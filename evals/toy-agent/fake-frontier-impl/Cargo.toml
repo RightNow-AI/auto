@@ -1,0 +1,30 @@
+[package]
+name = "fake_frontier_impl"
+description = "Hand-assisted S3 wasm implementation of the toy agent's fake-frontier span (synthesis lands S4)"
+version = "0.0.1"
+edition = "2024"
+rust-version = "1.96"
+publish = false
+
+# standalone root on purpose: the repo workspace excludes this crate, so the
+# wasm implementation keeps its own lockfile and target directory and never
+# enters host builds
+[workspace]
+
+[lib]
+# cdylib: the wasm module the .cbin carries. rlib: lets the pure mapping be
+# unit-tested on the host target.
+crate-type = ["cdylib", "rlib"]
+
+[features]
+# deliberately divergent variant (keeps 2 keywords instead of 3), used by the
+# e2e to prove the emit gate blocks a wrong implementation. never ship it.
+wrong = []
+
+[dependencies]
+serde_json = "1.0.150"
+
+[lints.rust]
+# constitution: no `unsafe` without a justification comment. deny (not forbid)
+# so the ABI module can carry a justified allow.
+unsafe_code = "deny"

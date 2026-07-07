@@ -1,0 +1,24 @@
+[package]
+name = "auto-contract"
+description = "Auto contract v0: examples + properties + eval sets + budgets, and the verification harness that checks them against recorded traces or callable subjects"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+publish.workspace = true
+
+[dependencies]
+auto-ir.workspace = true
+auto-trace.workspace = true
+regex.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+sha2.workspace = true
+thiserror.workspace = true
+toml.workspace = true
+
+[dev-dependencies]
+proptest.workspace = true
+tempfile.workspace = true
+
+[lints]
+workspace = true

@@ -1,0 +1,78 @@
+# AUTO-BENCH v1 — F6 novelty-stream (H1, the ratchet curve): the recompile
+# contract. Committed BEFORE the first compile per evals/bench/DESIGN.md
+# anti-gaming rules: every threshold below is declared from the task
+# DEFINITION, and the one example's output is filled from RECORDED REALITY
+# by the orchestrator after the first recording — never invented.
+#
+# IDENTITY (measured constraint, not a choice): this is the F6 family
+# (spend-ledger session "bench-f6"), but the contract MUST carry
+# task = "ticket-triage", scope span model_call("triage"), because one
+# identity has to hold through the whole ratchet loop:
+#   1. bootstrap recordings reuse evals/ticket-triage/agent.py VERBATIM
+#      (no second paid agent), and its Tracer records task="ticket-triage",
+#      span model_call("triage") — not overridable by env;
+#   2. `auto compile`/`auto distill` gather witnesses via
+#      store.load_task(contract.task) then filter span kind+name
+#      (crates/auto-backend/src/differential.rs, gather_observations);
+#   3. `auto run --tier0 … --store …` ingests each deopt answer as a
+#      synthetic single-span trace labeled with the ARTIFACT MANIFEST's
+#      task/scope_kind/scope_name (crates/auto-cli/src/main.rs,
+#      ingest_deopt_observation), and the manifest copies those fields from
+#      THIS contract at emit time (verify_and_emit).
+# A "bench-f6"-named contract would gather zero witnesses and the deopt
+# ingests would orphan. DESIGN.md's per-family name lives in the session.
+#
+# Two-contract note (the F1 lesson): this is the EMIT contract — a wasm
+# subject has no billing, so cost/token budgets here would force every emit
+# Inconclusive. Reference-side cost/token claims stay in
+# evals/ticket-triage/triage-recorded.contract.toml territory and in the
+# spend ledger, which the F6 driver reads per item.
+contract_version = 0
+task = "ticket-triage"
+
+[scope]
+type = "span"
+kind = "model_call"
+name = "triage"
+
+[interface]
+input = "json"
+output = "text"
+
+# Exactly one exact example: input = the frozen stream's pos-1 ticket
+# (stream.jsonl, byte-identical), output = what the recorded reference
+# actually answered on the FIRST bootstrap recording of that ticket.
+# TODO(orchestrator): replace the placeholder with the recorded label from
+# the first `auto record` of stream pos 1 (e.g. via
+# `auto report --task ticket-triage --store <f6 store>` or the driver's
+# CSV/stdout) BEFORE the first compile. The driver refuses to start a real
+# (non --dry-run) leg while the placeholder is present.
+[[example]]
+name = "f6-pos1-billing-two-seats"
+match = "exact"
+input = { ticket = "I was charged for two seats on this month's invoice but our workspace only has one member, please refund the extra seat." }
+output = "billing"
+
+# Declared NOW, from the task definition: the six category labels of the
+# frozen stream (three base + the two injected categories + the fraud
+# phrasing family). Tier-0 deopt answers are unverified reference authority
+# (spec/runtime.md §3); an off-vocabulary answer is an honest FAIL when this
+# contract is verified in trace mode against the grown store — a result,
+# not noise. In the emit gate this property checks the subject's outputs on
+# the example inputs (crates/auto-contract/src/harness.rs).
+[[property]]
+kind = "one_of"
+target = "output"
+values = ["billing", "bug", "feature", "security", "onboarding", "billing-fraud"]
+
+# Declared NOW (ADR-0018): >= 95.0% of distinct witnessed inputs must
+# reproduce byte-equal on replay. Divergent-reference witnesses (the same
+# ticket answered differently across recordings — frontier stochasticity)
+# count as unmatched against this threshold, never as hard failures;
+# training picks the majority via --divergent-pick most-common.
+# differential_match stays "exact" (default): byte equality, no judge.
+[acceptance]
+differential_min_agreement_milli = 950
+
+[budgets]
+max_latency_ms_p95 = 30000

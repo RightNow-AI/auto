@@ -1,0 +1,20 @@
+[package]
+name = "auto-frontier"
+description = "spend-capped frontier model client: the ONLY path to paid API calls (hard cap, append-only ledger, fail-closed)"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+publish.workspace = true
+
+[dependencies]
+serde = { workspace = true }
+serde_json = { workspace = true }
+sha2 = { workspace = true }
+thiserror = { workspace = true }
+ureq = { workspace = true }
+
+[dev-dependencies]
+tempfile = { workspace = true }
+
+[lints]
+workspace = true

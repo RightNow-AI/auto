@@ -1,0 +1,23 @@
+[package]
+name = "auto-backend"
+description = "Auto backend: .cbin artifact container, honest manifest, verification-gated emit, differential checks"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+publish.workspace = true
+
+[dependencies]
+auto-contract.workspace = true
+auto-ir.workspace = true
+auto-trace.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+sha2.workspace = true
+thiserror.workspace = true
+
+[dev-dependencies]
+proptest.workspace = true
+tempfile.workspace = true
+
+[lints]
+workspace = true

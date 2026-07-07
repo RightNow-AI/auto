@@ -1,0 +1,37 @@
+[package]
+name = "auto-py"
+description = "In-process pyo3/abi3 embedding of a compiled .cbin: the tier-1 fast path inside the agent's OWN Python process — no subprocess, no HTTP, no stdio (ADR-0024). Capability artifacts run through host tool callbacks, tools={name: callable} (ADR-0027)."
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+publish.workspace = true
+
+[lib]
+name = "auto_py"
+# cdylib: the CPython extension module (`auto_py.pyd` / `.so`) maturin builds.
+# rlib: so `cargo test`/`clippy --all-targets` build the crate as a normal lib
+# and link the pure-logic unit tests (ADR-0024 §consequences).
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+# pyo3 0.29 is current stable (2026-06-11) with MSRV 1.83 <= the workspace's
+# 1.96; caret `0.29` takes non-breaking 0.29.x patches but not 0.30 (which can
+# change the proc-macro surface). abi3-py310 emits ONE forward-compatible
+# extension for CPython 3.10+ and lets `cargo check`/`clippy` resolve the ABI
+# without pinning a single interpreter. `extension-module` is a CRATE feature
+# (below), OFF for check/clippy/test and ON only for the maturin wheel build.
+# Justification + alternatives: spec/adr/0024-pyo3-embedding.md.
+pyo3 = { version = "0.29", features = ["abi3-py310"] }
+auto-runtime = { workspace = true }
+auto-backend = { workspace = true }
+auto-trace = { workspace = true }
+serde_json = { workspace = true }
+
+[features]
+# maturin turns this on (see pyproject.toml) to build the Python extension
+# module. Left OFF for `cargo check|clippy|test` so those need no CPython at
+# link time (spec/adr/0024-pyo3-embedding.md §decision).
+extension-module = ["pyo3/extension-module"]
+
+[lints]
+workspace = true

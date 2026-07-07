@@ -1,0 +1,88 @@
+# AUTO-BENCH v1 — F1 ticket-triage emit contract (bench leg).
+#
+# Committed BEFORE the first bench compile (DESIGN.md anti-gaming rule).
+# A bench-local contract is NEEDED (the "if needed" of the track spec) for
+# three measured reasons:
+#
+#   1. The F1 bench recording window is the FIRST 40 corpus tickets
+#      (2 passes x 40; DESIGN.md pre-registration) — billing (1-20) and bug
+#      (21-40) only. evals/ticket-triage/triage.contract.toml carries a
+#      "feature" example whose input is corpus line 41, OUTSIDE this
+#      window: the emit gate replays examples against the subject, so that
+#      contract would judge the bench artifact on an input the bench never
+#      witnessed. Both example inputs below are inside the first 40.
+#   2. Its example outputs were filled from the 2026-07-04 compile store.
+#      Bench examples must be filled from THIS bench store's recording
+#      (the F4 placeholder pattern; wave-3 lesson: recorded reality, never
+#      an author's guess — and never another run's reality).
+#   3. triage.contract.toml declares no [acceptance]: every divergent
+#      witness would be gate-fatal. The bench pre-declares the threshold
+#      (DESIGN.md: thresholds declared before runs). 950 matches the F6
+#      declaration for the SAME span and model (stream.contract.toml),
+#      kept identical on purpose.
+#
+# IDENTITY (the F6 lesson, measured): task must be "ticket-triage", scope
+# span model_call("triage") — that is what evals/ticket-triage/agent.py
+# records and what compile/distill/deopt-ingest key on. The F1 bench
+# identity lives in the ledger session ("bench-f1") and the file names.
+#
+# Two-contract note (the F1 wave-3 lesson): this is the EMIT contract — a
+# wasm subject has no billing, so cost/token budgets here would force every
+# emit Inconclusive. Reference-side cost/token claims stay in
+# evals/ticket-triage/triage-recorded.contract.toml; the bench reports the
+# recorded reference's cost/latency from the reserved span attrs instead.
+contract_version = 0
+task = "ticket-triage"
+
+[scope]
+type = "span"
+kind = "model_call"
+name = "triage"
+
+[interface]
+input = "json"
+output = "text"
+
+# Exactly two exact examples. INPUTS are frozen corpus lines 1 and 21
+# (byte-identical to evals/ticket-triage/corpus.txt), both inside the
+# first-40 bench window. OUTPUTS are placeholders the ORCHESTRATOR fills
+# from the FIRST bench recording pass (run-f1.sh prints the recorded
+# outputs for both inputs at fill time). Compiling against an unfilled
+# placeholder fails the gate loudly, on purpose — run-f1.sh refuses to
+# start its compile phase while a placeholder is present. Commit the fill.
+[[example]]
+name = "billing-duplicate-charge"
+match = "exact"
+input = { ticket = "I was charged twice for my subscription this month, please refund the duplicate payment." }
+# TODO(orchestrator): fill from the FIRST bench recording of corpus line 1
+# (expected "billing" from the wave-3 n=60 measurement; record it, do not
+# assume it).
+output = "billing"
+
+[[example]]
+name = "bug-settings-crash"
+match = "exact"
+input = { ticket = "The app crashes immediately when I open the settings page on Android." }
+# TODO(orchestrator): fill from the FIRST bench recording of corpus line 21
+# (expected "bug"; record it, do not assume it).
+output = "bug"
+
+# Declared from the task definition (the agent's system prompt names
+# exactly these three words). "feature" stays declared even though the
+# first-40 window witnesses none: the vocabulary is the task's, not the
+# sample's.
+[[property]]
+kind = "one_of"
+target = "output"
+values = ["billing", "bug", "feature"]
+
+# Declared NOW (ADR-0018): >= 95.0% of distinct witnessed inputs must
+# reproduce on replay. F1 measured 100% deterministic at n=60 (wave 3);
+# 950 prices residual frontier stochasticity without tuning after a gate
+# verdict. differential_match stays absent (= exact): one-word labels need
+# no judge (contrast bench-f5).
+[acceptance]
+differential_min_agreement_milli = 950
+
+[budgets]
+max_latency_ms_p95 = 30000

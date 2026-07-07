@@ -1,0 +1,78 @@
+# AUTO-BENCH v1 — F5 summarize-strict: the JUDGED emit contract.
+#
+# Committed BEFORE the first bench compile (DESIGN.md anti-gaming rule).
+# evals/inbox-agent/summarize.contract.toml deliberately lacks [acceptance]
+# — it pins wave-5 memorization semantics. F5 exists to measure the
+# generative residue under JUDGED differential parity (ADR-0021), so the
+# bench needs this contract, with the threshold declared up front:
+#
+#   [acceptance]
+#   differential_match = "judged"           — byte-divergent differential
+#       groups are arbitrated by the --judge-model (semantic equivalence);
+#       WITHOUT a judge the agreement check is Unchecked and the verdict is
+#       INCONCLUSIVE (ADR-0019/0021) — run-f5.sh sub-run (a) measures
+#       exactly that, on purpose.
+#   differential_min_agreement_milli = 800  — >= 80.0% of distinct
+#       witnessed inputs must reproduce byte-equal OR be judged equivalent.
+#       Same threshold the wave-9/12 live firings declared; frozen here
+#       before any bench run, never tuned after a verdict.
+#
+# IDENTITY: task "inbox-agent", scope span model_call("summarize") — what
+# evals/inbox-agent/agent.py records (the F6 lesson: the contract must key
+# on the recorded identity or it gathers zero witnesses). The F5 bench
+# identity lives in the ledger session ("bench-f5") and the file names.
+# F5 runs over the F2 store (run-f2.sh recording) — no second paid
+# recording exists for this family.
+#
+# FILL-BEFORE-COMPILE RULE: the one example's output is a placeholder.
+# The orchestrator fills it from THIS bench store's recorded reality —
+# the CANONICAL PICK of the example ticket's recorded outputs (majority
+# witness; at a 2-witness tie, the lexicographically smaller canonical
+# output — the gate's own ADR-0018 pick rule, not a second rule).
+# run-f5.sh prints the recorded outputs and the canonical pick at fill
+# time, and refuses to start any sub-run while the placeholder is present.
+# Commit the fill.
+#
+# Honest risk, stated up front: summarize measured ~20% deterministic
+# (wave 5), and this example is match="exact" (per the frozen track spec).
+# A weighted-trained subject (run-f5.sh sub-run b) may answer a
+# feature-collision leaf's output instead of the canonical pick — the
+# example check would then FAIL the emit even where judged differential
+# agreement passes. That outcome is a result, not a bug; report it.
+contract_version = 0
+task = "inbox-agent"
+
+[scope]
+type = "span"
+kind = "model_call"
+name = "summarize"
+
+[interface]
+input = "json"
+output = "text"
+
+# One exact example. INPUT is frozen corpus line 1 (byte-identical to
+# evals/inbox-agent/corpus.txt, inside the first-20 F2 recording window);
+# OUTPUT is the placeholder (fill rule above).
+[[example]]
+name = "billing-duplicate-charge-summary"
+match = "exact"
+input = { ticket = "I was charged twice for my subscription this month, please refund the duplicate payment." }
+# TODO(orchestrator): fill with the canonical pick of this ticket's
+# recorded summarize outputs in the F2 bench store (run-f5.sh prints it).
+output = "Duplicate subscription charge refund requested"
+
+# Declared from the task definition (the prompt demands a <= 12 word
+# summary; 120 chars is the wave-5 declared ceiling, kept identical).
+[[property]]
+kind = "len_range"
+target = "output"
+min = 1
+max = 120
+
+[acceptance]
+differential_match = "judged"
+differential_min_agreement_milli = 800
+
+[budgets]
+max_latency_ms_p95 = 30000

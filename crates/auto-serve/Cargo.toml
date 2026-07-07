@@ -1,0 +1,32 @@
+[package]
+name = "auto-serve"
+description = "tier-1 artifact server: registry-backed, guard-gated, abstain-honest (no tier-0 in v0)"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+publish.workspace = true
+
+[dependencies]
+auto-backend = { workspace = true }
+auto-registry = { workspace = true }
+auto-runtime = { workspace = true }
+# canonical_json: the per-request tool-budget wrapper (ADR-0028) reimplements
+# the Live tier-0 command contract, which serializes the tool input as
+# canonical JSON. The runtime does not expose Live execution as a standalone
+# public fn, so auto-serve owns the spawn and must match its bytes exactly.
+auto-trace = { workspace = true }
+serde_json = { workspace = true }
+thiserror = { workspace = true }
+tiny_http = { workspace = true }
+
+[dev-dependencies]
+# unit tests build a real registry + runnable ECHO artifact in a tempdir; no
+# sockets (CLAUDE.md).
+tempfile = { workspace = true }
+# capability-artifact fixtures embed the REAL tool interpreter + a pipeline-v1
+# payload (ADR-0017). auto-passes does not depend on auto-serve (its tree is
+# auto-dsl/auto-frontier/auto-model), so these dev edges are acyclic.
+auto-passes = { workspace = true }
+
+[lints]
+workspace = true

@@ -1,0 +1,10 @@
+{"id": "f3-p01", "kind": "heldout", "email": "I want a refund for order ORD-62918 immediately - the tent arrived with a torn rainfly. This is urgent, our trip depends on it."}
+{"id": "f3-p02", "kind": "heldout", "email": "The wireless mouse from order ORD-48350 double-clicks on every press. Could you send a replacement?"}
+{"id": "f3-p03", "kind": "heldout", "email": "No rush, but when is order ORD-87621 for the bath towels expected to arrive?"}
+{"id": "f3-p04", "kind": "heldout", "email": "Please cancel order ORD-15789, I accidentally submitted it twice and only need one air fryer."}
+{"id": "f3-p05", "kind": "heldout", "email": "Could you email me the invoice for order ORD-93046? Our finance team files these monthly."}
+{"id": "f3-p06", "kind": "ood", "email": "E0704 12:31:07.442913 1 reflector.go:138] k8s.io/client-go/informers: Failed to watch *v1.Pod: failed to list *v1.Pod: the server could not find the requested resource"}
+{"id": "f3-p07", "kind": "ood", "email": "The harbor lights dissolve in rain, and every mast leans north again; the tide rewrites the shore by night, and morning finds the gulls in flight."}
+{"id": "f3-p08", "kind": "ood", "email": "hi"}
+{"id": "f3-p09", "kind": "ood", "email": "panic: runtime error: index out of range [3] with length 2 goroutine 1 [running]: main.handleOrder(0xc000112000) /srv/app/main.go:42 +0x1a5 exit status 2"}
+{"id": "f3-p10", "kind": "ood", "email": "Hi, could we get a table for four this Saturday around 7pm? We are celebrating my mother's retirement and would love the corner booth if it is available."}

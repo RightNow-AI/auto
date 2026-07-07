@@ -1,0 +1,23 @@
+[package]
+name = "auto-registry"
+description = "Auto registry, S7 slice: local content-addressed artifact store + detached ed25519 signing. Remote registries and sigstore are recorded targets."
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+publish.workspace = true
+
+[dependencies]
+auto-backend.workspace = true
+ed25519-dalek.workspace = true
+getrandom.workspace = true
+thiserror.workspace = true
+# remote transport (ADR-0022): blocking http SERVER (tiny_http) + CLIENT (ureq),
+# same synchronous-workspace pins as auto-serve / auto-proxy / the frontier client
+tiny_http.workspace = true
+ureq.workspace = true
+
+[dev-dependencies]
+tempfile.workspace = true
+
+[lints]
+workspace = true

@@ -1,0 +1,24 @@
+[package]
+name = "auto-passes"
+description = "Auto passes, S4 slice: enumerative symbolic extraction over the closed DSL (LLM-guided proposal generation is future work and says so). Distillation/optimization land S5+."
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+publish.workspace = true
+build = "build.rs"
+
+[dependencies]
+auto-dsl.workspace = true
+auto-frontier.workspace = true
+auto-model.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+sha2.workspace = true
+thiserror.workspace = true
+
+[dev-dependencies]
+proptest.workspace = true
+wasmtime.workspace = true
+
+[lints]
+workspace = true

@@ -1,0 +1,69 @@
+# AUTO-BENCH F4 — policy-routing emit contract (task bench-f4).
+#
+# Committed BEFORE the first compile (DESIGN.md anti-gaming rule). Every
+# threshold here is DECLARED NOW, from the task definition, and is never
+# tuned after seeing a gate verdict:
+#
+#   * property one_of {approve, review, reject} — the only legal outputs;
+#   * [acceptance] differential_min_agreement_milli = 900 — the distilled
+#     subject must reproduce >= 90.0% of the distinct witnessed inputs'
+#     recorded outputs (ADR-0018 statistical acceptance; integer-milli math).
+#     F4 is expected to be high-but-not-perfect deterministic, so a strict
+#     exact gate would be dishonest; 900 prices in the recorded stochasticity
+#     and divergent groups still count against agreement (they are exactly
+#     what the threshold exists to price). differential_match is left absent
+#     (= exact): one-word labels need no judge (contrast F5).
+#
+# The two examples are match="exact". Their INPUTS are frozen corpus lines
+# (f4-004, f4-035 — the most unambiguous approve/reject); their OUTPUTS are
+# placeholders the ORCHESTRATOR fills from the FIRST recording pass, so the
+# expected values come from RECORDED REALITY, never from an author's guess
+# (the wave-3 lesson). Until filled, `<FROM-RECORDED-REALITY>` will fail the
+# gate loudly — that is intended: do not compile against a placeholder.
+#
+# budgets: max_latency_ms_p95 = 30000 — the 30s frontier-latency ceiling for
+# the recorded reference (trace mode). Cost/token budgets are deliberately
+# NOT declared here: a distilled wasm subject has no billing at all, so a
+# declared cost/token budget would force every emit Inconclusive (spec/
+# contract.md §6; the ticket-triage two-contract split note in
+# spec/adr/open-questions.md). The recorded reference's per-call cost/tokens
+# are measured from the reserved span attrs and reported in the bench
+# results, not gated as an emit budget.
+contract_version = 0
+task = "bench-f4"
+
+[scope]
+type = "span"
+kind = "model_call"
+name = "route"
+
+[interface]
+input = "json"
+output = "text"
+
+[[example]]
+name = "approve-small"
+match = "exact"
+input = { request = "$250 for a sales team lunch, standard vendor." }
+# TODO(orchestrator): fill from the FIRST recording of f4-004 (expected
+# "approve" under the policy; record it, do not assume it).
+output = "approve"
+
+[[example]]
+name = "reject-large"
+match = "exact"
+input = { request = "$45,000 for data-center servers, IT, standard vendor." }
+# TODO(orchestrator): fill from the FIRST recording of f4-035 (expected
+# "reject" under the policy; record it, do not assume it).
+output = "reject"
+
+[[property]]
+kind = "one_of"
+target = "output"
+values = ["approve", "review", "reject"]
+
+[acceptance]
+differential_min_agreement_milli = 900
+
+[budgets]
+max_latency_ms_p95 = 30000

@@ -1,0 +1,495 @@
+# AUTO-BENCH v1 F6 novelty-stream (H1, the ratchet curve) - per-position log.
+# REAL leg: session bench-f6b, cap 1.00 USD, tier-0 frontier:gpt-5.4-mini, ledger ~/.auto/spend.jsonl
+# stream=evals\bench\f6-stream\stream.jsonl K=8 guard_alpha_milli=400
+# tier: bootstrap-record = paid recording via evals/ticket-triage/agent.py (no artifact yet);
+#       tier1 = guard proceed, compiled answer, marginal cost 0; tier0-deopt = guard trip, paid
+#       frontier answer ingested into the store (the ratchet); abstain/error = honest failures.
+# cost_usd_micros: bootstrap = reserved span attr from the store; tier0-deopt = spend-ledger
+# delta for this session; tier1 = 0. latency_ms: bootstrap = recorded span duration (real API
+# latency); tier0-deopt = the runtime's measured tier-0 wall time; tier1 = one-shot `auto run`
+# wall time (process spawn + wasm compile included - the honest one-shot number; see README).
+pos,category,text_sha12,distinct_seen,tier,guard_distance,latency_ms,cost_usd_micros,artifact_generation,answer
+1,billing,17cb12f37f2c,1,bootstrap-record,,909,63,0,billing
+2,bug,ce3ad56c2cf2,2,bootstrap-record,,834,57,0,bug
+3,feature,596a467f9df0,3,bootstrap-record,,937,61,0,feature
+4,billing,f08ef09a72b6,4,bootstrap-record,,907,58,0,billing
+5,bug,21e6c02f0cf9,5,bootstrap-record,,797,57,0,bug
+6,feature,63ba506c4f68,6,bootstrap-record,,1077,57,0,feature
+7,billing,793f8e241429,7,bootstrap-record,,890,60,0,billing
+8,bug,c95d2df9836c,8,bootstrap-record,,894,59,0,bug
+9,feature,85dc8b741c90,8,tier1,0.7923,745,0,1,feature
+10,billing,3f283840eeb8,8,tier1,0.7901,98,0,1,billing
+11,bug,5363b868787f,8,tier1,0.8714,89,0,1,bug
+12,feature,16311abe6402,8,tier1,0.8592,86,0,1,bug
+13,billing,793f8e241429,8,tier1,0.0000,380,0,1,billing
+14,bug,8f5076b17d0d,8,tier1,0.8792,82,0,1,bug
+15,billing,cfb98f978d8b,8,tier1,0.8690,79,0,1,billing
+16,bug,5363b868787f,8,tier1,0.8714,339,0,1,bug
+17,bug,21e6c02f0cf9,8,tier1,0.0000,904,0,1,bug
+18,feature,16311abe6402,8,tier1,0.8592,608,0,1,bug
+19,feature,63ba506c4f68,8,tier1,0.0000,102,0,1,feature
+20,billing,78a26c8bef69,8,tier1,0.8333,95,0,1,billing
+21,billing,793f8e241429,8,tier1,0.0000,377,0,1,billing
+22,feature,596a467f9df0,8,tier1,0.0000,100,0,1,feature
+23,billing,3f283840eeb8,8,tier1,0.7901,97,0,1,billing
+24,feature,596a467f9df0,8,tier1,0.0000,320,0,1,feature
+25,billing,f08ef09a72b6,8,tier1,0.0000,98,0,1,billing
+26,feature,1b3eb767452a,8,tier1,0.8897,381,0,1,bug
+27,bug,7c55b12b6d40,8,tier1,0.8551,82,0,1,bug
+28,feature,1b3eb767452a,8,tier1,0.8897,81,0,1,bug
+29,billing,17cb12f37f2c,8,tier1,0.0000,393,0,1,billing
+30,feature,68948e3c77c8,8,tier1,0.8936,83,0,1,feature
+31,bug,7c55b12b6d40,8,tier1,0.8551,68,0,1,bug
+32,billing,cfb98f978d8b,8,tier1,0.8690,83,0,1,billing
+33,billing,17cb12f37f2c,8,tier1,0.0000,68,0,1,billing
+34,feature,596a467f9df0,8,tier1,0.0000,68,0,1,feature
+35,feature,596a467f9df0,8,tier1,0.0000,74,0,1,feature
+36,billing,3f283840eeb8,8,tier1,0.7901,416,0,1,billing
+37,feature,63ba506c4f68,8,tier1,0.0000,327,0,1,feature
+38,bug,7c55b12b6d40,8,tier1,0.8551,309,0,1,bug
+39,billing,793f8e241429,8,tier1,0.0000,299,0,1,billing
+40,billing,3f283840eeb8,8,tier1,0.7901,532,0,1,billing
+41,feature,596a467f9df0,8,tier1,0.0000,1017,0,1,feature
+42,feature,85dc8b741c90,8,tier1,0.7923,535,0,1,feature
+43,feature,68948e3c77c8,8,tier1,0.8936,83,0,1,feature
+44,bug,7c55b12b6d40,8,tier1,0.8551,75,0,1,bug
+45,bug,c95d2df9836c,8,tier1,0.0000,70,0,1,bug
+46,billing,f08ef09a72b6,8,tier1,0.0000,72,0,1,billing
+47,feature,85dc8b741c90,8,tier1,0.7923,73,0,1,feature
+48,feature,16311abe6402,8,tier1,0.8592,76,0,1,bug
+49,feature,68948e3c77c8,8,tier1,0.8936,93,0,1,feature
+50,security,4f493401f33b,9,tier0-deopt,0.8988,1200,175,1,Account security concern: suspicious login alert from foreign IP; needs verification and password reset guidance.
+51,bug,21e6c02f0cf9,9,tier1,0.0000,299,0,1,bug
+52,billing,793f8e241429,9,tier1,0.0000,66,0,1,billing
+53,billing,17cb12f37f2c,9,tier1,0.0000,64,0,1,billing
+54,bug,8f5076b17d0d,9,tier1,0.8792,65,0,1,bug
+55,bug,21e6c02f0cf9,9,tier1,0.0000,62,0,1,bug
+56,feature,16311abe6402,9,tier1,0.8592,69,0,1,bug
+57,security,4ee6f6ed7ed0,10,tier0-deopt,0.9045,1067,123,1,security: unauthorized password reset attempts
+58,bug,c95d2df9836c,10,tier1,0.0000,64,0,1,bug
+59,security,77d54dd9a67c,10,tier1,0.8036,77,0,1,bug
+60,feature,85dc8b741c90,10,tier1,0.7923,72,0,1,feature
+61,security,4ee6f6ed7ed0,10,tier0-deopt,0.9045,2488,114,1,security_investigation
+62,security,4f493401f33b,10,tier0-deopt,0.8988,1024,130,1,suspicious login alert from another country
+63,billing,f08ef09a72b6,10,tier1,0.0000,63,0,1,billing
+64,bug,7c55b12b6d40,10,tier1,0.8551,67,0,1,bug
+65,billing,f08ef09a72b6,10,tier1,0.0000,64,0,1,billing
+66,bug,21e6c02f0cf9,10,tier1,0.0000,64,0,1,bug
+67,billing,793f8e241429,10,tier1,0.0000,62,0,1,billing
+68,security,45bab5f6ed00,11,tier0-deopt,0.9286,1271,108,1,security_incident
+69,bug,5363b868787f,11,tier1,0.8714,67,0,1,bug
+70,security,907876c2e9aa,12,tier0-deopt,0.9351,1937,669,1,"Revoke the exposed API key immediately in your account/dashboard, then create a new key and update any services using it. Also rotate any other tokens or secrets that may have been exposed, especially if they share the same scope or environment. Check repository history, CI/CD logs, issue trackers, and deployment configs for copies of the secret, and remove them where possible. If the key had broad permissions, review recent usage for suspicious activity. After rotating, deploy the new credentials securely and delete the old one. If you tell me the platform (e.g. OpenAI, AWS, GitHub), I can give the exact revocation steps."
+71,security,4ee6f6ed7ed0,12,tier0-deopt,0.9045,1641,388,1,"Security issue: unauthorized password reset attempts. Advise the user to secure the account immediately by changing the password, enabling two-factor authentication if available, checking account recovery options, and reviewing recent login activity. Recommend reporting the incident to support so they can investigate suspicious activity and, if needed, temporarily lock the account or invalidate reset links."
+72,security,2852dbe2ff73,13,tier0-deopt,0.9097,1178,231,1,"Security-related request: I recommend immediately locking the account, reviewing the login attempts, verifying the device/user, and resetting credentials if any suspicious access is confirmed."
+73,billing,cfb98f978d8b,13,tier1,0.8690,73,0,1,billing
+74,security,5415248e02e2,14,tier0-deopt,0.9185,1384,330,1,"Handle as a security/account access request: verify the requester is authorized (HR/manager/security/admin) before taking action, then invalidate the former employee’s active sessions and refresh tokens across all devices, force password reset if applicable, and confirm the sign-out is complete."
+75,bug,ce3ad56c2cf2,14,tier1,0.0000,75,0,1,bug
+76,security,4ee6f6ed7ed0,14,tier0-deopt,0.9045,1279,285,1,"Security issue: your account may be under attack. Please secure your account immediately by changing your password, reviewing recent login activity, enabling two-factor authentication if available, and contacting support to report the unauthorized password reset attempts."
+77,security,45bab5f6ed00,14,tier0-deopt,0.9286,1350,279,1,"Security incident: suspected phishing attempt. Instruct staff not to respond, click links, or share passwords; report the email to IT/security for investigation and, if any credentials were entered, reset affected passwords immediately."
+78,security,4f493401f33b,14,tier0-deopt,0.8988,1041,121,1,"Yes, that was me."
+79,feature,68948e3c77c8,14,tier1,0.8936,65,0,1,feature
+80,security,662c755241d1,15,tier0-deopt,0.9329,1530,500,1,"Rotate the password for any account that used the leaked password, and for any other accounts where you reused that same password or a very similar one. Also change the password on the affected service itself, plus any accounts that share the same email, recovery email, or single sign-on login. If you use password managers, update the saved entry there as well. If you have MFA enabled, keep it on; if not, enable it after changing the passwords."
+81,security,9c474aa4438c,15,tier1,0.8896,78,0,1,bug
+82,security,f1e66211864a,15,tier1,0.8814,76,0,1,feature
+83,security,3c5b0804dfe3,16,tier0-deopt,0.9066,1491,386,1,"Security incident: audit admin access to the exported member list and identify any unauthorized logins. Review authentication logs, file access/export logs, admin account activity, source IPs, timestamps, and any privilege changes. If suspicious activity is confirmed, preserve evidence, disable affected accounts, rotate credentials, and escalate to security/incident response."
+84,security,5eadfa45d7bf,17,tier0-deopt,0.8950,1456,330,1,"Security incident suspected: sign-in verification codes may be intercepted. Please revoke existing 2FA sessions/recovery codes, reset the two-factor setup, and review account security logs immediately. If you want, I can also help draft an escalation message for your security team."
+85,feature,85dc8b741c90,17,tier1,0.7923,64,0,1,feature
+86,security,45bab5f6ed00,17,tier0-deopt,0.9286,969,108,1,security/phishing
+87,billing,78a26c8bef69,17,tier1,0.8333,64,0,1,billing
+88,security,3c5b0804dfe3,17,tier0-deopt,0.9066,1200,220,1,"Access review request: identify all admin accounts that accessed the exported member list, including timestamps, source IPs, and whether any access was unauthorized."
+89,security,4ee6f6ed7ed0,17,tier0-deopt,0.9045,1080,141,1,Security / Account compromise: multiple unsolicited password reset attempts
+90,security,45bab5f6ed00,17,tier0-deopt,0.9286,1042,108,1,security_incident
+91,security,2852dbe2ff73,17,tier0-deopt,0.9097,1345,145,1,Security concern detected: account lock recommended until verification is completed.
+92,bug,21e6c02f0cf9,17,tier1,0.0000,67,0,1,bug
+93,billing,17cb12f37f2c,17,tier1,0.0000,67,0,1,billing
+94,security,5eadfa45d7bf,17,tier0-deopt,0.8950,1422,235,1,"Security incident: account verification codes may be intercepted. Recommend immediately resetting two-factor authentication, invalidating active sessions, reviewing recovery methods, and checking for unauthorized access."
+95,feature,16311abe6402,17,tier1,0.8592,67,0,1,bug
+96,feature,63ba506c4f68,17,tier1,0.0000,66,0,1,feature
+97,feature,85dc8b741c90,17,tier1,0.7923,66,0,1,feature
+98,bug,ce3ad56c2cf2,17,tier1,0.0000,67,0,1,bug
+99,bug,ce3ad56c2cf2,17,tier1,0.0000,68,0,1,bug
+100,feature,68948e3c77c8,17,tier1,0.8936,70,0,1,feature
+101,feature,1b3eb767452a,17,tier1,0.8897,66,0,1,bug
+102,bug,c95d2df9836c,17,tier1,0.0000,356,0,1,bug
+103,feature,16311abe6402,17,tier1,0.8592,71,0,1,bug
+104,billing,793f8e241429,17,tier1,0.0000,67,0,1,billing
+105,bug,21e6c02f0cf9,17,tier1,0.0000,71,0,1,bug
+106,billing,793f8e241429,17,tier1,0.0000,66,0,1,billing
+107,security,5415248e02e2,17,tier0-deopt,0.9185,1160,199,1,Access termination / session revocation request: verify authorization and then revoke the former employee’s active sessions on all devices immediately.
+108,bug,21e6c02f0cf9,17,tier1,0.0000,68,0,1,bug
+109,feature,63ba506c4f68,17,tier1,0.0000,77,0,1,feature
+110,billing,cfb98f978d8b,17,tier1,0.8690,66,0,1,billing
+111,bug,ce3ad56c2cf2,17,tier1,0.0000,68,0,1,bug
+112,bug,c95d2df9836c,17,tier1,0.0000,64,0,1,bug
+113,security,77d54dd9a67c,17,tier1,0.8036,66,0,1,bug
+114,security,2852dbe2ff73,17,tier0-deopt,0.9097,1294,190,1,Security concern: suspicious login attempts from an unknown device. Recommend temporarily locking the account and initiating verification/reset procedures.
+115,feature,68948e3c77c8,17,tier1,0.8936,67,0,1,feature
+116,bug,5363b868787f,17,tier1,0.8714,65,0,1,bug
+117,billing,3f283840eeb8,17,tier1,0.7901,64,0,1,billing
+118,bug,5363b868787f,17,tier1,0.8714,350,0,1,bug
+119,feature,85dc8b741c90,17,tier1,0.7923,69,0,1,feature
+120,onboarding,65e17160ea68,18,tier0-deopt,0.8987,1339,290,1,"During the initial setup, you can invite teammates by entering their email addresses in the invite section or workspace setup step. If you don’t see that option, you can usually add teammates later from the workspace settings or members page."
+121,onboarding,1c81d31bbc0b,19,tier0-deopt,0.9226,1611,483,1,"Ask the user to open the checklist item for step three and follow the “Connect data source” flow in the setup wizard. If they’re already there, have them go to Sources/Data connections, choose the source type, enter the required credentials, and save. If the checklist still doesn’t advance, refresh the page and confirm the connection completed successfully; if it still stays stuck, collect the source type and any error message for support."
+122,feature,85dc8b741c90,19,tier1,0.7923,67,0,1,feature
+123,bug,8f5076b17d0d,19,tier1,0.8792,67,0,1,bug
+124,onboarding,65e17160ea68,19,tier0-deopt,0.8987,1328,407,1,"During initial setup, you can usually add teammates by entering their email addresses in the invite or team members step and sending the invitation. If you don’t see that option yet, you can finish setup first and then invite them from the workspace settings or members page. If you want, I can also help with the exact steps for your plan or app version."
+125,billing,17cb12f37f2c,19,tier1,0.0000,65,0,1,billing
+126,security,5415248e02e2,19,tier0-deopt,0.9185,1689,357,1,"Access/security request: user/session revocation and forced sign-out. Recommend immediate account disablement or session invalidation by an authorized admin, and review for any unauthorized access. If this is urgent and you have admin access, use the identity provider’s global sign-out / revoke sessions function right away."
+127,bug,21e6c02f0cf9,19,tier1,0.0000,70,0,1,bug
+128,feature,1b3eb767452a,19,tier1,0.8897,69,0,1,bug
+129,security,f1e66211864a,19,tier1,0.8814,65,0,1,feature
+130,bug,5363b868787f,19,tier1,0.8714,66,0,1,bug
+131,feature,68948e3c77c8,19,tier1,0.8936,68,0,1,feature
+132,onboarding,1c81d31bbc0b,19,tier0-deopt,0.9226,1443,501,1,"To connect your first data source, go to the Data Sources or Integrations section in the app and choose the connector for the system you want to import from. Follow the setup prompts to authorize access and map any required fields. If the checklist is stuck on step three, try refreshing the page after saving the connection, or log out and back in. If it still won’t advance, share the data source type and I can help with the exact steps."
+133,bug,21e6c02f0cf9,19,tier1,0.0000,71,0,1,bug
+134,onboarding,1c81d31bbc0b,19,tier0-deopt,0.9226,1755,519,1,"To connect your first data source, go to the Data Sources or Integrations section in the app, choose the source type you want to add, and follow the setup steps to authenticate and configure it. If your getting started checklist is stuck on step three, try refreshing the page after completing the connection, or check whether the source was added under your integrations list.
+
+If you tell me which data source you’re trying to connect, I can give you the exact steps."
+135,security,3c5b0804dfe3,19,tier0-deopt,0.9066,1392,386,1,"Accessing an exported member list may involve personal data. Before proceeding, ensure you have authorization and a legitimate need to review access logs. If you’re an authorized administrator, I can help outline the steps to audit admin access by reviewing system logs, export/download history, authentication events, and account activity tied to the member list export."
+136,feature,596a467f9df0,19,tier1,0.0000,74,0,1,feature
+137,onboarding,998c4ba59263,19,tier1,0.8780,69,0,1,bug
+138,bug,21e6c02f0cf9,19,tier1,0.0000,70,0,1,bug
+139,onboarding,1c81d31bbc0b,19,tier0-deopt,0.9226,1448,447,1,"To connect your first data source, go to the Data Sources or Integrations section in the app, choose the source you want to connect, and follow the setup prompts to authenticate and configure it. If the checklist is stuck on step three, try refreshing the page after the connection is completed. If you tell me which data source you’re trying to add, I can give you the exact steps."
+140,onboarding,998c4ba59263,19,tier1,0.8780,63,0,1,bug
+141,onboarding,6d99f75cb7ae,20,tier0-deopt,0.9197,1304,294,1,"Import your existing contacts during onboarding by choosing the spreadsheet import option, then uploading your file and mapping the columns to the required contact fields. If you tell me what format your spreadsheet is in, I can give you the exact steps."
+142,security,f1e66211864a,20,tier1,0.8814,205,0,1,feature
+143,onboarding,bff272947e20,21,tier0-deopt,0.8963,1506,194,1,Please provide the relevant product or system context so I can give the correct recommendation for setting up roles on day one.
+144,feature,1b3eb767452a,21,tier1,0.8897,65,0,1,bug
+145,onboarding,8667e6330646,21,tier1,0.8671,65,0,1,billing
+146,feature,68948e3c77c8,21,tier1,0.8936,279,0,1,feature
+147,onboarding,8962185b2d7f,21,tier1,0.8806,67,0,1,feature
+148,onboarding,a0ba6e191d3a,22,tier0-deopt,0.9098,1379,414,1,"To migrate data from the old tool during initial setup, use the import/migration option in the onboarding flow. If your workspace already has data, export it from the old tool in the supported format, then upload or connect it in the new tool’s setup wizard. If you tell me which old tool you’re coming from, I can give the exact steps."
+149,bug,c95d2df9836c,22,tier1,0.0000,66,0,1,bug
+150,security,2852dbe2ff73,22,tier0-deopt,0.9097,1404,244,1,"Security-related account lock requested due to unknown-device login attempts. Recommend immediate temporary lock, force password reset, review recent activity, and verify user identity before re-enabling."
+151,onboarding,98d321080eb1,23,tier0-deopt,0.9062,2892,1740,1,"Sure — here’s a simple first-time configuration setup for a small marketing team:
+
+1. Create the team workspace
+   - Set up a shared workspace or account for the marketing team.
+   - Use a team-specific name so it’s easy to identify.
+
+2. Add team members
+   - Invite everyone who needs access.
+   - Assign roles based on responsibility, such as admin, editor, or viewer.
+
+3. Set up shared resources
+   - Add shared folders, files, campaign assets, and brand guidelines.
+   - Organize them by campaign, channel, or project.
+
+4. Configure permissions
+   - Limit access to sensitive folders or settings.
+   - Make sure only the right people can approve or publish content.
+
+5. Connect tools and integrations
+   - Link email, analytics, social media, CRM, or project management tools if needed.
+   - Verify that all integrations are working correctly.
+
+6. Define naming and file conventions
+   - Agree on consistent naming for campaigns, assets, and documents.
+   - This makes collaboration and searching much easier.
+
+7. Set up notifications and workflows
+   - Decide who gets alerts for approvals, deadlines, or performance updates.
+   - Configure a simple review and approval process.
+
+8. Test the setup
+   - Have the team try a sample campaign or project.
+   - Confirm that everyone can access what they need and that workflows behave as expected.
+
+9. Document the process
+   - Keep a short internal guide with login steps, roles, key links, and common procedures.
+
+If you want, I can also turn this into a checklist specifically for tools like Google Workspace, HubSpot, Mailchimp, or a project management platform."
+152,bug,7c55b12b6d40,23,tier1,0.8551,66,0,1,bug
+153,bug,ce3ad56c2cf2,23,tier1,0.0000,68,0,1,bug
+154,onboarding,ac28bf167850,24,tier0-deopt,0.9161,1225,114,1,customer-success-starter-template
+155,security,5eadfa45d7bf,24,tier0-deopt,0.8950,1648,303,1,"Security issue: sign-in verification codes may be intercepted, and the user wants to reset two-factor authentication. Recommend immediate account security review, invalidate active sessions and recovery codes, reset 2FA after verifying identity, and investigate possible compromise."
+156,billing,cfb98f978d8b,24,tier1,0.8690,68,0,1,billing
+157,onboarding,b5d2e8f9b001,25,tier0-deopt,0.8992,1218,213,1,"Please contact our team through the booking link in your onboarding email or share your availability, and we’ll help schedule a session for next week."
+158,feature,63ba506c4f68,25,tier1,0.0000,64,0,1,feature
+159,feature,596a467f9df0,25,tier1,0.0000,66,0,1,feature
+160,onboarding,cce057678045,26,tier0-deopt,0.9128,1768,401,1,"Please check your app’s sample-data or reset options and restore the tutorial sample project from the template/default dataset; if you’re using a hosted tutorial, sign out/in or restart the walkthrough, and if that doesn’t bring it back, contact support with the project name and workspace so they can re-provision it."
+161,feature,63ba506c4f68,26,tier1,0.0000,71,0,1,feature
+162,onboarding,65e17160ea68,26,tier0-deopt,0.8987,1442,380,1,"To invite teammates during initial setup, open the workspace setup flow and look for the ""Invite teammates"" or ""Add members"" step. Enter their email addresses, choose their roles if prompted, and send the invitations. If you don't see that option, you can usually add members later from the workspace settings or team management page."
+163,bug,7c55b12b6d40,26,tier1,0.8551,64,0,1,bug
+164,billing,3f283840eeb8,26,tier1,0.7901,71,0,1,billing
+165,security,45bab5f6ed00,26,tier0-deopt,0.9286,1062,171,1,Security incident: phishing email impersonating support and requesting passwords.
+166,onboarding,1c81d31bbc0b,26,tier0-deopt,0.9226,1416,415,1,"Step 3 in the getting started checklist is usually where you connect your first data source. To do that, open the app and go to Data Sources or Connections, then choose Add source and follow the prompts for the system you want to connect.
+
+If you tell me which product or data source you’re using, I can give you the exact steps."
+167,billing,cfb98f978d8b,26,tier1,0.8690,117,0,1,billing
+168,billing,cfb98f978d8b,26,tier1,0.8690,69,0,1,billing
+169,onboarding,bff272947e20,26,tier0-deopt,0.8963,1882,540,1,"Create a minimal, clear role setup on day one: assign one owner for the team lead/accountable role, define who can approve work, who can edit/merge, and who only needs read access. Start with the principle of least privilege, give access based on actual responsibilities, and avoid overcomplicating the structure until the team’s workflow settles. If you use a permissions system, group people by function (for example: admin, editor, viewer) rather than assigning permissions one by one."
+170,bug,c95d2df9836c,26,tier1,0.0000,69,0,1,bug
+171,feature,596a467f9df0,26,tier1,0.0000,71,0,1,feature
+172,feature,63ba506c4f68,26,tier1,0.0000,70,0,1,feature
+173,security,4ee6f6ed7ed0,26,tier0-deopt,0.9045,1146,132,1,security:unwanted_password_reset_attempts
+174,bug,21e6c02f0cf9,26,tier1,0.0000,69,0,1,bug
+175,onboarding,1c81d31bbc0b,26,tier0-deopt,0.9226,1690,528,1,"To connect your first data source, open the app and go to Data Sources or Sources in the left menu. Click Add Source, choose the connector you want, then follow the prompts to authenticate and select the data you want to import. If the checklist is stuck on step three, try refreshing the page after completing the connection, or log out and back in. If it still doesn’t update, tell me which source you’re trying to connect and I can help with the exact steps."
+176,bug,c95d2df9836c,26,tier1,0.0000,350,0,1,bug
+177,security,5eadfa45d7bf,26,tier0-deopt,0.8950,1483,348,1,"Security issue: the verification codes for sign-in are being intercepted. This may indicate compromise of the two-factor authentication process. Recommend immediately resetting the 2FA setup, revoking any active sessions, rotating recovery codes, and reviewing account access logs. Escalate to the security team."
+178,feature,16311abe6402,26,tier1,0.8592,68,0,1,bug
+179,onboarding,cce057678045,26,tier0-deopt,0.9128,1516,410,1,"Could you please provide more details about what tutorial or product you’re referring to, and where the sample project disappeared from? For example:
+- the product/app name
+- the tutorial or walkthrough name
+- whether the project was deleted, hidden, or not showing up
+
+With that info, I can help you restore or recreate the sample project."
+180,security,4ee6f6ed7ed0,26,tier0-deopt,0.9045,1303,141,1,security: suspicious account activity / unauthorized password reset attempts
+181,bug,5363b868787f,26,tier1,0.8714,63,0,1,bug
+182,billing,17cb12f37f2c,26,tier1,0.0000,68,0,1,billing
+183,security,4f493401f33b,26,tier0-deopt,0.8988,1451,247,1,"Ask the user to confirm whether they recognize the login and, if not, advise them to change their password immediately, enable two-factor authentication, and review recent account activity."
+184,onboarding,1c81d31bbc0b,26,tier0-deopt,0.9226,1602,424,1,"To connect your first data source, open the checklist step for adding a data source and follow the connection wizard. If you’re stuck on step 3, try refreshing the page and confirming you’ve completed the required setup items in the previous steps. If the checklist still won’t advance, let me know which data source you’re trying to connect and I can help troubleshoot."
+185,bug,7c55b12b6d40,26,tier1,0.8551,66,0,1,bug
+186,feature,16311abe6402,26,tier1,0.8592,67,0,1,bug
+187,bug,21e6c02f0cf9,26,tier1,0.0000,73,0,1,bug
+188,security,9c474aa4438c,26,tier1,0.8896,70,0,1,bug
+189,feature,68948e3c77c8,26,tier1,0.8936,72,0,1,feature
+190,onboarding,8667e6330646,26,tier1,0.8671,72,0,1,billing
+191,billing,f08ef09a72b6,26,tier1,0.0000,71,0,1,billing
+192,onboarding,998c4ba59263,26,tier1,0.8780,69,0,1,bug
+193,billing,f08ef09a72b6,26,tier1,0.0000,288,0,1,billing
+194,onboarding,8962185b2d7f,26,tier1,0.8806,74,0,1,feature
+195,billing,cfb98f978d8b,26,tier1,0.8690,67,0,1,billing
+196,billing,793f8e241429,26,tier1,0.0000,65,0,1,billing
+197,security,2852dbe2ff73,26,tier0-deopt,0.9097,1074,132,1,security: account lock / suspicious login attempts
+198,bug,5363b868787f,26,tier1,0.8714,80,0,1,bug
+199,security,662c755241d1,26,tier0-deopt,0.9329,1553,347,1,"Rotate any passwords for the affected account and any other accounts where you reused the same password. Also update related credentials such as password manager master password, recovery email password, and any MFA backup codes if they may have been exposed. If you use the same password elsewhere, change those too."
+200,billing-fraud,3e24fdaa2019,27,tier0-deopt,0.9041,1300,107,1,billing_fraud
+201,billing,f08ef09a72b6,27,tier1,0.0000,74,0,1,billing
+202,bug,8f5076b17d0d,27,tier1,0.8792,76,0,1,bug
+203,billing-fraud,bb3afbf3fae0,27,tier1,0.8933,70,0,1,bug
+204,billing,793f8e241429,27,tier1,0.0000,72,0,1,billing
+205,feature,16311abe6402,27,tier1,0.8592,66,0,1,bug
+206,billing-fraud,aa4621b71c34,28,tier0-deopt,0.9200,1099,110,1,dispute_charge
+207,security,5eadfa45d7bf,28,tier0-deopt,0.8950,1381,195,1,"Security / Account Access: verify sign-in code interception concern, advise immediate 2FA reset and account security review."
+208,billing-fraud,adec52e9c436,28,tier1,0.8816,73,0,1,feature
+209,bug,c95d2df9836c,28,tier1,0.0000,66,0,1,bug
+210,billing-fraud,a8c1171b068d,29,tier0-deopt,0.9180,1285,159,1,Billing issue: bank disputed charge; needs transaction confirmation and possible fraud review.
+211,security,662c755241d1,29,tier0-deopt,0.9329,1423,437,1,"Rotate your password for any account that used the leaked password, and also change passwords for any accounts where you reused it. If you used that password on email, banking, cloud storage, password manager, or any account with access to recovery options, rotate those first. Also update any connected credentials such as API keys, app passwords, and MFA backup codes if they may have been exposed."
+212,billing-fraud,f53c48b0f77c,30,tier0-deopt,0.9042,1007,103,1,fraud
+213,onboarding,98d321080eb1,30,tier0-deopt,0.9062,3889,2208,1,"To set up a small marketing team for the first time, start by defining your goals, roles, and communication plan. Here’s a simple walkthrough:
+
+1. Clarify your objectives
+   - Decide what the team is responsible for: brand awareness, lead generation, social media, content, campaigns, or all of the above.
+   - Set 2–4 measurable goals for the first quarter.
+
+2. Assign core roles
+   - Even a small team should cover key functions:
+     - Team lead / manager
+     - Content creator or copywriter
+     - Designer or multimedia support
+     - Paid ads / analytics support
+   - One person can handle multiple roles at first.
+
+3. Set up tools and systems
+   - Communication: Slack, Teams, or email
+   - Project management: Trello, Asana, Monday, or Notion
+   - File sharing: Google Drive or OneDrive
+   - Analytics: Google Analytics, social platform dashboards, CRM if needed
+
+4. Create a basic workflow
+   - Plan weekly priorities
+   - Review and approve content/campaigns
+   - Assign owners and deadlines
+   - Track performance after launch
+
+5. Establish brand and messaging guidelines
+   - Define tone of voice, visual standards, approved logos/colors, and key talking points.
+   - Make a shared document so everyone stays consistent.
+
+6. Build a simple content/campaign calendar
+   - Map out posts, emails, events, and promotions at least 2–4 weeks ahead.
+   - Include deadlines for drafts, reviews, and publishing.
+
+7. Set meeting cadence
+   - Weekly team check-in for priorities and blockers
+   - Monthly review for results and planning
+
+8. Track KPIs
+   - Common starting metrics: website traffic, engagement, leads, conversion rate, email open rate, and campaign ROI.
+   - Pick a few metrics that match your goals.
+
+9. Train the team
+   - Make sure everyone knows the tools, brand standards, and approval process.
+   - Document the basics so onboarding is easy later.
+
+If you want, I can also provide a simple 30-day setup checklist or a recommended tool stack for a team of 3–5 people."
+214,bug,8f5076b17d0d,30,tier1,0.8792,65,0,1,bug
+215,billing-fraud,97fc8965221c,31,tier0-deopt,0.9148,1138,130,1,Refund and unauthorized charges from a stolen wallet
+216,billing-fraud,bc6b900f6708,32,tier0-deopt,0.9091,1035,108,1,billing_dispute
+217,bug,21e6c02f0cf9,32,tier1,0.0000,69,0,1,bug
+218,security,5415248e02e2,32,tier0-deopt,0.9185,2182,726,1,"To force sign-out a former employee from all devices, you’ll need to remove or disable their account and revoke active sessions.
+
+Recommended steps:
+1. Disable the user account in your identity provider/admin console.
+2. Revoke all active sessions / refresh tokens for the account.
+3. If supported, reset the user’s password and MFA factors.
+4. Confirm the user is terminated in any connected SSO apps and device management tools.
+5. Review audit logs to verify sessions were invalidated.
+
+If you want, I can help with the exact steps for your platform (e.g., Google Workspace, Microsoft 365, Okta, AWS, etc.)."
+219,billing-fraud,e1e33daccb45,32,tier1,0.8895,68,0,1,feature
+220,security,2852dbe2ff73,32,tier0-deopt,0.9097,1278,258,1,"Security-related request detected. Recommend temporarily locking the account, reviewing the login attempts and source device information, and escalating to the security/identity verification team for confirmation before re-enabling access."
+221,security,5415248e02e2,32,tier0-deopt,0.9185,1107,118,1,IT security / access management
+222,onboarding,bff272947e20,32,tier0-deopt,0.8963,1077,333,1,"Create a small set of default roles based on your team’s immediate needs, assign clear owners for each role, keep permissions minimal at first, and refine as the team’s workflow becomes clearer. If you’re using a specific platform, I can tailor the recommendation to it."
+223,onboarding,ac28bf167850,32,tier0-deopt,0.9161,1766,542,1,"Starter templates for customer success onboarding are usually best chosen based on the team’s main goal:
+
+- If they want a quick, general setup: pick the **Customer Success** starter template.
+- If they’re focused on support and ticket handling: choose **Support**.
+- If they manage renewals, onboarding, and account health: choose **Customer Success / Account Management** if available.
+
+If you share what tool this onboarding is for, I can recommend the exact template name."
+224,billing-fraud,bb3afbf3fae0,32,tier1,0.8933,66,0,1,bug
+225,billing,793f8e241429,32,tier1,0.0000,66,0,1,billing
+226,onboarding,1c81d31bbc0b,32,tier0-deopt,0.9226,1889,568,1,"To connect your first data source, go to the app’s Data Sources or Integrations section, choose the source you want, and follow the setup prompts to authorize and map it.
+
+If the checklist is stuck on step 3, try:
+- Refreshing the page
+- Completing any required fields in the previous steps
+- Disconnecting/reconnecting the source
+- Clearing your browser cache or trying an incognito window
+
+If you tell me which data source you’re adding, I can give the exact steps."
+227,billing-fraud,bc6b900f6708,32,tier0-deopt,0.9091,1389,153,1,billing_dispute_chargeback_fraudulent_payment_or_subscription_reversal
+228,bug,5363b868787f,32,tier1,0.8714,265,0,1,bug
+229,billing-fraud,bb3afbf3fae0,32,tier1,0.8933,66,0,1,bug
+230,feature,68948e3c77c8,32,tier1,0.8936,67,0,1,feature
+231,billing-fraud,efcfd0ceae7e,32,tier1,0.8940,64,0,1,bug
+232,bug,ce3ad56c2cf2,32,tier1,0.0000,63,0,1,bug
+233,billing-fraud,bc6b900f6708,32,tier0-deopt,0.9091,998,108,1,billing_dispute
+234,security,77d54dd9a67c,32,tier1,0.8036,118,0,1,bug
+235,bug,5363b868787f,32,tier1,0.8714,67,0,1,bug
+236,security,4ee6f6ed7ed0,32,tier0-deopt,0.9045,1579,361,1,"Security incident: unauthorized password reset attempts. Advise the user to secure the account immediately, check email/phone for reset notifications, change the password if they still have access, enable MFA, and investigate account activity/logs for suspicious access. If repeated or widespread, escalate to security/identity support."
+237,billing-fraud,9ce7474d0b59,32,tier1,0.8933,218,0,1,bug
+238,onboarding,a0ba6e191d3a,32,tier0-deopt,0.9098,1922,662,1,"To migrate data from the old tool during initial setup, use the import/migration workflow in the setup wizard. Typically you’ll need to:
+
+1. Export your data from the old tool in a supported format.
+2. In the new tool, go to Setup or Settings and choose Import/Migrate data.
+3. Upload the export file or connect the old account if supported.
+4. Map fields if prompted and run a test import first.
+5. Review the imported records, then complete the migration.
+
+If you tell me which old tool you’re moving from, I can give more specific steps."
+239,onboarding,1c81d31bbc0b,32,tier0-deopt,0.9226,1550,447,1,"To connect your first data source, open the workspace and go to Data Sources, then choose Add Source and follow the setup prompts for your provider. If the checklist is stuck, try refreshing the page after completing the connection; if it still does not advance, clear the browser cache or re-open the app. If you tell me which data source you're adding, I can give you the exact steps."
+240,billing-fraud,a4faccf09ec1,33,tier0-deopt,0.9102,1065,143,1,Payments issue: unauthorized recurring charge / stop billing compromised card
+241,onboarding,998c4ba59263,33,tier1,0.8780,73,0,1,bug
+242,billing-fraud,cc8b30748245,34,tier0-deopt,0.9156,1918,135,1,billing_fraud_or_unauthorized_charges
+243,feature,16311abe6402,34,tier1,0.8592,67,0,1,bug
+244,billing,f08ef09a72b6,34,tier1,0.0000,73,0,1,billing
+245,billing-fraud,88f99b8bf7e9,35,tier0-deopt,0.9054,915,103,1,fraud
+246,billing,cfb98f978d8b,35,tier1,0.8690,72,0,1,billing
+247,feature,68948e3c77c8,35,tier1,0.8936,68,0,1,feature
+248,bug,ce3ad56c2cf2,35,tier1,0.0000,67,0,1,bug
+249,billing-fraud,3e24fdaa2019,35,tier0-deopt,0.9041,1078,112,1,billing_fraud_charge
+250,billing-fraud,efcfd0ceae7e,35,tier1,0.8940,67,0,1,bug
+251,billing,793f8e241429,35,tier1,0.0000,69,0,1,billing
+252,feature,16311abe6402,35,tier1,0.8592,67,0,1,bug
+253,onboarding,ac28bf167850,35,tier0-deopt,0.9161,1180,182,1,"Select the starter template for Customer Success / Customer Support onboarding, since it matches a new customer success team."
+254,billing-fraud,cc8b30748245,35,tier0-deopt,0.9156,997,117,1,fraud_identity_theft
+255,security,5415248e02e2,35,tier0-deopt,0.9185,1417,411,1,"Security issue: this is a request to forcibly end a former employee’s active sessions on all devices. I can’t carry out the sign-out directly, but if you’re authorized, use your admin console to revoke the user’s sessions/tokens and disable their account immediately. If you want, I can help you with the exact steps for common identity providers."
+256,bug,c95d2df9836c,35,tier1,0.0000,66,0,1,bug
+257,billing,793f8e241429,35,tier1,0.0000,67,0,1,billing
+258,billing,cfb98f978d8b,35,tier1,0.8690,67,0,1,billing
+259,security,9c474aa4438c,35,tier1,0.8896,337,0,1,bug
+260,security,9c474aa4438c,35,tier1,0.8896,65,0,1,bug
+261,security,4ee6f6ed7ed0,35,tier0-deopt,0.9045,1491,280,1,"Security concern: suspected unauthorized password reset attempts. Recommend immediately securing the account by changing the password, reviewing recent account activity, enabling two-factor authentication, and contacting support to investigate and lock down the account if needed."
+262,security,45bab5f6ed00,35,tier0-deopt,0.9286,1430,266,1,"Security incident: phishing attempt. The email impersonated support and requested password confirmation, which is a credential-harvesting attack. Recommend reporting to security, warning recipients, and resetting any exposed passwords."
+263,feature,596a467f9df0,35,tier1,0.0000,68,0,1,feature
+264,feature,16311abe6402,35,tier1,0.8592,65,0,1,bug
+265,security,9c474aa4438c,35,tier1,0.8896,66,0,1,bug
+266,onboarding,a0ba6e191d3a,35,tier0-deopt,0.9098,1217,315,1,"To migrate your data from the old tool during initial setup, use the import or migration option in the setup flow if available. If you tell me which old tool you're coming from and what product you're setting up, I can give you the exact steps."
+267,billing-fraud,f53c48b0f77c,35,tier0-deopt,0.9042,1000,107,1,finance_fraud
+268,billing-fraud,f53c48b0f77c,35,tier0-deopt,0.9042,1105,116,1,finance_fraud_chargeback
+269,feature,68948e3c77c8,35,tier1,0.8936,328,0,1,feature
+270,onboarding,98d321080eb1,35,tier0-deopt,0.9062,3810,1906,1,"Sure — here’s a simple first-time setup flow for a small marketing team:
+
+1. Create the team workspace
+- Set up a shared workspace for the marketing team.
+- Add all team members with the right permissions.
+
+2. Define the team structure
+- Create channels or folders for key workstreams, such as:
+  - Campaign planning
+  - Content creation
+  - Social media
+  - Analytics/reporting
+  - Approvals
+
+3. Set roles and access
+- Assign admins, editors, and viewers as needed.
+- Limit access to sensitive assets like budgets or brand files.
+
+4. Add core assets
+- Upload brand guidelines, logos, templates, and approved copy.
+- Centralize recurring documents so everyone works from the same source.
+
+5. Configure workflows
+- Set up task templates for common marketing processes.
+- Add approval steps for content, creative, and launch materials.
+- If available, automate reminders and status updates.
+
+6. Connect integrations
+- Link the tools your team already uses, such as:
+  - Email marketing
+  - Social scheduling
+  - File storage
+  - Analytics
+  - Project management
+
+7. Establish naming conventions
+- Use consistent names for campaigns, assets, and folders.
+- This makes search and reporting much easier later.
+
+8. Set reporting expectations
+- Decide what metrics the team tracks weekly or monthly.
+- Create a dashboard or report template for campaign performance.
+
+9. Do a quick test run
+- Run one small campaign or project through the new setup.
+- Check that permissions, notifications, and approvals work correctly.
+
+10. Document the basics
+- Write a short onboarding guide for the team.
+- Include where to find assets, how to request approvals, and who to contact for help.
+
+If you want, I can turn this into a checklist for a specific tool or team size."
+271,billing,3f283840eeb8,35,tier1,0.7901,92,0,1,billing
+272,security,9c474aa4438c,35,tier1,0.8896,70,0,1,bug
+273,security,f1e66211864a,35,tier1,0.8814,72,0,1,feature
+274,security,9c474aa4438c,35,tier1,0.8896,66,0,1,bug
+275,bug,7c55b12b6d40,35,tier1,0.8551,65,0,1,bug
+276,billing-fraud,efcfd0ceae7e,35,tier1,0.8940,69,0,1,bug
+277,onboarding,8667e6330646,35,tier1,0.8671,61,0,1,billing
+278,billing-fraud,a8c1171b068d,35,tier0-deopt,0.9180,1204,127,1,billing_charge_dispute_fraud_confirmation
+279,security,4f493401f33b,35,tier0-deopt,0.8988,1435,364,1,"Yes, that alert was triggered by a login attempt from a different country. If it wasn't you, I recommend changing your password immediately and enabling two-factor authentication. You should also review your recent account activity and sign out of any unfamiliar sessions. If you want, I can help you secure the account."
+280,feature,1b3eb767452a,35,tier1,0.8897,66,0,1,bug
+281,bug,21e6c02f0cf9,35,tier1,0.0000,65,0,1,bug
+282,feature,1b3eb767452a,35,tier1,0.8897,66,0,1,bug
+283,feature,596a467f9df0,35,tier1,0.0000,63,0,1,feature
+284,bug,c95d2df9836c,35,tier1,0.0000,64,0,1,bug
+285,security,5415248e02e2,35,tier0-deopt,0.9185,3342,361,1,"To force sign out a former employee from all devices immediately, please use your identity provider’s admin console to revoke their sessions and tokens. If you need, I can help with the exact steps for your platform (for example, Microsoft 365, Google Workspace, Okta, or another IdP)."
+286,billing-fraud,88f99b8bf7e9,35,tier0-deopt,0.9054,1099,103,1,Security issue
+287,billing,cfb98f978d8b,35,tier1,0.8690,70,0,1,billing
+288,billing,cfb98f978d8b,35,tier1,0.8690,66,0,1,billing
+289,onboarding,cce057678045,35,tier0-deopt,0.9128,2319,450,1,"Please open the app’s project/sample gallery and look for an option like “Restore sample project,” “Reinstall tutorial content,” or “Download sample project” for the walkthrough project. If you had previously deleted it, check whether there’s a recycle/bin or removed-projects area in the app and restore it from there. If you tell me the app name or platform, I can give exact steps."
+290,security,4ee6f6ed7ed0,35,tier0-deopt,0.9045,1440,316,1,"Security issue: repeated unsolicited password reset attempts. Recommend immediately securing the account by changing the password, checking for unauthorized activity, enabling multi-factor authentication, and reviewing account recovery settings. Also consider reporting the incident to support so they can investigate possible account abuse."
+291,security,9c474aa4438c,35,tier1,0.8896,68,0,1,bug
+292,billing-fraud,a4faccf09ec1,35,tier0-deopt,0.9102,1753,463,1,"To stop billing a compromised card, please update or remove the payment method associated with the recurring charge in your billing settings. If this card was used on an active subscription, the subscription will continue billing until the payment method is changed or the subscription is canceled. If you need help locating the subscription or billing profile, provide the account email and the last 4 digits of the card, and I can guide you further."
+293,billing-fraud,9ce7474d0b59,35,tier1,0.8933,79,0,1,bug
+294,billing-fraud,e1e33daccb45,35,tier1,0.8895,63,0,1,feature
+295,billing-fraud,adec52e9c436,35,tier1,0.8816,69,0,1,feature
+296,billing-fraud,97fc8965221c,35,tier0-deopt,0.9148,908,107,1,billing_fraud
+297,billing-fraud,aa4621b71c34,35,tier0-deopt,0.9200,1009,115,1,fraud_dispute
+298,onboarding,b5d2e8f9b001,35,tier0-deopt,0.8992,9057,231,1,"Please contact our onboarding team to schedule a session for next week. If you’d like, I can also help draft a message with your preferred date and time."
+299,onboarding,6d99f75cb7ae,35,tier0-deopt,0.9197,1627,357,1,"To import existing contacts during onboarding, open the Contacts step in the setup flow and choose Import from spreadsheet. Upload a CSV or XLSX file, map the columns to the required contact fields, and confirm the import. If the option isn’t visible, it may depend on your plan or onboarding settings."
+300,security,907876c2e9aa,35,tier0-deopt,0.9351,2030,858,1,"Treat the API key as compromised and revoke it immediately in your provider's dashboard or admin console. Then create a new key, update any apps, scripts, CI/CD secrets, and environment variables that use the old one, and delete the old key everywhere it was stored.
+
+To fully rotate tokens:
+- Revoke the exposed key now
+- Generate a replacement key/token
+- Update all services and deployments to use the new value
+- Invalidate any related refresh tokens, session tokens, or API tokens if your system supports it
+- Check logs and usage for suspicious activity since the leak
+- Scan the repo and history for other secrets before re-committing
+
+If the repository was public, assume anyone may have copied it. If you tell me which service this key is for, I can give the exact revocation steps."

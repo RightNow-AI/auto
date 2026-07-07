@@ -1,0 +1,169 @@
+{
+ "family": "F4 policy-routing",
+ "task": "bench-f4",
+ "store": "target/bench/f4.db",
+ "session": "bench-f4",
+ "cap_usd": "0.25",
+ "repo_commit": "63b89a2",
+ "census": {
+  "effectful_spans": 80,
+  "witnessed": 80,
+  "witnessed_of": 80,
+  "deterministic": 80,
+  "deterministic_pct_of_witnessed": 100.0,
+  "divergent": 0,
+  "method": "auto report --task bench-f4 (raw at target/bench/f4-census.txt)"
+ },
+ "frontier_baseline": {
+  "calls": 80,
+  "errored_calls": 0,
+  "latency_ms": {
+   "p50": 1037,
+   "p95": 1375,
+   "mean": 1082.0
+  },
+  "cost_usd_micros": {
+   "mean": 112.0,
+   "sum": 8964,
+   "calls_with_attrs": 80
+  },
+  "source": "recorded span duration_ms + reserved attrs; recorded = baseline (DESIGN.md)"
+ },
+ "artifact_rung": "distill (enum refused: policy thresholds inexpressible in the v0 DSL, as designed)",
+ "compile": {
+  "enum": {
+   "exit": 1,
+   "verdict": null,
+   "refusal_verbatim": "auto compile: synthesis budget exhausted (300000 state(s), depth 8) - no fitting program in the v0 DSL",
+   "eval_run_id": null,
+   "artifact_id": null,
+   "artifact_path": null
+  },
+  "distill_weighted": {
+   "exit": 0,
+   "verdict": "PASS",
+   "agreement": {
+    "declared_milli": 900,
+    "matched": 40,
+    "eligible": 40,
+    "pct_truncated": 100.0
+   },
+   "artifact_path": "target/bench/f4-weighted.cbin",
+   "note": "ADR-0031 weighted witnesses; 40 rows over 40 inputs, 0 divergent",
+   "artifact_id": "a7d8c6f3fd4e0f60ac26ea070190e5c56226c83fce928f16dff3d0c0d04dcf6e",
+   "eval_run_id": null
+  },
+  "distill_most_common": {
+   "exit": 0,
+   "verdict": "PASS",
+   "agreement": {
+    "declared_milli": 900,
+    "matched": 40,
+    "eligible": 40,
+    "pct_truncated": 100.0
+   },
+   "artifact_path": "target/bench/f4-mostcommon.cbin",
+   "artifact_id": "502b22ccd3fb9eed318fb31c1dac54af4ff2c4d79423b218194b7b5494495e06",
+   "eval_run_id": null
+  },
+  "distill_generalization_holdout25": {
+   "exit": 0,
+   "verdict": "PASS",
+   "holdout_accuracy": 0.6,
+   "agreement": {
+    "declared_milli": 900,
+    "matched": 36,
+    "eligible": 40,
+    "pct_truncated": 90.0
+   },
+   "note": "razor-edge pass at exactly the declared threshold; train 30 / holdout 10",
+   "artifact_id": "9cacf8e640370dce34e44c4a31ce65a2352bade21bb10c1fcac4344a85283f24",
+   "artifact_path": "target/bench/f4-gen.cbin",
+   "eval_run_id": null
+  }
+ },
+ "verify": {
+  "verdict": "PASS"
+ },
+ "latency_probe": {
+  "artifact": "target/bench/f4-weighted.cbin",
+  "timer": "script-timer",
+  "p50_ms": 65.7,
+  "mean_ms": 76.7,
+  "n_warm": 20,
+  "note": "one-shot process wall-clock (spawn + wasm compile included); resident/in-process floors in paper/log.md waves 6/9/10",
+  "p95_ms": 96.4
+ },
+ "h4_probes": {
+  "artifacts": {
+   "v1_jaccard": {
+    "artifact": "target/bench/f4-weighted.cbin",
+    "in_dist_total": 5,
+    "in_dist_abstained": 0,
+    "ood_total": 5,
+    "ood_answered": 0,
+    "other_errors": 0,
+    "per_probe": [
+     {
+      "id": "f4-in1",
+      "kind": "heldout",
+      "exit": 0,
+      "answered": "\"approve\""
+     },
+     {
+      "id": "f4-in2",
+      "kind": "heldout",
+      "exit": 0,
+      "answered": "\"approve\""
+     },
+     {
+      "id": "f4-in3",
+      "kind": "heldout",
+      "exit": 0,
+      "answered": "\"approve\""
+     },
+     {
+      "id": "f4-in4",
+      "kind": "heldout",
+      "exit": 0,
+      "answered": "\"approve\""
+     },
+     {
+      "id": "f4-in5",
+      "kind": "heldout",
+      "exit": 0,
+      "answered": "\"reject\""
+     },
+     {
+      "id": "f4-ood1",
+      "kind": "ood",
+      "exit": 3
+     },
+     {
+      "id": "f4-ood2",
+      "kind": "ood",
+      "exit": 3
+     },
+     {
+      "id": "f4-ood3",
+      "kind": "ood",
+      "exit": 3
+     },
+     {
+      "id": "f4-ood4",
+      "kind": "ood",
+      "exit": 3
+     },
+     {
+      "id": "f4-ood5",
+      "kind": "ood",
+      "exit": 3
+     }
+    ],
+    "note": "perfect calibration on this probe set; 2/5 admitted held-out answered nearest-leaf labels differing from intended (unwitnessed-admit exposure, cf. F6)"
+   }
+  }
+ },
+ "status": "compiled at parity (memorization) + razor-edge generalization pass; class skew 24/10/6 exercised weighted witnesses",
+ "deviations": []
+}

@@ -1,0 +1,29 @@
+# Contract for the distill-agent router — the deliberately FUZZY span.
+# Its rule (substring markers, then a length threshold) is inexpressible in
+# the extraction DSL, so `auto compile` refuses honestly; `auto distill`
+# compiles it through the SAME pass-or-nothing gate (spec/distillation.md).
+contract_version = 0
+task = "distill-agent"
+
+[scope]
+type = "span"
+kind = "model_call"
+name = "fuzzy-router"
+
+[interface]
+input = "json"
+output = "text"
+
+[[example]]
+name = "short-doc"
+match = "exact"
+input = { text = "Ping me when you arrive." }
+output = "short"
+
+[[property]]
+kind = "one_of"
+target = "output"
+values = ["urgent", "long", "short"]
+
+[budgets]
+max_latency_ms_p95 = 1000

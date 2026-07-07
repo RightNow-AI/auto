@@ -1,0 +1,28 @@
+[package]
+name = "auto-daemon"
+description = "the ratchet as a service: watch a trace store, recompile on new evidence, publish to the registry - no human in the loop"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+publish.workspace = true
+
+[dependencies]
+auto-backend = { workspace = true }
+auto-contract = { workspace = true }
+auto-registry = { workspace = true }
+auto-trace = { workspace = true }
+thiserror = { workspace = true }
+# persistent watermark file: strict-JSON schema, deny_unknown_fields on read,
+# compact deterministic write (wave-5 upgrade to ADR-0013's in-memory watermark)
+serde = { workspace = true }
+serde_json = { workspace = true }
+
+[dev-dependencies]
+# tests build real stores/contracts/artifacts in temp dirs and drive a real
+# subprocess recompile (a python one-liner writing artifact bytes to {out});
+# no network, no sockets (CLAUDE.md).
+serde_json = { workspace = true }
+tempfile = { workspace = true }
+
+[lints]
+workspace = true

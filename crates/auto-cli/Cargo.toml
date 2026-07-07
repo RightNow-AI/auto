@@ -1,0 +1,29 @@
+[package]
+name = "auto-cli"
+description = "auto — toolchain cli: record | report | verify | compile | distill | run | registry | inspect, all real"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+publish.workspace = true
+
+[[bin]]
+name = "auto"
+path = "src/main.rs"
+
+[dependencies]
+auto-backend.workspace = true
+auto-contract.workspace = true
+auto-daemon.workspace = true
+auto-frontier.workspace = true
+auto-ir.workspace = true
+auto-passes.workspace = true
+auto-proxy.workspace = true
+auto-registry.workspace = true
+auto-runtime.workspace = true
+auto-serve.workspace = true
+auto-trace.workspace = true
+clap.workspace = true
+serde_json.workspace = true
+
+[lints]
+workspace = true

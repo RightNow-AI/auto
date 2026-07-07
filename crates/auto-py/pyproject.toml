@@ -1,0 +1,28 @@
+# maturin build config for the auto_py extension module (ADR-0024).
+# Build locally with:
+#   pip install maturin
+#   maturin develop --release -m crates/auto-py/Cargo.toml
+# The import name is `auto_py` (the [lib] name in Cargo.toml); the distribution
+# name is `auto-py`.
+
+[build-system]
+requires = ["maturin>=1.4,<2.0"]
+build-backend = "maturin"
+
+[project]
+name = "auto-py"
+description = "In-process (pyo3/abi3) embedding of a compiled Auto .cbin artifact — the tier-1 fast path inside the agent's own Python process."
+requires-python = ">=3.10"
+classifiers = [
+    "Programming Language :: Rust",
+    "Programming Language :: Python :: Implementation :: CPython",
+    "Programming Language :: Python :: 3.10",
+]
+# version comes from Cargo.toml (workspace 0.0.1); maturin fills it in
+dynamic = ["version"]
+
+[tool.maturin]
+# Turn ON the crate's `extension-module` feature (which enables
+# pyo3/extension-module) for the wheel build ONLY. `cargo check|clippy|test`
+# leave it off so they need no CPython at link time (ADR-0024 §decision).
+features = ["extension-module"]

@@ -1,0 +1,33 @@
+# Emit contract for the inbox-agent classify span (wave-5 multi-step E1).
+# Examples are recorded reality (2026-07-04 baseline store).
+contract_version = 0
+task = "inbox-agent"
+
+[scope]
+type = "span"
+kind = "model_call"
+name = "classify"
+
+[interface]
+input = "json"
+output = "text"
+
+[[example]]
+name = "billing"
+match = "exact"
+input = { ticket = "I was charged twice for my subscription this month, please refund the duplicate payment." }
+output = "billing"
+
+[[example]]
+name = "bug"
+match = "exact"
+input = { ticket = "The app crashes immediately when I open the settings page on Android." }
+output = "bug"
+
+[[property]]
+kind = "one_of"
+target = "output"
+values = ["billing", "bug", "feature"]
+
+[budgets]
+max_latency_ms_p95 = 30000

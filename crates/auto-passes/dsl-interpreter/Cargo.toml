@@ -1,0 +1,30 @@
+# Workspace-excluded wasm crate: the generic DSL interpreter embedded in
+# synthesized artifacts. Built by auto-passes' build.rs for
+# wasm32-unknown-unknown; shares the evaluator with the native synthesizer
+# via the auto-dsl path dependency (one implementation, two compilations).
+[package]
+name = "dsl_interpreter"
+version = "0.0.1"
+edition = "2024"
+publish = false
+
+[workspace]
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+auto-dsl = { path = "../../auto-dsl" }
+# float_roundtrip: input parsing must be bit-exact with the native side
+serde_json = { version = "1.0.150", features = ["float_roundtrip"] }
+
+[lints.rust]
+unsafe_code = "deny"
+
+[profile.release]
+opt-level = "s"
+
+[features]
+# the capability build: declares the auto.tool_call import (ADR-0017).
+# The default build stays zero-import pure.
+tools = []

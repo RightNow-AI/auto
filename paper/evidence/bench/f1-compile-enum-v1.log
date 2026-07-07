@@ -1,0 +1,6 @@
+$ target/release/auto compile --contract evals/bench/bench-f1.contract.toml --store target/bench/f1.db --synth enum --guard-field ticket --guard-alpha-milli 1 --divergent-pick most-common --out paper/evidence/bench\f1-triage-v1.cbin --runs-dir evals/runs
+--- stdout ---
+canonical pick: 40 trainable input(s), 0 divergent reference(s) resolved to their majority witness, 0 errored group(s) skipped
+
+--- stderr ---
+auto compile: synthesis budget exhausted (300000 state(s), depth 8) — no fitting program in the v0 DSL; supply --module (hand-assisted) or wait for a richer search

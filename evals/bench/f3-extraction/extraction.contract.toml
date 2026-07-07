@@ -1,0 +1,60 @@
+# AUTO-BENCH F3 (field extraction) — contract for the bench-f3 extract span.
+# COMMITTED BEFORE ANY RECORDING OR COMPILE (evals/bench/DESIGN.md
+# anti-gaming rules): the acceptance threshold and budget below are declared
+# from the task DEFINITION, never tuned against a recording or a gate
+# verdict; amendments after the first gate run are logged protocol
+# deviations.
+#
+# TODO(orchestrator, after the FIRST recording pass and BEFORE any
+# verify/compile/distill): the two example outputs below are placeholders.
+# Examples must be recorded reality (the wave-3 lesson), and no recording
+# exists at commit time. Replace each "<FROM-RECORDED-REALITY ...>" string
+# with the exact span output the FIRST recording produced for that corpus
+# item — the parsed JSON object the agent returned, written as a TOML
+# inline table, e.g.
+#     output = { order_id = "ORD-84213", category = "refund", urgency = "high" }
+# Filling example outputs from recorded reality is the protocol, not a
+# deviation. Until the fill, verify/compile would judge a witnessed example
+# against a placeholder string and fail meaninglessly — do not run them.
+contract_version = 0
+task = "bench-f3"
+
+[scope]
+type = "span"
+kind = "model_call"
+name = "extract"
+
+[interface]
+input = "json"
+output = "json"
+
+# example inputs are corpus items f3-001 / f3-002, byte-identical to
+# corpus.jsonl (witnessing is canonical-json equality on the span input)
+[[example]]
+name = "f3-001"
+match = "exact"
+input = { email = "I was charged twice for order ORD-84213 and I want the duplicate charge refunded immediately. The second charge of $58.40 hit my card this morning. Please treat this as urgent." }
+output = { order_id = "ORD-84213", category = "refund", urgency = "high" }
+
+[[example]]
+name = "f3-002"
+match = "exact"
+input = { email = "My espresso machine from order ORD-43892 leaks water all over the counter and I need a replacement shipped immediately. This is urgent, it was a gift for this weekend." }
+output = { order_id = "ORD-43892", category = "replacement", urgency = "high" }
+
+# properties: none declared. The v0 closed property set (spec/contract.md
+# §4) has no predicate over json object FIELD values — no field regex, no
+# field enum — so the pinned output shape is not expressible here. Shape is
+# enforced upstream: the agent validates every reply and an invalid one is
+# a recorded span ERROR, which already fails verification outright
+# ("observations free of recorded errors"). See README.md.
+
+# declared NOW, from the task definition: extraction should be
+# near-deterministic; if reality measures below 950‰ the gate verdict IS
+# the family's reported result (a benchmark that cannot fail is not a
+# benchmark).
+[acceptance]
+differential_min_agreement_milli = 950
+
+[budgets]
+max_latency_ms_p95 = 30000

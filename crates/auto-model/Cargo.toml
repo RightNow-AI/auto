@@ -1,0 +1,15 @@
+[package]
+name = "auto-model"
+description = "Auto distilled-model format v0: char-trigram fnv1a features + decision-tree inference, shared by the python trainer (via the frozen spec) and the wasm interpreter (one implementation, two compilations on the rust side)"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+publish.workspace = true
+
+[dependencies]
+serde.workspace = true
+serde_json.workspace = true
+thiserror.workspace = true
+
+[lints]
+workspace = true

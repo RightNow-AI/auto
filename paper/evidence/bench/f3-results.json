@@ -1,0 +1,71 @@
+{
+ "family": "F3 field-extraction",
+ "task": "bench-f3",
+ "store": "target/bench/f3.db",
+ "session": "bench-f3",
+ "cap_usd": "0.10",
+ "repo_commit": "63b89a2",
+ "census": {
+  "effectful_spans": 80,
+  "witnessed": 80,
+  "witnessed_of": 80,
+  "deterministic": 80,
+  "deterministic_pct_of_witnessed": 100.0,
+  "divergent": 0,
+  "method": "auto report --task bench-f3 (raw at target/bench/f3-census.txt)"
+ },
+ "frontier_baseline": {
+  "calls": 80,
+  "errored_calls": 0,
+  "latency_ms": {
+   "p50": 1171,
+   "p95": 1943,
+   "mean": 1243.0
+  },
+  "cost_usd_micros": {
+   "mean": 255.8,
+   "sum": 20463,
+   "calls_with_attrs": 80
+  },
+  "source": "recorded span duration_ms + reserved attrs; recorded = baseline (DESIGN.md)"
+ },
+ "artifact_rung": "none - honest refusal at every rung (json-object outputs have no v0 compile rung)",
+ "compile": {
+  "enum": {
+   "exit": 1,
+   "verdict": null,
+   "refusal_verbatim": "auto compile: synthesis budget exhausted (300000 state(s), depth 8) - no fitting program in the v0 DSL",
+   "eval_run_id": null,
+   "artifact_id": null,
+   "artifact_path": null
+  },
+  "llm_cegis": {
+   "exit": 1,
+   "verdict": null,
+   "session": "bench-f3",
+   "paid": true,
+   "refusal_verbatim": "llm-cegis found no verifying program in 4 round(s) (6 candidate(s)); last failure: const_out candidate killed by counterexample (expected {category:cancel,order_id:ORD-91506,urgency:high}, got {category:other,order_id:ORD-,urgency:normal})",
+   "eval_run_id": null,
+   "artifact_id": null,
+   "artifact_path": null
+  },
+  "distill_tree": {
+   "exit": 1,
+   "verdict": null,
+   "refusal_verbatim": "auto distill: trainer failed (exit code: 2); stderr tail: error: line 1: output must be a JSON string (the label), got object",
+   "eval_run_id": null,
+   "artifact_id": null,
+   "artifact_path": null
+  }
+ },
+ "verify": {
+  "verdict": "PASS",
+  "note": "trace-mode verify of the filled contract: both examples witnessed 2x, budgets measured"
+ },
+ "latency_probe": null,
+ "h4_probes": {
+  "note": "n/a - no artifact emitted (all rungs refused)"
+ },
+ "status": "honest refusal - 100% witnessed-deterministic behavior the v0 output algebra cannot yet compile (recorded gap: DSL object constructor OR value-labeled trainer rung)",
+ "deviations": []
+}

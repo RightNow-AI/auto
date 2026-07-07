@@ -1,0 +1,286 @@
+{
+  "family": "f1",
+  "task": "ticket-triage",
+  "generated_at_unix": 1783260853,
+  "store": "target/bench/f1.db",
+  "session": "bench-f1",
+  "cap_usd": "0.25",
+  "cap_note": "no auto-mediated paid leg in this script; recording pays via the agent's own key",
+  "guard_alpha_milli": 1,
+  "pins": {
+    "model": "gpt-5.4-mini",
+    "prices_usd_per_mtok": {
+      "input": 0.75,
+      "output": 4.5
+    },
+    "price_source": "crates/auto-frontier/src/prices.rs (mirrored in evals/ticket-triage/agent.py)",
+    "distill_seed": 0,
+    "trainer": "python crates/auto-passes/trainer/tree_train.py (tree)"
+  },
+  "repo_commit": "63b89a24a718f59d6292706b7332db5458d772bd",
+  "census": {
+    "effectful_spans": 80,
+    "witnessed": 80,
+    "witnessed_of": 80,
+    "deterministic": 80,
+    "deterministic_pct_of_witnessed": 100.0,
+    "divergent": 0,
+    "method": "auto report --task ticket-triage (canonical determinism report, parsed)",
+    "raw_report": "determinism report \u2014 task \"ticket-triage\" (80 traces)\neffectful spans: 80 (structural spans excluded: 80)\nwitnessed (signature observed >=2 across runs): 80 of 80 spans\n  deterministic: 80 spans (100.0% of witnessed)\n  divergent:     0 spans\n  unwitnessed:   0 spans \u2014 no claim made\ntime-weighted deterministic fraction of witnessed: 100.0%\nby kind:\n  model_call: 80 spans \u2014 80 deterministic, 0 divergent, 0 unwitnessed\n(fractions cover witnessed spans only; nothing is extrapolated)\n"
+  },
+  "frontier_baseline": {
+    "calls": 80,
+    "errored_calls": 0,
+    "latency_ms": {
+      "p50": 904,
+      "p95": 1535,
+      "mean": 990.1875
+    },
+    "cost_usd_micros": {
+      "mean": 55.625,
+      "sum": 4450,
+      "calls_with_attrs": 80
+    },
+    "tokens": {
+      "mean": 53.725,
+      "sum": 4298
+    },
+    "source": "recorded span duration_ms + reserved attrs; recorded = baseline (DESIGN.md); percentiles nearest-rank, script-side"
+  },
+  "artifact_rung": "distill (enum refused, as the DSL predicts; refusal recorded verbatim)",
+  "compile": {
+    "enum_v1": {
+      "exit": 1,
+      "verdict": null,
+      "agreement": null,
+      "eval_run_id": null,
+      "artifact_id": null,
+      "artifact_path": null,
+      "refusal_verbatim": "auto compile: synthesis budget exhausted (300000 state(s), depth 8) \u2014 no fitting program in the v0 DSL; supply --module (hand-assisted) or wait for a richer search",
+      "cmd": "target/release/auto compile --contract evals/bench/bench-f1.contract.toml --store target/bench/f1.db --synth enum --guard-field ticket --guard-alpha-milli 1 --divergent-pick most-common --out paper/evidence/bench\\f1-triage-v1.cbin --runs-dir evals/runs"
+    },
+    "distill_v1": {
+      "exit": 0,
+      "verdict": "PASS",
+      "agreement": {
+        "declared_milli": 950,
+        "matched": 40,
+        "eligible": 40,
+        "pct_truncated": 100.0
+      },
+      "eval_run_id": "51da04aaa91f29bf7ba260df9a030cf2678c3611d8e10d19eec550cee4892142",
+      "artifact_id": "551694f0b696f44d4d39082b29cda9c8fef3cf880ff0e97466448d7994ac9e91",
+      "artifact_path": "paper/evidence/bench\\f1-triage-v1.cbin",
+      "refusal_verbatim": null,
+      "cmd": "target/release/auto distill --contract evals/bench/bench-f1.contract.toml --store target/bench/f1.db --trainer python crates/auto-passes/trainer/tree_train.py --model-kind tree --input-field ticket --holdout 0 --seed 0 --divergent-pick most-common --guard-alpha-milli 1 --runs-dir evals/runs --out paper/evidence/bench\\f1-triage-v1.cbin"
+    },
+    "distill_v2": {
+      "exit": 0,
+      "verdict": "PASS",
+      "agreement": {
+        "declared_milli": 950,
+        "matched": 40,
+        "eligible": 40,
+        "pct_truncated": 100.0
+      },
+      "eval_run_id": "6c8ba48d586fe1aa0346a91d9636467f3b121e2cbc9c251acfa5293de93ed9cc",
+      "artifact_id": "763d58c01584182de671c522a0f48043bdc3e8b6bdbc9deb14a92bd84f2e508e",
+      "artifact_path": "paper/evidence/bench\\f1-triage-v2.cbin",
+      "refusal_verbatim": null,
+      "cmd": "target/release/auto distill --contract evals/bench/bench-f1.contract.toml --store target/bench/f1.db --trainer python crates/auto-passes/trainer/tree_train.py --model-kind tree --input-field ticket --holdout 0 --seed 0 --divergent-pick most-common --guard-alpha-milli 1 --runs-dir evals/runs --guard-embedding --out paper/evidence/bench\\f1-triage-v2.cbin"
+    }
+  },
+  "verify": {
+    "exit": 0,
+    "verdict": "PASS",
+    "agreement": null,
+    "eval_run_id": "95c62cb4353505278c2b8242165df2aeff0387e1140ee31bb97e9b4d86f3cf98",
+    "artifact_id": null,
+    "artifact_path": null,
+    "refusal_verbatim": null
+  },
+  "latency_probe": {
+    "artifact": "paper/evidence/bench\\f1-triage-v1.cbin",
+    "input_ticket": "I was charged twice for my subscription this month, please refund the duplicate payment.",
+    "timer": "script-timer",
+    "note": "one-shot `auto run` process wall-clock incl. spawn + wasm compile (deployment-shaped, F6 convention); 1 unmeasured warmup then 20 measured; resident/in-process floors measured elsewhere (paper/log.md waves 6/9/10)",
+    "calls": 20,
+    "ms": [
+      66.82,
+      337.82,
+      65.89,
+      64.43,
+      64.36,
+      349.69,
+      73.93,
+      68.22,
+      63.07,
+      67.95,
+      63.5,
+      64.06,
+      65.66,
+      63.53,
+      63.7,
+      331.73,
+      62.95,
+      68.86,
+      66.61,
+      64.76
+    ],
+    "p50_ms": 65.66,
+    "p95_ms": 337.82,
+    "mean_ms": 106.88,
+    "min_ms": 62.95,
+    "max_ms": 349.69,
+    "distinct_outcomes": [
+      "exit=0 out=\"billing\""
+    ]
+  },
+  "h4_probes": {
+    "probes_file": "evals/bench/probes-f1.jsonl",
+    "exit_codes": "0 = answered (tier-1), 3 = abstained (guard trip, no tier-0)",
+    "accounting": "false-abstain = heldout abstained; false-proceed = ood answered (the cardinal failure)",
+    "artifacts": {
+      "v1_jaccard": {
+        "artifact": "paper/evidence/bench\\f1-triage-v1.cbin",
+        "per_probe": [
+          {
+            "id": "f1-p01",
+            "kind": "heldout",
+            "exit": 0,
+            "answered": "\"billing\""
+          },
+          {
+            "id": "f1-p02",
+            "kind": "heldout",
+            "exit": 0,
+            "answered": "\"bug\""
+          },
+          {
+            "id": "f1-p03",
+            "kind": "heldout",
+            "exit": 0,
+            "answered": "\"billing\""
+          },
+          {
+            "id": "f1-p04",
+            "kind": "heldout",
+            "exit": 0,
+            "answered": "\"bug\""
+          },
+          {
+            "id": "f1-p05",
+            "kind": "heldout",
+            "exit": 0,
+            "answered": "\"bug\""
+          },
+          {
+            "id": "f1-p06",
+            "kind": "ood",
+            "exit": 3
+          },
+          {
+            "id": "f1-p07",
+            "kind": "ood",
+            "exit": 0,
+            "answered": "\"billing\""
+          },
+          {
+            "id": "f1-p08",
+            "kind": "ood",
+            "exit": 3
+          },
+          {
+            "id": "f1-p09",
+            "kind": "ood",
+            "exit": 3
+          },
+          {
+            "id": "f1-p10",
+            "kind": "ood",
+            "exit": 0,
+            "answered": "\"billing\""
+          }
+        ],
+        "in_dist_total": 5,
+        "in_dist_abstained": 0,
+        "ood_total": 5,
+        "ood_answered": 2,
+        "other_errors": 0
+      },
+      "v2_embedding": {
+        "artifact": "paper/evidence/bench\\f1-triage-v2.cbin",
+        "per_probe": [
+          {
+            "id": "f1-p01",
+            "kind": "heldout",
+            "exit": 0,
+            "answered": "\"billing\""
+          },
+          {
+            "id": "f1-p02",
+            "kind": "heldout",
+            "exit": 0,
+            "answered": "\"bug\""
+          },
+          {
+            "id": "f1-p03",
+            "kind": "heldout",
+            "exit": 0,
+            "answered": "\"billing\""
+          },
+          {
+            "id": "f1-p04",
+            "kind": "heldout",
+            "exit": 0,
+            "answered": "\"bug\""
+          },
+          {
+            "id": "f1-p05",
+            "kind": "heldout",
+            "exit": 0,
+            "answered": "\"bug\""
+          },
+          {
+            "id": "f1-p06",
+            "kind": "ood",
+            "exit": 3
+          },
+          {
+            "id": "f1-p07",
+            "kind": "ood",
+            "exit": 0,
+            "answered": "\"billing\""
+          },
+          {
+            "id": "f1-p08",
+            "kind": "ood",
+            "exit": 3
+          },
+          {
+            "id": "f1-p09",
+            "kind": "ood",
+            "exit": 0,
+            "answered": "\"billing\""
+          },
+          {
+            "id": "f1-p10",
+            "kind": "ood",
+            "exit": 0,
+            "answered": "\"billing\""
+          }
+        ],
+        "in_dist_total": 5,
+        "in_dist_abstained": 0,
+        "ood_total": 5,
+        "ood_answered": 3,
+        "other_errors": 0
+      }
+    }
+  },
+  "status": "complete",
+  "deviations": [
+    "enum rung expected to refuse (v0 DSL has no input-equality branching; F6 README) \u2014 artifacts for latency/H4 come from the distill rung unless enum emitted; see compile.*",
+    "bench-f1.contract.toml used instead of evals/ticket-triage/triage.contract.toml: the wave-3 contract's feature example input lies OUTSIDE the first-40 bench window and its examples were filled from a different (2026-07-04) store; see the contract header"
+  ]
+}

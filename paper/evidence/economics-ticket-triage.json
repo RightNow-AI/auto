@@ -1,0 +1,34 @@
+{
+  "experiment": "E1 economics demo, single-call scale (paper/log.md 2026-07-04 wave 3)",
+  "task": "ticket-triage: one real gpt-5.4-mini chat call per run, 60-ticket corpus",
+  "baseline_recorded_reference": {
+    "n_calls": 60,
+    "latency_ms": { "p50": 736, "p95": 1177, "mean": 783, "max": 1247 },
+    "cost_usd_micros_per_call": { "p50": 54, "p95": 58, "mean": 55.0 },
+    "tokens_per_call_p95": 57,
+    "total_recording_cost_usd_micros": 3302,
+    "eval_run": "9b987621a4881640b3dc41bea75a42663419a01154ebb1e2896c04fed5409b74"
+  },
+  "compiled_artifact": {
+    "artifact_id": "c016f4c73544ff7f06981e1eb800daf2c47a10ffba09ba40246eb592faf17c88",
+    "model": "decision tree, 25 nodes, digest d4dcd404abca, trained on all 60 witnesses (holdout 0)",
+    "in_process_latency_ms": { "p50": 0, "p95": 0, "max": 0, "note": "below 1ms timer resolution over the 60 gating replays; from the manifest" },
+    "cold_process_invocation_ms": { "samples": [699, 687, 581, 869, 762], "note": "full auto-run process incl. per-process wasmtime module compilation; a resident server (auto-serve) holds the module warm" },
+    "marginal_cost_usd_micros_per_call": 0,
+    "eval_run": "b287fbf9caa3faa635fb9d4fb6ea0450b7f1c1b4b3890d47583902751b36490e"
+  },
+  "ratios_measured": {
+    "latency_p95_in_process": ">=1177x (1177ms -> <1ms)",
+    "marginal_cost": "55 usd-micros/call -> 0 (compile spend amortizes after ~60 replaced calls)"
+  },
+  "determinism_measurement": {
+    "protocol": "20 tickets x 2 independent recording passes, witnessed >= 2",
+    "witnessed_deterministic": "40/40 spans = 100.0%",
+    "cross_store_refinement": "the same single ambiguous ticket flipped in 2 of 4 total observations across stores; 59/60 tickets fully stable"
+  },
+  "honesty_caveats": [
+    "single-call agent on a designed 60-ticket corpus; NOT the multi-step $0.50/40s agent of claim E1 at full scale",
+    "the artifact memorizes the witnessed distribution (no holdout generalization was achievable at n=60 on real-LLM labels; measured, then compiled with --holdout 0); the guard abstains beyond calibration (verified live on a novel out-of-vocabulary ticket, distance 0.9550 > threshold 0.9151)",
+    "recording spend (100 calls incl. determinism store, ~$0.0055) was direct owner API usage recorded via span attrs, not via the auto-frontier ledger"
+  ]
+}

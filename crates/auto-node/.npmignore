@@ -1,0 +1,10 @@
+# A hypothetical `npm pack` ships exactly: package.json, index.d.ts, and the
+# built auto_node.node addon. Everything Rust stays out — the package is a
+# binary artifact + its hand-written types, not a compile-on-install source
+# distribution (no prebuilds in v0; the addon is built on and for the build
+# host — see evals/embedded-node/README.md). The package is private: true;
+# this file exists so the boundary is explicit, not because v0 publishes.
+src/
+tests/
+build.rs
+Cargo.toml

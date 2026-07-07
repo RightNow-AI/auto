@@ -1,0 +1,29 @@
+# Task-scope contract for the toy agent: the whole-run input/output the SDK
+# records via task_input / set_task_output (ADR-0025). The example is the
+# recorded reality of a run over the default document. Verifies in trace mode
+# (`auto verify`); compile/distill still refuse task scope (emit is span- or
+# region-scoped in v0).
+contract_version = 0
+task = "toy-agent"
+
+[scope]
+type = "task"
+
+[interface]
+input = "json"
+output = "json"
+
+[[example]]
+name = "riverbank-run"
+match = "exact"
+input = { doc = "The quick brown fox jumps over the lazy dog near the riverbank." }
+output = { words = 12, summary = "brown jumps quick", route = "long" }
+
+[[property]]
+kind = "json_has_keys"
+target = "output"
+keys = ["route", "summary", "words"]
+
+[budgets]
+# recorded wall-clock from run start to the set_task_output declaration
+max_latency_ms_p95 = 30000

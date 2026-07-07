@@ -1,0 +1,300 @@
+{"pos": 1, "category": "billing", "ticket": "I was charged for two seats on this month's invoice but our workspace only has one member, please refund the extra seat."}
+{"pos": 2, "category": "bug", "ticket": "The editor crashes to a blank screen whenever I paste an image from the clipboard."}
+{"pos": 3, "category": "feature", "ticket": "Please add a dark mode option to the dashboard, the white theme is hard on the eyes at night."}
+{"pos": 4, "category": "billing", "ticket": "My monthly invoice doubled this cycle even though our plan and seat count did not change."}
+{"pos": 5, "category": "bug", "ticket": "Saving a draft throws an unexpected error and the page freezes until I reload it."}
+{"pos": 6, "category": "feature", "ticket": "It would be great if you could add keyboard shortcuts for switching between projects."}
+{"pos": 7, "category": "billing", "ticket": "The March invoice still lists the annual plan price although we switched to monthly billing before the renewal."}
+{"pos": 8, "category": "bug", "ticket": "The mobile app crashes on launch after the latest update, reinstalling did not fix it."}
+{"pos": 9, "category": "feature", "ticket": "Please add an option to export the analytics charts as PNG images for slide decks."}
+{"pos": 10, "category": "billing", "ticket": "Please refund the duplicate charge on the last invoice, the payment retried and we were billed twice."}
+{"pos": 11, "category": "bug", "ticket": "Sorting by date is broken in the reports table, clicking the column header throws an error."}
+{"pos": 12, "category": "feature", "ticket": "Could you add support for recurring reminders, today I recreate the same task every week."}
+{"pos": 13, "category": "billing", "ticket": "The March invoice still lists the annual plan price although we switched to monthly billing before the renewal."}
+{"pos": 14, "category": "bug", "ticket": "Uploading any PDF over five megabytes fails with a spinner that never finishes and the tab crashes."}
+{"pos": 15, "category": "billing", "ticket": "Our latest invoice is missing the tax ID we saved in billing settings, accounting needs a corrected invoice."}
+{"pos": 16, "category": "bug", "ticket": "Sorting by date is broken in the reports table, clicking the column header throws an error."}
+{"pos": 17, "category": "bug", "ticket": "Saving a draft throws an unexpected error and the page freezes until I reload it."}
+{"pos": 18, "category": "feature", "ticket": "Could you add support for recurring reminders, today I recreate the same task every week."}
+{"pos": 19, "category": "feature", "ticket": "It would be great if you could add keyboard shortcuts for switching between projects."}
+{"pos": 20, "category": "billing", "ticket": "My card was billed before the trial ended and the invoice does not show the promised discount."}
+{"pos": 21, "category": "billing", "ticket": "The March invoice still lists the annual plan price although we switched to monthly billing before the renewal."}
+{"pos": 22, "category": "feature", "ticket": "Please add a dark mode option to the dashboard, the white theme is hard on the eyes at night."}
+{"pos": 23, "category": "billing", "ticket": "Please refund the duplicate charge on the last invoice, the payment retried and we were billed twice."}
+{"pos": 24, "category": "feature", "ticket": "Please add a dark mode option to the dashboard, the white theme is hard on the eyes at night."}
+{"pos": 25, "category": "billing", "ticket": "My monthly invoice doubled this cycle even though our plan and seat count did not change."}
+{"pos": 26, "category": "feature", "ticket": "It would help to add custom fields on contacts so we can track a region for each customer."}
+{"pos": 27, "category": "bug", "ticket": "Notifications stopped working since yesterday and the bell icon shows an error badge."}
+{"pos": 28, "category": "feature", "ticket": "It would help to add custom fields on contacts so we can track a region for each customer."}
+{"pos": 29, "category": "billing", "ticket": "I was charged for two seats on this month's invoice but our workspace only has one member, please refund the extra seat."}
+{"pos": 30, "category": "feature", "ticket": "Please add a Slack integration so alerts can post directly into our team channel."}
+{"pos": 31, "category": "bug", "ticket": "Notifications stopped working since yesterday and the bell icon shows an error badge."}
+{"pos": 32, "category": "billing", "ticket": "Our latest invoice is missing the tax ID we saved in billing settings, accounting needs a corrected invoice."}
+{"pos": 33, "category": "billing", "ticket": "I was charged for two seats on this month's invoice but our workspace only has one member, please refund the extra seat."}
+{"pos": 34, "category": "feature", "ticket": "Please add a dark mode option to the dashboard, the white theme is hard on the eyes at night."}
+{"pos": 35, "category": "feature", "ticket": "Please add a dark mode option to the dashboard, the white theme is hard on the eyes at night."}
+{"pos": 36, "category": "billing", "ticket": "Please refund the duplicate charge on the last invoice, the payment retried and we were billed twice."}
+{"pos": 37, "category": "feature", "ticket": "It would be great if you could add keyboard shortcuts for switching between projects."}
+{"pos": 38, "category": "bug", "ticket": "Notifications stopped working since yesterday and the bell icon shows an error badge."}
+{"pos": 39, "category": "billing", "ticket": "The March invoice still lists the annual plan price although we switched to monthly billing before the renewal."}
+{"pos": 40, "category": "billing", "ticket": "Please refund the duplicate charge on the last invoice, the payment retried and we were billed twice."}
+{"pos": 41, "category": "feature", "ticket": "Please add a dark mode option to the dashboard, the white theme is hard on the eyes at night."}
+{"pos": 42, "category": "feature", "ticket": "Please add an option to export the analytics charts as PNG images for slide decks."}
+{"pos": 43, "category": "feature", "ticket": "Please add a Slack integration so alerts can post directly into our team channel."}
+{"pos": 44, "category": "bug", "ticket": "Notifications stopped working since yesterday and the bell icon shows an error badge."}
+{"pos": 45, "category": "bug", "ticket": "The mobile app crashes on launch after the latest update, reinstalling did not fix it."}
+{"pos": 46, "category": "billing", "ticket": "My monthly invoice doubled this cycle even though our plan and seat count did not change."}
+{"pos": 47, "category": "feature", "ticket": "Please add an option to export the analytics charts as PNG images for slide decks."}
+{"pos": 48, "category": "feature", "ticket": "Could you add support for recurring reminders, today I recreate the same task every week."}
+{"pos": 49, "category": "feature", "ticket": "Please add a Slack integration so alerts can post directly into our team channel."}
+{"pos": 50, "category": "security", "ticket": "I received an alert about a suspicious login to my account from an IP address in another country, was this you?"}
+{"pos": 51, "category": "bug", "ticket": "Saving a draft throws an unexpected error and the page freezes until I reload it."}
+{"pos": 52, "category": "billing", "ticket": "The March invoice still lists the annual plan price although we switched to monthly billing before the renewal."}
+{"pos": 53, "category": "billing", "ticket": "I was charged for two seats on this month's invoice but our workspace only has one member, please refund the extra seat."}
+{"pos": 54, "category": "bug", "ticket": "Uploading any PDF over five megabytes fails with a spinner that never finishes and the tab crashes."}
+{"pos": 55, "category": "bug", "ticket": "Saving a draft throws an unexpected error and the page freezes until I reload it."}
+{"pos": 56, "category": "feature", "ticket": "Could you add support for recurring reminders, today I recreate the same task every week."}
+{"pos": 57, "category": "security", "ticket": "Someone tried to reset my password three times overnight and I did not request any of those resets."}
+{"pos": 58, "category": "bug", "ticket": "The mobile app crashes on launch after the latest update, reinstalling did not fix it."}
+{"pos": 59, "category": "security", "ticket": "Please enforce two-factor authentication for every member of our workspace before our compliance audit."}
+{"pos": 60, "category": "feature", "ticket": "Please add an option to export the analytics charts as PNG images for slide decks."}
+{"pos": 61, "category": "security", "ticket": "Someone tried to reset my password three times overnight and I did not request any of those resets."}
+{"pos": 62, "category": "security", "ticket": "I received an alert about a suspicious login to my account from an IP address in another country, was this you?"}
+{"pos": 63, "category": "billing", "ticket": "My monthly invoice doubled this cycle even though our plan and seat count did not change."}
+{"pos": 64, "category": "bug", "ticket": "Notifications stopped working since yesterday and the bell icon shows an error badge."}
+{"pos": 65, "category": "billing", "ticket": "My monthly invoice doubled this cycle even though our plan and seat count did not change."}
+{"pos": 66, "category": "bug", "ticket": "Saving a draft throws an unexpected error and the page freezes until I reload it."}
+{"pos": 67, "category": "billing", "ticket": "The March invoice still lists the annual plan price although we switched to monthly billing before the renewal."}
+{"pos": 68, "category": "security", "ticket": "A phishing email pretending to be your support team asked our staff to confirm their passwords."}
+{"pos": 69, "category": "bug", "ticket": "Sorting by date is broken in the reports table, clicking the column header throws an error."}
+{"pos": 70, "category": "security", "ticket": "My API key may have leaked in a public repository, how do I revoke it and rotate all tokens?"}
+{"pos": 71, "category": "security", "ticket": "Someone tried to reset my password three times overnight and I did not request any of those resets."}
+{"pos": 72, "category": "security", "ticket": "The security log shows login attempts from an unknown device, please lock the account until we verify."}
+{"pos": 73, "category": "billing", "ticket": "Our latest invoice is missing the tax ID we saved in billing settings, accounting needs a corrected invoice."}
+{"pos": 74, "category": "security", "ticket": "A former employee still has an active session, force sign-out on all of their devices immediately."}
+{"pos": 75, "category": "bug", "ticket": "The editor crashes to a blank screen whenever I paste an image from the clipboard."}
+{"pos": 76, "category": "security", "ticket": "Someone tried to reset my password three times overnight and I did not request any of those resets."}
+{"pos": 77, "category": "security", "ticket": "A phishing email pretending to be your support team asked our staff to confirm their passwords."}
+{"pos": 78, "category": "security", "ticket": "I received an alert about a suspicious login to my account from an IP address in another country, was this you?"}
+{"pos": 79, "category": "feature", "ticket": "Please add a Slack integration so alerts can post directly into our team channel."}
+{"pos": 80, "category": "security", "ticket": "Your breach notification says my password appeared in a data leak, which credentials should I rotate?"}
+{"pos": 81, "category": "security", "ticket": "We caught a session token being replayed from two locations at once, is the account compromised?"}
+{"pos": 82, "category": "security", "ticket": "A suspicious OAuth grant appeared on our workspace overnight, revoke it and audit recent access."}
+{"pos": 83, "category": "security", "ticket": "Please audit which admins accessed the exported member list, we suspect an unauthorized login."}
+{"pos": 84, "category": "security", "ticket": "The verification codes for sign-in are being intercepted, we need to reset our two-factor setup."}
+{"pos": 85, "category": "feature", "ticket": "Please add an option to export the analytics charts as PNG images for slide decks."}
+{"pos": 86, "category": "security", "ticket": "A phishing email pretending to be your support team asked our staff to confirm their passwords."}
+{"pos": 87, "category": "billing", "ticket": "My card was billed before the trial ended and the invoice does not show the promised discount."}
+{"pos": 88, "category": "security", "ticket": "Please audit which admins accessed the exported member list, we suspect an unauthorized login."}
+{"pos": 89, "category": "security", "ticket": "Someone tried to reset my password three times overnight and I did not request any of those resets."}
+{"pos": 90, "category": "security", "ticket": "A phishing email pretending to be your support team asked our staff to confirm their passwords."}
+{"pos": 91, "category": "security", "ticket": "The security log shows login attempts from an unknown device, please lock the account until we verify."}
+{"pos": 92, "category": "bug", "ticket": "Saving a draft throws an unexpected error and the page freezes until I reload it."}
+{"pos": 93, "category": "billing", "ticket": "I was charged for two seats on this month's invoice but our workspace only has one member, please refund the extra seat."}
+{"pos": 94, "category": "security", "ticket": "The verification codes for sign-in are being intercepted, we need to reset our two-factor setup."}
+{"pos": 95, "category": "feature", "ticket": "Could you add support for recurring reminders, today I recreate the same task every week."}
+{"pos": 96, "category": "feature", "ticket": "It would be great if you could add keyboard shortcuts for switching between projects."}
+{"pos": 97, "category": "feature", "ticket": "Please add an option to export the analytics charts as PNG images for slide decks."}
+{"pos": 98, "category": "bug", "ticket": "The editor crashes to a blank screen whenever I paste an image from the clipboard."}
+{"pos": 99, "category": "bug", "ticket": "The editor crashes to a blank screen whenever I paste an image from the clipboard."}
+{"pos": 100, "category": "feature", "ticket": "Please add a Slack integration so alerts can post directly into our team channel."}
+{"pos": 101, "category": "feature", "ticket": "It would help to add custom fields on contacts so we can track a region for each customer."}
+{"pos": 102, "category": "bug", "ticket": "The mobile app crashes on launch after the latest update, reinstalling did not fix it."}
+{"pos": 103, "category": "feature", "ticket": "Could you add support for recurring reminders, today I recreate the same task every week."}
+{"pos": 104, "category": "billing", "ticket": "The March invoice still lists the annual plan price although we switched to monthly billing before the renewal."}
+{"pos": 105, "category": "bug", "ticket": "Saving a draft throws an unexpected error and the page freezes until I reload it."}
+{"pos": 106, "category": "billing", "ticket": "The March invoice still lists the annual plan price although we switched to monthly billing before the renewal."}
+{"pos": 107, "category": "security", "ticket": "A former employee still has an active session, force sign-out on all of their devices immediately."}
+{"pos": 108, "category": "bug", "ticket": "Saving a draft throws an unexpected error and the page freezes until I reload it."}
+{"pos": 109, "category": "feature", "ticket": "It would be great if you could add keyboard shortcuts for switching between projects."}
+{"pos": 110, "category": "billing", "ticket": "Our latest invoice is missing the tax ID we saved in billing settings, accounting needs a corrected invoice."}
+{"pos": 111, "category": "bug", "ticket": "The editor crashes to a blank screen whenever I paste an image from the clipboard."}
+{"pos": 112, "category": "bug", "ticket": "The mobile app crashes on launch after the latest update, reinstalling did not fix it."}
+{"pos": 113, "category": "security", "ticket": "Please enforce two-factor authentication for every member of our workspace before our compliance audit."}
+{"pos": 114, "category": "security", "ticket": "The security log shows login attempts from an unknown device, please lock the account until we verify."}
+{"pos": 115, "category": "feature", "ticket": "Please add a Slack integration so alerts can post directly into our team channel."}
+{"pos": 116, "category": "bug", "ticket": "Sorting by date is broken in the reports table, clicking the column header throws an error."}
+{"pos": 117, "category": "billing", "ticket": "Please refund the duplicate charge on the last invoice, the payment retried and we were billed twice."}
+{"pos": 118, "category": "bug", "ticket": "Sorting by date is broken in the reports table, clicking the column header throws an error."}
+{"pos": 119, "category": "feature", "ticket": "Please add an option to export the analytics charts as PNG images for slide decks."}
+{"pos": 120, "category": "onboarding", "ticket": "How do I invite my teammates to the workspace during the initial setup?"}
+{"pos": 121, "category": "onboarding", "ticket": "The getting started checklist is stuck on step three, how do I connect our first data source?"}
+{"pos": 122, "category": "feature", "ticket": "Please add an option to export the analytics charts as PNG images for slide decks."}
+{"pos": 123, "category": "bug", "ticket": "Uploading any PDF over five megabytes fails with a spinner that never finishes and the tab crashes."}
+{"pos": 124, "category": "onboarding", "ticket": "How do I invite my teammates to the workspace during the initial setup?"}
+{"pos": 125, "category": "billing", "ticket": "I was charged for two seats on this month's invoice but our workspace only has one member, please refund the extra seat."}
+{"pos": 126, "category": "security", "ticket": "A former employee still has an active session, force sign-out on all of their devices immediately."}
+{"pos": 127, "category": "bug", "ticket": "Saving a draft throws an unexpected error and the page freezes until I reload it."}
+{"pos": 128, "category": "feature", "ticket": "It would help to add custom fields on contacts so we can track a region for each customer."}
+{"pos": 129, "category": "security", "ticket": "A suspicious OAuth grant appeared on our workspace overnight, revoke it and audit recent access."}
+{"pos": 130, "category": "bug", "ticket": "Sorting by date is broken in the reports table, clicking the column header throws an error."}
+{"pos": 131, "category": "feature", "ticket": "Please add a Slack integration so alerts can post directly into our team channel."}
+{"pos": 132, "category": "onboarding", "ticket": "The getting started checklist is stuck on step three, how do I connect our first data source?"}
+{"pos": 133, "category": "bug", "ticket": "Saving a draft throws an unexpected error and the page freezes until I reload it."}
+{"pos": 134, "category": "onboarding", "ticket": "The getting started checklist is stuck on step three, how do I connect our first data source?"}
+{"pos": 135, "category": "security", "ticket": "Please audit which admins accessed the exported member list, we suspect an unauthorized login."}
+{"pos": 136, "category": "feature", "ticket": "Please add a dark mode option to the dashboard, the white theme is hard on the eyes at night."}
+{"pos": 137, "category": "onboarding", "ticket": "Is there a guided tutorial for a new admin setting up the workspace for the first time?"}
+{"pos": 138, "category": "bug", "ticket": "Saving a draft throws an unexpected error and the page freezes until I reload it."}
+{"pos": 139, "category": "onboarding", "ticket": "The getting started checklist is stuck on step three, how do I connect our first data source?"}
+{"pos": 140, "category": "onboarding", "ticket": "Is there a guided tutorial for a new admin setting up the workspace for the first time?"}
+{"pos": 141, "category": "onboarding", "ticket": "How do I import our existing contacts from a spreadsheet during onboarding?"}
+{"pos": 142, "category": "security", "ticket": "A suspicious OAuth grant appeared on our workspace overnight, revoke it and audit recent access."}
+{"pos": 143, "category": "onboarding", "ticket": "What is the recommended way to set up roles for a brand new team on day one?"}
+{"pos": 144, "category": "feature", "ticket": "It would help to add custom fields on contacts so we can track a region for each customer."}
+{"pos": 145, "category": "onboarding", "ticket": "The welcome email link expired before I finished creating my account, can you resend the setup invite?"}
+{"pos": 146, "category": "feature", "ticket": "Please add a Slack integration so alerts can post directly into our team channel."}
+{"pos": 147, "category": "onboarding", "ticket": "Where can I reopen the setup wizard after skipping it on my first login?"}
+{"pos": 148, "category": "onboarding", "ticket": "How do I migrate our data from the old tool as part of the initial setup?"}
+{"pos": 149, "category": "bug", "ticket": "The mobile app crashes on launch after the latest update, reinstalling did not fix it."}
+{"pos": 150, "category": "security", "ticket": "The security log shows login attempts from an unknown device, please lock the account until we verify."}
+{"pos": 151, "category": "onboarding", "ticket": "Can you walk me through the first-time configuration for a small marketing team?"}
+{"pos": 152, "category": "bug", "ticket": "Notifications stopped working since yesterday and the bell icon shows an error badge."}
+{"pos": 153, "category": "bug", "ticket": "The editor crashes to a blank screen whenever I paste an image from the clipboard."}
+{"pos": 154, "category": "onboarding", "ticket": "Which starter template should a new customer success team pick during onboarding?"}
+{"pos": 155, "category": "security", "ticket": "The verification codes for sign-in are being intercepted, we need to reset our two-factor setup."}
+{"pos": 156, "category": "billing", "ticket": "Our latest invoice is missing the tax ID we saved in billing settings, accounting needs a corrected invoice."}
+{"pos": 157, "category": "onboarding", "ticket": "How do I book an onboarding session with your team for next week?"}
+{"pos": 158, "category": "feature", "ticket": "It would be great if you could add keyboard shortcuts for switching between projects."}
+{"pos": 159, "category": "feature", "ticket": "Please add a dark mode option to the dashboard, the white theme is hard on the eyes at night."}
+{"pos": 160, "category": "onboarding", "ticket": "The sample project from the tutorial disappeared, how do I restore it to finish the walkthrough?"}
+{"pos": 161, "category": "feature", "ticket": "It would be great if you could add keyboard shortcuts for switching between projects."}
+{"pos": 162, "category": "onboarding", "ticket": "How do I invite my teammates to the workspace during the initial setup?"}
+{"pos": 163, "category": "bug", "ticket": "Notifications stopped working since yesterday and the bell icon shows an error badge."}
+{"pos": 164, "category": "billing", "ticket": "Please refund the duplicate charge on the last invoice, the payment retried and we were billed twice."}
+{"pos": 165, "category": "security", "ticket": "A phishing email pretending to be your support team asked our staff to confirm their passwords."}
+{"pos": 166, "category": "onboarding", "ticket": "The getting started checklist is stuck on step three, how do I connect our first data source?"}
+{"pos": 167, "category": "billing", "ticket": "Our latest invoice is missing the tax ID we saved in billing settings, accounting needs a corrected invoice."}
+{"pos": 168, "category": "billing", "ticket": "Our latest invoice is missing the tax ID we saved in billing settings, accounting needs a corrected invoice."}
+{"pos": 169, "category": "onboarding", "ticket": "What is the recommended way to set up roles for a brand new team on day one?"}
+{"pos": 170, "category": "bug", "ticket": "The mobile app crashes on launch after the latest update, reinstalling did not fix it."}
+{"pos": 171, "category": "feature", "ticket": "Please add a dark mode option to the dashboard, the white theme is hard on the eyes at night."}
+{"pos": 172, "category": "feature", "ticket": "It would be great if you could add keyboard shortcuts for switching between projects."}
+{"pos": 173, "category": "security", "ticket": "Someone tried to reset my password three times overnight and I did not request any of those resets."}
+{"pos": 174, "category": "bug", "ticket": "Saving a draft throws an unexpected error and the page freezes until I reload it."}
+{"pos": 175, "category": "onboarding", "ticket": "The getting started checklist is stuck on step three, how do I connect our first data source?"}
+{"pos": 176, "category": "bug", "ticket": "The mobile app crashes on launch after the latest update, reinstalling did not fix it."}
+{"pos": 177, "category": "security", "ticket": "The verification codes for sign-in are being intercepted, we need to reset our two-factor setup."}
+{"pos": 178, "category": "feature", "ticket": "Could you add support for recurring reminders, today I recreate the same task every week."}
+{"pos": 179, "category": "onboarding", "ticket": "The sample project from the tutorial disappeared, how do I restore it to finish the walkthrough?"}
+{"pos": 180, "category": "security", "ticket": "Someone tried to reset my password three times overnight and I did not request any of those resets."}
+{"pos": 181, "category": "bug", "ticket": "Sorting by date is broken in the reports table, clicking the column header throws an error."}
+{"pos": 182, "category": "billing", "ticket": "I was charged for two seats on this month's invoice but our workspace only has one member, please refund the extra seat."}
+{"pos": 183, "category": "security", "ticket": "I received an alert about a suspicious login to my account from an IP address in another country, was this you?"}
+{"pos": 184, "category": "onboarding", "ticket": "The getting started checklist is stuck on step three, how do I connect our first data source?"}
+{"pos": 185, "category": "bug", "ticket": "Notifications stopped working since yesterday and the bell icon shows an error badge."}
+{"pos": 186, "category": "feature", "ticket": "Could you add support for recurring reminders, today I recreate the same task every week."}
+{"pos": 187, "category": "bug", "ticket": "Saving a draft throws an unexpected error and the page freezes until I reload it."}
+{"pos": 188, "category": "security", "ticket": "We caught a session token being replayed from two locations at once, is the account compromised?"}
+{"pos": 189, "category": "feature", "ticket": "Please add a Slack integration so alerts can post directly into our team channel."}
+{"pos": 190, "category": "onboarding", "ticket": "The welcome email link expired before I finished creating my account, can you resend the setup invite?"}
+{"pos": 191, "category": "billing", "ticket": "My monthly invoice doubled this cycle even though our plan and seat count did not change."}
+{"pos": 192, "category": "onboarding", "ticket": "Is there a guided tutorial for a new admin setting up the workspace for the first time?"}
+{"pos": 193, "category": "billing", "ticket": "My monthly invoice doubled this cycle even though our plan and seat count did not change."}
+{"pos": 194, "category": "onboarding", "ticket": "Where can I reopen the setup wizard after skipping it on my first login?"}
+{"pos": 195, "category": "billing", "ticket": "Our latest invoice is missing the tax ID we saved in billing settings, accounting needs a corrected invoice."}
+{"pos": 196, "category": "billing", "ticket": "The March invoice still lists the annual plan price although we switched to monthly billing before the renewal."}
+{"pos": 197, "category": "security", "ticket": "The security log shows login attempts from an unknown device, please lock the account until we verify."}
+{"pos": 198, "category": "bug", "ticket": "Sorting by date is broken in the reports table, clicking the column header throws an error."}
+{"pos": 199, "category": "security", "ticket": "Your breach notification says my password appeared in a data leak, which credentials should I rotate?"}
+{"pos": 200, "category": "billing-fraud", "ticket": "There is a fraudulent charge on my statement from your company that I never authorized."}
+{"pos": 201, "category": "billing", "ticket": "My monthly invoice doubled this cycle even though our plan and seat count did not change."}
+{"pos": 202, "category": "bug", "ticket": "Uploading any PDF over five megabytes fails with a spinner that never finishes and the tab crashes."}
+{"pos": 203, "category": "billing-fraud", "ticket": "My stolen card was used to open a subscription with you, cancel it and reverse the charges."}
+{"pos": 204, "category": "billing", "ticket": "The March invoice still lists the annual plan price although we switched to monthly billing before the renewal."}
+{"pos": 205, "category": "feature", "ticket": "Could you add support for recurring reminders, today I recreate the same task every week."}
+{"pos": 206, "category": "billing-fraud", "ticket": "I am disputing an unauthorized transaction of seventy nine dollars that appeared after my card was skimmed."}
+{"pos": 207, "category": "security", "ticket": "The verification codes for sign-in are being intercepted, we need to reset our two-factor setup."}
+{"pos": 208, "category": "billing-fraud", "ticket": "Someone opened an account using my credit card number, reverse the charge and close that account."}
+{"pos": 209, "category": "bug", "ticket": "The mobile app crashes on launch after the latest update, reinstalling did not fix it."}
+{"pos": 210, "category": "billing-fraud", "ticket": "My bank flagged your charge as suspected fraud, I need confirmation so I can file the dispute."}
+{"pos": 211, "category": "security", "ticket": "Your breach notification says my password appeared in a data leak, which credentials should I rotate?"}
+{"pos": 212, "category": "billing-fraud", "ticket": "An unauthorized upgrade was purchased on our corporate card and nobody here approved that transaction."}
+{"pos": 213, "category": "onboarding", "ticket": "Can you walk me through the first-time configuration for a small marketing team?"}
+{"pos": 214, "category": "bug", "ticket": "Uploading any PDF over five megabytes fails with a spinner that never finishes and the tab crashes."}
+{"pos": 215, "category": "billing-fraud", "ticket": "I see three unauthorized charges from your service after my wallet was stolen last week."}
+{"pos": 216, "category": "billing-fraud", "ticket": "Please reverse the fraudulent renewal, the cardholder never signed up for your product at all."}
+{"pos": 217, "category": "bug", "ticket": "Saving a draft throws an unexpected error and the page freezes until I reload it."}
+{"pos": 218, "category": "security", "ticket": "A former employee still has an active session, force sign-out on all of their devices immediately."}
+{"pos": 219, "category": "billing-fraud", "ticket": "We are filing a chargeback for a transaction our finance team has marked as fraudulent."}
+{"pos": 220, "category": "security", "ticket": "The security log shows login attempts from an unknown device, please lock the account until we verify."}
+{"pos": 221, "category": "security", "ticket": "A former employee still has an active session, force sign-out on all of their devices immediately."}
+{"pos": 222, "category": "onboarding", "ticket": "What is the recommended way to set up roles for a brand new team on day one?"}
+{"pos": 223, "category": "onboarding", "ticket": "Which starter template should a new customer success team pick during onboarding?"}
+{"pos": 224, "category": "billing-fraud", "ticket": "My stolen card was used to open a subscription with you, cancel it and reverse the charges."}
+{"pos": 225, "category": "billing", "ticket": "The March invoice still lists the annual plan price although we switched to monthly billing before the renewal."}
+{"pos": 226, "category": "onboarding", "ticket": "The getting started checklist is stuck on step three, how do I connect our first data source?"}
+{"pos": 227, "category": "billing-fraud", "ticket": "Please reverse the fraudulent renewal, the cardholder never signed up for your product at all."}
+{"pos": 228, "category": "bug", "ticket": "Sorting by date is broken in the reports table, clicking the column header throws an error."}
+{"pos": 229, "category": "billing-fraud", "ticket": "My stolen card was used to open a subscription with you, cancel it and reverse the charges."}
+{"pos": 230, "category": "feature", "ticket": "Please add a Slack integration so alerts can post directly into our team channel."}
+{"pos": 231, "category": "billing-fraud", "ticket": "A scammer used my payment account to buy your premium plan, refund the unauthorized payment."}
+{"pos": 232, "category": "bug", "ticket": "The editor crashes to a blank screen whenever I paste an image from the clipboard."}
+{"pos": 233, "category": "billing-fraud", "ticket": "Please reverse the fraudulent renewal, the cardholder never signed up for your product at all."}
+{"pos": 234, "category": "security", "ticket": "Please enforce two-factor authentication for every member of our workspace before our compliance audit."}
+{"pos": 235, "category": "bug", "ticket": "Sorting by date is broken in the reports table, clicking the column header throws an error."}
+{"pos": 236, "category": "security", "ticket": "Someone tried to reset my password three times overnight and I did not request any of those resets."}
+{"pos": 237, "category": "billing-fraud", "ticket": "The charge on my statement is fraud, I have never even heard of your company before today."}
+{"pos": 238, "category": "onboarding", "ticket": "How do I migrate our data from the old tool as part of the initial setup?"}
+{"pos": 239, "category": "onboarding", "ticket": "The getting started checklist is stuck on step three, how do I connect our first data source?"}
+{"pos": 240, "category": "billing-fraud", "ticket": "My card issuer says this recurring charge is unauthorized, stop billing the compromised card."}
+{"pos": 241, "category": "onboarding", "ticket": "Is there a guided tutorial for a new admin setting up the workspace for the first time?"}
+{"pos": 242, "category": "billing-fraud", "ticket": "Someone is running up charges on a trial opened with my email and my card without consent."}
+{"pos": 243, "category": "feature", "ticket": "Could you add support for recurring reminders, today I recreate the same task every week."}
+{"pos": 244, "category": "billing", "ticket": "My monthly invoice doubled this cycle even though our plan and seat count did not change."}
+{"pos": 245, "category": "billing-fraud", "ticket": "Reporting card fraud: two transactions from your store hit an account closed for theft."}
+{"pos": 246, "category": "billing", "ticket": "Our latest invoice is missing the tax ID we saved in billing settings, accounting needs a corrected invoice."}
+{"pos": 247, "category": "feature", "ticket": "Please add a Slack integration so alerts can post directly into our team channel."}
+{"pos": 248, "category": "bug", "ticket": "The editor crashes to a blank screen whenever I paste an image from the clipboard."}
+{"pos": 249, "category": "billing-fraud", "ticket": "There is a fraudulent charge on my statement from your company that I never authorized."}
+{"pos": 250, "category": "billing-fraud", "ticket": "A scammer used my payment account to buy your premium plan, refund the unauthorized payment."}
+{"pos": 251, "category": "billing", "ticket": "The March invoice still lists the annual plan price although we switched to monthly billing before the renewal."}
+{"pos": 252, "category": "feature", "ticket": "Could you add support for recurring reminders, today I recreate the same task every week."}
+{"pos": 253, "category": "onboarding", "ticket": "Which starter template should a new customer success team pick during onboarding?"}
+{"pos": 254, "category": "billing-fraud", "ticket": "Someone is running up charges on a trial opened with my email and my card without consent."}
+{"pos": 255, "category": "security", "ticket": "A former employee still has an active session, force sign-out on all of their devices immediately."}
+{"pos": 256, "category": "bug", "ticket": "The mobile app crashes on launch after the latest update, reinstalling did not fix it."}
+{"pos": 257, "category": "billing", "ticket": "The March invoice still lists the annual plan price although we switched to monthly billing before the renewal."}
+{"pos": 258, "category": "billing", "ticket": "Our latest invoice is missing the tax ID we saved in billing settings, accounting needs a corrected invoice."}
+{"pos": 259, "category": "security", "ticket": "We caught a session token being replayed from two locations at once, is the account compromised?"}
+{"pos": 260, "category": "security", "ticket": "We caught a session token being replayed from two locations at once, is the account compromised?"}
+{"pos": 261, "category": "security", "ticket": "Someone tried to reset my password three times overnight and I did not request any of those resets."}
+{"pos": 262, "category": "security", "ticket": "A phishing email pretending to be your support team asked our staff to confirm their passwords."}
+{"pos": 263, "category": "feature", "ticket": "Please add a dark mode option to the dashboard, the white theme is hard on the eyes at night."}
+{"pos": 264, "category": "feature", "ticket": "Could you add support for recurring reminders, today I recreate the same task every week."}
+{"pos": 265, "category": "security", "ticket": "We caught a session token being replayed from two locations at once, is the account compromised?"}
+{"pos": 266, "category": "onboarding", "ticket": "How do I migrate our data from the old tool as part of the initial setup?"}
+{"pos": 267, "category": "billing-fraud", "ticket": "An unauthorized upgrade was purchased on our corporate card and nobody here approved that transaction."}
+{"pos": 268, "category": "billing-fraud", "ticket": "An unauthorized upgrade was purchased on our corporate card and nobody here approved that transaction."}
+{"pos": 269, "category": "feature", "ticket": "Please add a Slack integration so alerts can post directly into our team channel."}
+{"pos": 270, "category": "onboarding", "ticket": "Can you walk me through the first-time configuration for a small marketing team?"}
+{"pos": 271, "category": "billing", "ticket": "Please refund the duplicate charge on the last invoice, the payment retried and we were billed twice."}
+{"pos": 272, "category": "security", "ticket": "We caught a session token being replayed from two locations at once, is the account compromised?"}
+{"pos": 273, "category": "security", "ticket": "A suspicious OAuth grant appeared on our workspace overnight, revoke it and audit recent access."}
+{"pos": 274, "category": "security", "ticket": "We caught a session token being replayed from two locations at once, is the account compromised?"}
+{"pos": 275, "category": "bug", "ticket": "Notifications stopped working since yesterday and the bell icon shows an error badge."}
+{"pos": 276, "category": "billing-fraud", "ticket": "A scammer used my payment account to buy your premium plan, refund the unauthorized payment."}
+{"pos": 277, "category": "onboarding", "ticket": "The welcome email link expired before I finished creating my account, can you resend the setup invite?"}
+{"pos": 278, "category": "billing-fraud", "ticket": "My bank flagged your charge as suspected fraud, I need confirmation so I can file the dispute."}
+{"pos": 279, "category": "security", "ticket": "I received an alert about a suspicious login to my account from an IP address in another country, was this you?"}
+{"pos": 280, "category": "feature", "ticket": "It would help to add custom fields on contacts so we can track a region for each customer."}
+{"pos": 281, "category": "bug", "ticket": "Saving a draft throws an unexpected error and the page freezes until I reload it."}
+{"pos": 282, "category": "feature", "ticket": "It would help to add custom fields on contacts so we can track a region for each customer."}
+{"pos": 283, "category": "feature", "ticket": "Please add a dark mode option to the dashboard, the white theme is hard on the eyes at night."}
+{"pos": 284, "category": "bug", "ticket": "The mobile app crashes on launch after the latest update, reinstalling did not fix it."}
+{"pos": 285, "category": "security", "ticket": "A former employee still has an active session, force sign-out on all of their devices immediately."}
+{"pos": 286, "category": "billing-fraud", "ticket": "Reporting card fraud: two transactions from your store hit an account closed for theft."}
+{"pos": 287, "category": "billing", "ticket": "Our latest invoice is missing the tax ID we saved in billing settings, accounting needs a corrected invoice."}
+{"pos": 288, "category": "billing", "ticket": "Our latest invoice is missing the tax ID we saved in billing settings, accounting needs a corrected invoice."}
+{"pos": 289, "category": "onboarding", "ticket": "The sample project from the tutorial disappeared, how do I restore it to finish the walkthrough?"}
+{"pos": 290, "category": "security", "ticket": "Someone tried to reset my password three times overnight and I did not request any of those resets."}
+{"pos": 291, "category": "security", "ticket": "We caught a session token being replayed from two locations at once, is the account compromised?"}
+{"pos": 292, "category": "billing-fraud", "ticket": "My card issuer says this recurring charge is unauthorized, stop billing the compromised card."}
+{"pos": 293, "category": "billing-fraud", "ticket": "The charge on my statement is fraud, I have never even heard of your company before today."}
+{"pos": 294, "category": "billing-fraud", "ticket": "We are filing a chargeback for a transaction our finance team has marked as fraudulent."}
+{"pos": 295, "category": "billing-fraud", "ticket": "Someone opened an account using my credit card number, reverse the charge and close that account."}
+{"pos": 296, "category": "billing-fraud", "ticket": "I see three unauthorized charges from your service after my wallet was stolen last week."}
+{"pos": 297, "category": "billing-fraud", "ticket": "I am disputing an unauthorized transaction of seventy nine dollars that appeared after my card was skimmed."}
+{"pos": 298, "category": "onboarding", "ticket": "How do I book an onboarding session with your team for next week?"}
+{"pos": 299, "category": "onboarding", "ticket": "How do I import our existing contacts from a spreadsheet during onboarding?"}
+{"pos": 300, "category": "security", "ticket": "My API key may have leaked in a public repository, how do I revoke it and rotate all tokens?"}

@@ -1,0 +1,10 @@
+{"id": "f2-p01", "kind": "heldout", "ticket": "Please refund the second subscription charge that appeared on my statement this week."}
+{"id": "f2-p02", "kind": "heldout", "ticket": "My invoice lists a seat we removed last month, can you correct the bill?"}
+{"id": "f2-p03", "kind": "heldout", "ticket": "The annual renewal charged the old card instead of the one we saved in the billing portal."}
+{"id": "f2-p04", "kind": "heldout", "ticket": "I was billed in GBP but our contract says all invoices are in USD."}
+{"id": "f2-p05", "kind": "heldout", "ticket": "The promo credit from our sales agreement never showed up on this month's invoice."}
+{"id": "f2-p06", "kind": "ood", "ticket": "E0705 11:02:19.334871 1 kubelet.go:2461] pod/api-59d4c Back-off restarting failed container reason=CrashLoopBackOff"}
+{"id": "f2-p07", "kind": "ood", "ticket": "Rain counts the fence posts one by one, the gutter keeps the change; by noon the puddles hand the sun its silver back, arranged."}
+{"id": "f2-p08", "kind": "ood", "ticket": " "}
+{"id": "f2-p09", "kind": "ood", "ticket": "Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur."}
+{"id": "f2-p10", "kind": "ood", "ticket": "ERROR: syntax error at or near FORM LINE 1: SELECT * FORM customers WHERE id = 42 (psql 42601)"}

@@ -1,0 +1,175 @@
+{
+ "family": "f2",
+ "task": "inbox-agent",
+ "generated_at_unix": 1783261031,
+ "store": "target/bench/f2.db",
+ "session": "bench-f2",
+ "cap_usd": "0.25",
+ "cap_note": "no auto-mediated paid leg in this script; recording pays via the agent's own key",
+ "guard_alpha_milli": 1,
+ "recorded_ticket_count": 20,
+ "pins": {
+  "model": "gpt-5.4-mini",
+  "prices_usd_per_mtok": {
+   "input": 0.75,
+   "output": 4.5
+  },
+  "price_source": "crates/auto-frontier/src/prices.rs (mirrored in evals/inbox-agent/agent.py)"
+ },
+ "repo_commit": "63b89a24a718f59d6292706b7332db5458d772bd",
+ "census": {
+  "effectful_spans": 320,
+  "witnessed": 320,
+  "witnessed_of": 320,
+  "deterministic": 248,
+  "deterministic_pct_of_witnessed": 77.5,
+  "divergent": 72,
+  "method": "auto report --task inbox-agent (canonical determinism report, parsed)",
+  "raw_report": "determinism report \u2014 task \"inbox-agent\" (80 traces)\neffectful spans: 320 (structural spans excluded: 80)\nwitnessed (signature observed >=2 across runs): 320 of 320 spans\n  deterministic: 248 spans (77.5% of witnessed)\n  divergent:     72 spans\n  unwitnessed:   0 spans \u2014 no claim made\ntime-weighted deterministic fraction of witnessed: 68.6%\nby kind:\n  model_call: 240 spans \u2014 168 deterministic, 72 divergent, 0 unwitnessed\n  tool_call: 80 spans \u2014 80 deterministic, 0 divergent, 0 unwitnessed\ntop divergent signatures:\n  model_call(priority) input=a2ed55c4dc2d \u2014 2 observations, 2 distinct outputs, 0 errors\n  model_call(priority) input=b79956e58374 \u2014 2 observations, 2 distinct outputs, 0 errors\n  model_call(priority) input=ecf5be059553 \u2014 2 observations, 2 distinct outputs, 0 errors\n  model_call(summarize) input=12b5c99ead33 \u2014 2 observations, 2 distinct outputs, 0 errors\n  model_call(summarize) input=12f9938a2cbd \u2014 2 observations, 2 distinct outputs, 0 errors\n  model_call(summarize) input=1817220e683e \u2014 2 observations, 2 distinct outputs, 0 errors\n  model_call(summarize) input=1a1ae40f840e \u2014 2 observations, 2 distinct outputs, 0 errors\n  model_call(summarize) input=22baee4f59ba \u2014 2 observations, 2 distinct outputs, 0 errors\n  model_call(summarize) input=2af6ca6d78e5 \u2014 2 observations, 2 distinct outputs, 0 errors\n  model_call(summarize) input=4537763dceb8 \u2014 2 observations, 2 distinct outputs, 0 errors\n(fractions cover witnessed spans only; nothing is extrapolated)\n",
+  "per_span": {
+   "model_call/classify": {
+    "groups": 40,
+    "witnessed": 40,
+    "deterministic": 40,
+    "divergent": 0,
+    "unwitnessed": 0,
+    "deterministic_pct_of_witnessed": 100.0
+   },
+   "model_call/priority": {
+    "groups": 40,
+    "witnessed": 40,
+    "deterministic": 37,
+    "divergent": 3,
+    "unwitnessed": 0,
+    "deterministic_pct_of_witnessed": 92.5
+   },
+   "model_call/summarize": {
+    "groups": 40,
+    "witnessed": 40,
+    "deterministic": 7,
+    "divergent": 33,
+    "unwitnessed": 0,
+    "deterministic_pct_of_witnessed": 17.5
+   },
+   "tool_call/lookup": {
+    "groups": 2,
+    "witnessed": 2,
+    "deterministic": 2,
+    "divergent": 0,
+    "unwitnessed": 0,
+    "deterministic_pct_of_witnessed": 100.0
+   }
+  },
+  "per_span_method": "script sqlite groupby (kind, name, input_digest) over non-partial traces, mirroring determinism.rs: deterministic iff witnessed >=2 AND zero errors AND one distinct output; the canonical report above aggregates per task/kind only"
+ },
+ "frontier_baseline": {
+  "runs": 80,
+  "run_latency_ms": {
+   "p50": 2881,
+   "p95": 4230,
+   "mean": 3075.0
+  },
+  "run_cost_usd_micros": {
+   "mean": 192.4875,
+   "sum": 15399
+  },
+  "per_span": {
+   "classify": {
+    "calls": 80,
+    "errors": 0,
+    "cost_sum": 4096,
+    "latency_ms": {
+     "p50": 908,
+     "p95": 1511,
+     "mean": 1022.275
+    },
+    "cost_usd_micros_mean": 51.2
+   },
+   "priority": {
+    "calls": 80,
+    "errors": 0,
+    "cost_sum": 4034,
+    "latency_ms": {
+     "p50": 863,
+     "p95": 1754,
+     "mean": 990.8
+    },
+    "cost_usd_micros_mean": 50.425
+   },
+   "summarize": {
+    "calls": 80,
+    "errors": 0,
+    "cost_sum": 7269,
+    "latency_ms": {
+     "p50": 1042,
+     "p95": 1411,
+     "mean": 1058.5375
+    },
+    "cost_usd_micros_mean": 90.8625
+   }
+  },
+  "source": "recorded root-span duration_ms + model_call reserved cost attrs; recorded = baseline (DESIGN.md); percentiles nearest-rank, script-side"
+ },
+ "compile": {
+  "classify": {
+   "exit": 1,
+   "verdict": null,
+   "agreement": null,
+   "eval_run_id": null,
+   "artifact_id": null,
+   "artifact_path": null,
+   "refusal_verbatim": "auto compile: synthesis budget exhausted (300000 state(s), depth 8) \u2014 no fitting program in the v0 DSL; supply --module (hand-assisted) or wait for a richer search",
+   "cmd": "target/release/auto compile --contract evals/inbox-agent/classify.contract.toml --store target/bench/f2.db --synth enum --guard-field ticket --guard-alpha-milli 1 --divergent-pick most-common --out paper/evidence/bench\\f2-classify.cbin --runs-dir evals/runs",
+   "contract": "evals/inbox-agent/classify.contract.toml"
+  },
+  "priority": {
+   "exit": 1,
+   "verdict": null,
+   "agreement": null,
+   "eval_run_id": null,
+   "artifact_id": null,
+   "artifact_path": null,
+   "refusal_verbatim": "auto compile: synthesis budget exhausted (300000 state(s), depth 8) \u2014 no fitting program in the v0 DSL; supply --module (hand-assisted) or wait for a richer search",
+   "cmd": "target/release/auto compile --contract evals/inbox-agent/priority.contract.toml --store target/bench/f2.db --synth enum --guard-field ticket --guard-alpha-milli 1 --divergent-pick most-common --out paper/evidence/bench\\f2-priority.cbin --runs-dir evals/runs",
+   "contract": "evals/inbox-agent/priority.contract.toml"
+  },
+  "classify_distill": {
+   "exit": 0,
+   "verdict": "PASS",
+   "agreement": null,
+   "eval_run_id": null,
+   "artifact_id": "4a1815e617342fb396414d1f51c7c327c2fe6f5aa1a58ecf4212ebbd270098f8",
+   "artifact_path": "paper/evidence/bench/f2-classify.cbin",
+   "refusal_verbatim": null,
+   "cmd": "auto distill --contract evals/inbox-agent/classify.contract.toml --divergent-pick most-common --holdout 0 (hand-run after the scripted enum refusal; exact differential 40/40)"
+  },
+  "priority_distill": {
+   "exit": 1,
+   "verdict": "FAIL",
+   "agreement": null,
+   "eval_run_id": null,
+   "artifact_id": null,
+   "artifact_path": null,
+   "refusal_verbatim": "emit blocked - verdict FAIL: 3 divergent-reference groups fail the EXACT contract (e.g. 'recorded outputs agree for input #5 - 2 distinct recorded output(s)'); the wave-5 priority contract declares no acceptance threshold - 92.5%-deterministic behavior cannot pass an exact contract (the ADR-0018 motivation, measured)",
+   "cmd": "auto distill --contract evals/inbox-agent/priority.contract.toml --divergent-pick most-common --holdout 0 (hand-run)"
+  }
+ },
+ "h4_probes": {
+  "probes_file": "evals/bench/probes-f2.jsonl",
+  "exit_codes": "0 = answered (tier-1), 3 = abstained (guard trip, no tier-0)",
+  "accounting": "false-abstain = heldout abstained; false-proceed = ood answered (the cardinal failure)",
+  "artifacts": {
+   "classify_v1_jaccard": {
+    "status": "NOT RUN (artifact not emitted)"
+   },
+   "priority_v1_jaccard": {
+    "status": "NOT RUN (artifact not emitted)"
+   }
+  }
+ },
+ "status": "complete",
+ "deviations": [
+  "recorded 20 distinct tickets (track spec) vs DESIGN.md's >=40 corpus rule / 40-run pre-registration; F2_COUNT=40 restores it \u2014 logged either way",
+  "classify/priority contracts used VERBATIM (committed wave 5): each carries one example input outside the first-20 window, filled from the 2026-07-04 store \u2014 expected to constrain enum emits; the recorded verdicts in compile.* are the results"
+ ]
+}

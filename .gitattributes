@@ -1,0 +1,8 @@
+* text=auto
+*.rs text eol=lf
+*.fbs text eol=lf
+*.md text eol=lf
+*.toml text eol=lf
+*.yml text eol=lf
+*.air binary
+crates/auto-ir/tests/golden/*.txt text eol=lf

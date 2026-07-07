@@ -1,0 +1,44 @@
+# Emit contract for the ticket-triage span (the economics demo, E1).
+# Examples are RECORDED reality: each expected output is what the reference
+# frontier agent actually answered on 2026-07-04 (compile-store recording).
+# Cost/token budgets live in triage-recorded.contract.toml — they are claims
+# about the RECORDED reference (measured from reserved span attrs in trace
+# mode) and are unmeasurable on a wasm subject, which has no billing at all;
+# declaring them here would honestly force every emit Inconclusive.
+contract_version = 0
+task = "ticket-triage"
+
+[scope]
+type = "span"
+kind = "model_call"
+name = "triage"
+
+[interface]
+input = "json"
+output = "text"
+
+[[example]]
+name = "billing-duplicate-charge"
+match = "exact"
+input = { ticket = "I was charged twice for my subscription this month, please refund the duplicate payment." }
+output = "billing"
+
+[[example]]
+name = "bug-settings-crash"
+match = "exact"
+input = { ticket = "The app crashes immediately when I open the settings page on Android." }
+output = "bug"
+
+[[example]]
+name = "feature-sheets-export"
+match = "exact"
+input = { ticket = "Please add support for exporting reports directly to Google Sheets." }
+output = "feature"
+
+[[property]]
+kind = "one_of"
+target = "output"
+values = ["billing", "bug", "feature"]
+
+[budgets]
+max_latency_ms_p95 = 30000

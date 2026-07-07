@@ -1,0 +1,14 @@
+graph "generative-effects" id=00000000000000000000000000000003 schema_version=0
+nodes=4 edges=3 regions=1
+
+nodes:
+  n0 input "prompt" : () -> (prompt:text) [deterministic]
+  n1 model_call(frontier) "draft" : (prompt:text) -> (draft:text) [generative] caps={net,secrets} mem={read,append} bounds={max_latency_ms=30000, max_cost_usd_micros=500000, max_tokens=4096}
+  n2 transform(split_paragraphs) "split" : (draft:text) -> (paragraphs:list<text>) [deterministic]
+  n3 output "paragraphs" : (paragraphs:list<text>) -> () [deterministic]
+edges:
+  n0[0] -> n1[0]
+  n1[0] -> n2[0]
+  n2[0] -> n3[0]
+regions:
+  r0 "generative-core" nodes={n1}

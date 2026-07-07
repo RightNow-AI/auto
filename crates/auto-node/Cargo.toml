@@ -1,0 +1,45 @@
+[package]
+name = "auto-node"
+description = "In-process napi embedding of a compiled .cbin: the tier-1 fast path inside the agent's OWN Node.js process — no subprocess, no HTTP, no stdio (ADR-0026). Pure artifacts only in v0; the auto-py twin's tools= host (ADR-0027) is a recorded follow-up."
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+publish.workspace = true
+
+[lib]
+name = "auto_node"
+# cdylib: the Node addon (`auto_node.node`) the napi cli / a renamed cargo
+# cdylib provides. rlib: so `cargo test`/`clippy --all-targets` build the crate
+# as a normal lib and link the pure-logic unit tests (ADR-0026, mirroring
+# ADR-0024 §consequences).
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+# napi 3 is the current stable major (napi 2 is maintenance). Pinned EXACT
+# (=3.10.3 / =3.5.9): the proc-macro output, the runtime crate, and the
+# registration ABI the @napi-rs/cli build wraps must agree on one version —
+# the same exact-pin rationale as flatbuffers (ADR-0001). MSRV 1.88 <= the
+# workspace's 1.96. Both are OPTIONAL behind the `node` crate feature (below),
+# OFF for check/clippy/test so the cargo gates build no FFI and need no Node
+# toolchain. Justification + alternatives: spec/adr/0026-napi-embedding.md.
+napi = { version = "=3.10.3", optional = true }
+napi-derive = { version = "=3.5.9", optional = true }
+auto-runtime = { workspace = true }
+auto-backend = { workspace = true }
+auto-trace = { workspace = true }
+serde_json = { workspace = true }
+
+[build-dependencies]
+# NOT optional (build scripts cannot cfg their own deps on crate features);
+# build.rs calls napi_build::setup() only when the `node` feature is on.
+napi-build = "=2.3.2"
+
+[features]
+# The FFI surface. The @napi-rs/cli build (or a plain
+# `cargo build --release --features node`) turns this on to produce the
+# addon; `cargo check|clippy|test` leave it OFF so those gates compile pure
+# Rust only (spec/adr/0026-napi-embedding.md §decision).
+node = ["dep:napi", "dep:napi-derive"]
+
+[lints]
+workspace = true

@@ -1,0 +1,20 @@
+{
+  "name": "auto-node",
+  "version": "0.0.1",
+  "private": true,
+  "description": "In-process napi embedding of a compiled Auto .cbin artifact — the tier-1 fast path inside the agent's own Node.js process (ADR-0026). Private v0: no registry publish, no prebuilds; the addon is built on and for the build host.",
+  "main": "auto_node.node",
+  "types": "index.d.ts",
+  "license": "Apache-2.0",
+  "napi": {
+    "binaryName": "auto_node",
+    "targets": [
+      "x86_64-pc-windows-msvc",
+      "x86_64-unknown-linux-gnu"
+    ]
+  },
+  "scripts": {
+    "build": "npx --yes --package @napi-rs/cli@3 napi build --release --features node --dts ../../target/auto_node.generated.d.ts",
+    "build:debug": "npx --yes --package @napi-rs/cli@3 napi build --features node --dts ../../target/auto_node.generated.d.ts"
+  }
+}

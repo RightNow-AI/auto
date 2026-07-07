@@ -1,0 +1,3 @@
+  [FAIL] recorded outputs agree for input #5 — 2 distinct recorded output(s), 0 recorded error(s) over 2 observation(s); subject not run
+  [FAIL] recorded outputs agree for input #22 — 2 distinct recorded output(s), 0 recorded error(s) over 2 observation(s); subject not run
+  [FAIL] recorded outputs agree for input #39 — 2 distinct recorded output(s), 0 recorded error(s) over 2 observation(s); subject not run

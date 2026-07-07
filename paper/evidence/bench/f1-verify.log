@@ -1,0 +1,16 @@
+$ target/release/auto verify --contract evals/bench/bench-f1.contract.toml --store target/bench/f1.db --runs-dir evals/runs
+--- stdout ---
+verification — contract d9d8928b903e task "ticket-triage"
+subject: trace-store task "ticket-triage" (80 traces)
+observations: 80
+checks:
+  [pass] observations free of recorded errors (80 observations)
+  [pass] interface conformance (80 observations)
+  [pass] example "billing-duplicate-charge" (2 matching observation(s))
+  [pass] example "bug-settings-crash" (2 matching observation(s))
+  [pass] property one_of(output, 3 values) (80 observations)
+  [pass] budget max_latency_ms_p95 <= 30000 (recorded p95 = 1535ms over 80 observations)
+verdict: PASS
+eval run 95c62cb4353505278c2b8242165df2aeff0387e1140ee31bb97e9b4d86f3cf98 -> evals/runs\95c62cb4353505278c2b8242165df2aeff0387e1140ee31bb97e9b4d86f3cf98.json
+
+--- stderr ---

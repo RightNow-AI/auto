@@ -1,0 +1,34 @@
+# rust
+/target
+evals/toy-agent/fake-frontier-impl/target/
+evals/toy-agent/fake-frontier-impl/Cargo.lock
+crates/auto-passes/dsl-interpreter/target/
+crates/auto-passes/dsl-interpreter/Cargo.lock
+crates/auto-passes/model-interpreter/target/
+crates/auto-passes/model-interpreter/Cargo.lock
+crates/auto-passes/mlp-interpreter/target/
+crates/auto-passes/mlp-interpreter/Cargo.lock
+
+# local toolchain binaries (flatc etc.) — see README for install
+/tools/
+
+# python
+__pycache__/
+*.pyc
+.venv/
+dist/
+*.egg-info/
+
+# node
+node_modules/
+
+# editor noise
+.vscode/
+.idea/
+
+# secrets — API keys live here, never in git (constitution: owner-authorized
+# spend only; the capped client reads these)
+.env
+.env.*
+crates/auto-node/*.node
+paper/arxiv/

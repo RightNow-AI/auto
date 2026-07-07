@@ -1,0 +1,14 @@
+{
+  "name": "@auto/sdk",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Auto trace SDK: record agent runs to v0 JSONL traces; replay them with recorded outputs substituted (spec/trace.md)",
+  "type": "module",
+  "main": "src/index.ts",
+  "engines": {
+    "node": ">=22.6"
+  },
+  "scripts": {
+    "test": "node --experimental-strip-types --test tests/tracer.test.ts"
+  }
+}

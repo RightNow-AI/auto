@@ -1,0 +1,60 @@
+I was charged twice for my subscription this month, please refund the duplicate payment.
+My invoice shows the old plan price even though I downgraded two weeks ago.
+The receipt for order 4482 never arrived in my inbox, can you resend it?
+Why did my card get billed $49 when the checkout page said $39?
+I need a VAT invoice for last month's payment for our accounting team.
+Please cancel my subscription and refund the charge from yesterday.
+My payment failed but the money left my bank account anyway.
+Can I switch from monthly to annual billing and get the discount applied?
+The proration on my upgrade looks wrong, I was billed for a full month.
+Our company card expired and the retry charged the wrong backup card.
+I want a refund for the unused seats on our team plan.
+The billing portal shows a past-due balance we already paid by wire.
+Please update the billing email so invoices go to accounts payable.
+My trial converted to paid without warning and I was charged $99.
+The currency on my invoice is USD but we signed up for EUR pricing.
+I was billed for the enterprise tier but we are on the starter plan.
+Charge on my statement says your company name twice with two amounts.
+How do I download all my past receipts for tax season?
+The coupon SAVE20 was not applied to my renewal payment.
+We prepaid for a year, why is there a new monthly charge on the card?
+The app crashes immediately when I open the settings page on Android.
+Export to CSV fails with a 500 error every time I include the date column.
+The dashboard freezes after I upload a file larger than 10 megabytes.
+Login is broken since this morning, the page just reloads with no error.
+Search returns no results even for items I can see in the list view.
+The mobile app shows a blank white screen after the latest update.
+Saving a draft throws "unexpected token" and my changes are lost.
+Notifications arrive three hours late and some never arrive at all.
+The PDF preview renders every page upside down in Firefox.
+Two-factor codes are rejected even though my clock is synced.
+Dark mode makes all the buttons invisible on the reports screen.
+The API returns a timeout for any request with more than 50 items.
+Dragging a card between columns duplicates it instead of moving it.
+The date picker jumps to 1970 whenever I select a Sunday.
+Uploaded images are corrupted and show as gray rectangles.
+The sync between desktop and web silently drops my latest edits.
+Keyboard shortcuts stopped working after the last release.
+The export email links to a file that returns 404 not found.
+Deleting a folder crashes the app and the folder comes back on restart.
+Autosave says saved but reopening the document shows an old version.
+Please add support for exporting reports directly to Google Sheets.
+It would be great to have a dark theme for the editor.
+Can you add keyboard shortcuts for switching between projects?
+A calendar view of deadlines would make planning much easier.
+Please support single sign-on with Okta for enterprise accounts.
+I wish there was an offline mode for working on flights.
+Add the ability to duplicate a project with all its settings.
+Could you integrate with Slack so updates post to our channel?
+A bulk-edit mode for tags would save us hours every week.
+Please add custom fields on tasks so we can track priority.
+It would help to have version history with one-click restore.
+Can we get an audit log export for compliance reviews?
+Add support for right-to-left languages in the editor.
+A public API for creating invoices programmatically would be great.
+Please let admins set default permissions for new members.
+Could you add a Gantt chart view for long-running projects?
+Templates for common workflows would speed up onboarding.
+I would love webhook notifications when a form is submitted.
+Add an option to schedule reports to be emailed weekly.
+Please support importing data from Trello boards.

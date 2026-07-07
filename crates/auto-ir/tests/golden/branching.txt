@@ -1,0 +1,18 @@
+graph "branching" id=00000000000000000000000000000002 schema_version=0
+nodes=6 edges=5 regions=1
+
+nodes:
+  n0 input "request" : () -> (request:json) [deterministic]
+  n1 branch "cache-check" : (request:json) -> (hit:json, miss:json) [deterministic] mem={read}
+  n2 transform(render_cached) "cached" : (hit:json) -> (response:text) [deterministic]
+  n3 tool_call(http.get) "origin" : (miss:json) -> (response:text) [probabilistic] caps={net} bounds={max_latency_ms=5000}
+  n4 output "cached_response" : (response:text) -> () [deterministic]
+  n5 output "origin_response" : (response:text) -> () [deterministic]
+edges:
+  n0[0] -> n1[0]
+  n1[0] -> n2[0]
+  n1[1] -> n3[0]
+  n2[0] -> n4[0]
+  n3[0] -> n5[0]
+regions:
+  r0 "hot-path" nodes={n1,n2}

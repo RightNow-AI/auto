@@ -1,0 +1,8 @@
+# Seeds for failure cases proptest has generated in the past. It is
+# automatically read and these particular cases re-run before any
+# novel cases are generated.
+#
+# It is recommended to check this file in to source control so that
+# everyone who runs the test benefits from these saved cases.
+cc 4c83ec1b4ec1769b4e80a91d1502e0aca728eeb18b39a554c50b728438122931 # shrinks to t = Trace { header: TraceHeader { trace_id: TraceId(0), task: "a", started_at_ms: 0, sdk: "prop/0", attrs: {} }, spans: [Span { span_id: SpanId(1), parent_span_id: None, seq: 1, kind: ModelCall, name: "a", input: Array [Number(5.99197023991849e-221)], output: None, error: None, started_at_ms: 1, duration_ms: 0, attrs: {} }] }
+cc 61de192fff562e4350336ad8a2f6cc7a4a3eea8167393ad5f953462618b4784b # shrinks to t = Trace { header: TraceHeader { trace_id: TraceId(0), task: "-", started_at_ms: 0, sdk: "prop/0", attrs: {} }, spans: [Span { span_id: SpanId(1), parent_span_id: None, seq: 1, kind: ModelCall, name: ".", input: Null, output: Some(Object {"a": Object {"a": Number(9.767726605746407e+145)}}), error: None, started_at_ms: 1, duration_ms: 0, attrs: {} }] }

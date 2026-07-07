@@ -1,0 +1,5 @@
+# AUTO-BENCH v1 F6 recompile events.
+pos,event,generation,distinct_witnesses,artifact,detail
+8,compile-pass,1,8,evals/bench/f6-stream/artifacts-c\f6-gen1.cbin,eval_run=c95ac45da795fca8fe622761e1c53f2634c9023b97939c8faa2880f78bd8959e wall_ms=1859
+83,compile-pass,2,16,evals/bench/f6-stream/artifacts-c\f6-gen2.cbin,eval_run=64534ee80d600a4b6413e0ccfbe4cfad2c5c0bbb835c446bb4ce7253c6cb8921 wall_ms=1975
+154,compile-pass,3,24,evals/bench/f6-stream/artifacts-c\f6-gen3.cbin,eval_run=2164383c1b87b591f24d88342d21b93e72ec73bab986430b45be94d39bac295b wall_ms=2292

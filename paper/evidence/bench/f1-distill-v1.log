@@ -1,0 +1,60 @@
+$ target/release/auto distill --contract evals/bench/bench-f1.contract.toml --store target/bench/f1.db --trainer python crates/auto-passes/trainer/tree_train.py --model-kind tree --input-field ticket --holdout 0 --seed 0 --divergent-pick most-common --guard-alpha-milli 1 --runs-dir evals/runs --out paper/evidence/bench\f1-triage-v1.cbin
+--- stdout ---
+canonical pick: 40 trainable input(s), 0 divergent reference(s) resolved to their majority witness, 0 errored group(s) skipped
+distilled: tree_train.py sklearn-1.9.0 seed=0 (train_accuracy 1.000 over 40, holdout_accuracy 1.000 over 0, classes ["billing", "bug"])
+verification — contract d9d8928b903e task "ticket-triage"
+subject: distill candidate wasm "decision-tree-interpreter (distilled)" vs trace-store target/bench/f1.db
+observations: 42
+checks:
+  [pass] interface conformance (2 observations)
+  [pass] example "billing-duplicate-charge" (1 matching observation(s))
+  [pass] example "bug-settings-crash" (1 matching observation(s))
+  [pass] property one_of(output, 3 values) (2 observations)
+  [pass] budget max_latency_ms_p95 <= 30000 (measured p95 = 0ms over 2 observations)
+  [pass] differential: input #0 reproduces recorded output (2 observation(s))
+  [pass] differential: input #1 reproduces recorded output (2 observation(s))
+  [pass] differential: input #2 reproduces recorded output (2 observation(s))
+  [pass] differential: input #3 reproduces recorded output (2 observation(s))
+  [pass] differential: input #4 reproduces recorded output (2 observation(s))
+  [pass] differential: input #5 reproduces recorded output (2 observation(s))
+  [pass] differential: input #6 reproduces recorded output (2 observation(s))
+  [pass] differential: input #7 reproduces recorded output (2 observation(s))
+  [pass] differential: input #8 reproduces recorded output (2 observation(s))
+  [pass] differential: input #9 reproduces recorded output (2 observation(s))
+  [pass] differential: input #10 reproduces recorded output (2 observation(s))
+  [pass] differential: input #11 reproduces recorded output (2 observation(s))
+  [pass] differential: input #12 reproduces recorded output (2 observation(s))
+  [pass] differential: input #13 reproduces recorded output (2 observation(s))
+  [pass] differential: input #14 reproduces recorded output (2 observation(s))
+  [pass] differential: input #15 reproduces recorded output (2 observation(s))
+  [pass] differential: input #16 reproduces recorded output (2 observation(s))
+  [pass] differential: input #17 reproduces recorded output (2 observation(s))
+  [pass] differential: input #18 reproduces recorded output (2 observation(s))
+  [pass] differential: input #19 reproduces recorded output (2 observation(s))
+  [pass] differential: input #20 reproduces recorded output (2 observation(s))
+  [pass] differential: input #21 reproduces recorded output (2 observation(s))
+  [pass] differential: input #22 reproduces recorded output (2 observation(s))
+  [pass] differential: input #23 reproduces recorded output (2 observation(s))
+  [pass] differential: input #24 reproduces recorded output (2 observation(s))
+  [pass] differential: input #25 reproduces recorded output (2 observation(s))
+  [pass] differential: input #26 reproduces recorded output (2 observation(s))
+  [pass] differential: input #27 reproduces recorded output (2 observation(s))
+  [pass] differential: input #28 reproduces recorded output (2 observation(s))
+  [pass] differential: input #29 reproduces recorded output (2 observation(s))
+  [pass] differential: input #30 reproduces recorded output (2 observation(s))
+  [pass] differential: input #31 reproduces recorded output (2 observation(s))
+  [pass] differential: input #32 reproduces recorded output (2 observation(s))
+  [pass] differential: input #33 reproduces recorded output (2 observation(s))
+  [pass] differential: input #34 reproduces recorded output (2 observation(s))
+  [pass] differential: input #35 reproduces recorded output (2 observation(s))
+  [pass] differential: input #36 reproduces recorded output (2 observation(s))
+  [pass] differential: input #37 reproduces recorded output (2 observation(s))
+  [pass] differential: input #38 reproduces recorded output (2 observation(s))
+  [pass] differential: input #39 reproduces recorded output (2 observation(s))
+  [pass] differential agreement >= 950/1000 — measured 40/40 = 100.0% (truncated)
+verdict: PASS
+eval run 51da04aaa91f29bf7ba260df9a030cf2678c3611d8e10d19eec550cee4892142 -> evals/runs\51da04aaa91f29bf7ba260df9a030cf2678c3611d8e10d19eec550cee4892142.json
+guard: 40 witness(es), threshold 0.9217
+artifact 551694f0b696f44d4d39082b29cda9c8fef3cf880ff0e97466448d7994ac9e91 -> paper/evidence/bench\f1-triage-v1.cbin
+
+--- stderr ---

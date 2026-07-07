@@ -1,0 +1,79 @@
+[workspace]
+resolver = "3"
+# wasm implementation crates build for wasm32-unknown-unknown on their own;
+# keeping them out of the workspace keeps host builds and lockfiles separate
+exclude = [
+    "crates/auto-passes/dsl-interpreter",
+    "crates/auto-passes/mlp-interpreter",
+    "crates/auto-passes/model-interpreter",
+    "evals/toy-agent/fake-frontier-impl",
+]
+members = [
+    "crates/auto-backend",
+    "crates/auto-cli",
+    "crates/auto-contract",
+    "crates/auto-daemon",
+    "crates/auto-dsl",
+    "crates/auto-frontier",
+    "crates/auto-model",
+    "crates/auto-node",
+    "crates/auto-ir",
+    "crates/auto-passes",
+    "crates/auto-proxy",
+    "crates/auto-py",
+    "crates/auto-registry",
+    "crates/auto-runtime",
+    "crates/auto-serve",
+    "crates/auto-trace",
+]
+
+[workspace.package]
+version = "0.0.1"
+edition = "2024"
+rust-version = "1.96"
+publish = false
+
+[workspace.dependencies]
+# exact pin: flatc, the flatbuffers runtime, and the golden files must agree on
+# one version (see spec/adr/0001-ir-serialization.md)
+flatbuffers = "=25.12.19"
+thiserror = "2.0.18"
+clap = { version = "4.6.1", features = ["derive"] }
+ed25519-dalek = "2.2.0"
+getrandom = "0.4.3"
+proptest = "1.11.0"
+regex = "1.12.4"
+rusqlite = { version = "0.40.1", features = ["bundled"] }
+toml = "1.1.2"
+serde = { version = "1.0.228", features = ["derive"] }
+# float_roundtrip: recorded values must survive parse→store→load bit-exactly;
+# the default fast float parser is lossy at extreme magnitudes (caught by
+# auto-trace's roundtrip property test)
+serde_json = { version = "1.0.150", features = ["float_roundtrip"] }
+sha2 = "0.11.0"
+tempfile = "3"
+# blocking http SERVER for auto-serve / auto-proxy — thread-per-connection,
+# no tokio (same synchronous-workspace rationale as ureq; ADR-0011)
+tiny_http = "0.12.0"
+# blocking http for the frontier client (rustls default); no tokio in the
+# workspace — the CLI is synchronous (spec/adr/0010-frontier-client.md)
+ureq = { version = "3.3.0", features = ["json"] }
+wasmtime = "46.0.1"
+auto-backend = { path = "crates/auto-backend" }
+auto-contract = { path = "crates/auto-contract" }
+auto-daemon = { path = "crates/auto-daemon" }
+auto-dsl = { path = "crates/auto-dsl" }
+auto-frontier = { path = "crates/auto-frontier" }
+auto-model = { path = "crates/auto-model" }
+auto-passes = { path = "crates/auto-passes" }
+auto-proxy = { path = "crates/auto-proxy" }
+auto-registry = { path = "crates/auto-registry" }
+auto-serve = { path = "crates/auto-serve" }
+auto-ir = { path = "crates/auto-ir" }
+auto-runtime = { path = "crates/auto-runtime" }
+auto-trace = { path = "crates/auto-trace" }
+
+[workspace.lints.rust]
+# CLAUDE.md: no `unsafe` without a justification comment. deny (not forbid) so the
+# flatc-generated module can carry a justified allow.
+unsafe_code = "deny"

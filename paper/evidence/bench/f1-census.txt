@@ -1,0 +1,10 @@
+determinism report — task "ticket-triage" (80 traces)
+effectful spans: 80 (structural spans excluded: 80)
+witnessed (signature observed >=2 across runs): 80 of 80 spans
+  deterministic: 80 spans (100.0% of witnessed)
+  divergent:     0 spans
+  unwitnessed:   0 spans — no claim made
+time-weighted deterministic fraction of witnessed: 100.0%
+by kind:
+  model_call: 80 spans — 80 deterministic, 0 divergent, 0 unwitnessed
+(fractions cover witnessed spans only; nothing is extrapolated)

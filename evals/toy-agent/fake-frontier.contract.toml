@@ -1,0 +1,33 @@
+# Contract for the toy agent model call - the secretly-symbolic span.
+contract_version = 0
+task = "toy-agent"
+eval_sets = ["cases.jsonl"]
+
+[scope]
+type = "span"
+kind = "model_call"
+name = "fake-frontier"
+
+[interface]
+input = "json"
+output = "text"
+
+[[example]]
+name = "riverbank-doc"
+match = "exact"
+input = { prompt = "The quick brown fox jumps over the lazy dog near the riverbank." }
+output = "brown jumps quick"
+
+[[property]]
+kind = "regex"
+target = "output"
+pattern = "^[a-z ]*$"
+
+[[property]]
+kind = "len_range"
+target = "output"
+min = 1
+max = 200
+
+[budgets]
+max_latency_ms_p95 = 1000

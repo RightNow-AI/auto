@@ -1,0 +1,6 @@
+# AUTO-BENCH v1 F6 recompile events.
+pos,event,generation,distinct_witnesses,artifact,detail
+8,compile-pass,1,8,evals/bench/f6-stream/artifacts-b\f6-gen1.cbin,eval_run=75db45ed0a7576aa9cd38cce830f6a007fc79b7300cd683c7a4c758f3def7022 wall_ms=1780
+83,compile-refused,1,16,,rc=1 eval_run=b4a2680c229fcfc9b6d01fc08282626392b4b52d4ba878f4da94bb0f0ae8dbe9 auto distill: emit blocked — verdict FAIL (a failing or inconclusive contract never emits; CLAUDE.md)
+154,compile-refused,1,24,,rc=1 eval_run=bdf18da12df06a1006d3aa12acdd609c1969b609b92c3d584bdcf906483dd0fb auto distill: emit blocked — verdict FAIL (a failing or inconclusive contract never emits; CLAUDE.md)
+216,compile-refused,1,32,,rc=1 eval_run=9d95b509f661fd5ac8e56804bca8ef55c23e8d9c14f31b837c8ddf04a345522d auto distill: emit blocked — verdict FAIL (a failing or inconclusive contract never emits; CLAUDE.md)

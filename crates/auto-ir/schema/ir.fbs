@@ -1,0 +1,85 @@
+// Auto IR — flatbuffers serialization schema.
+// Normative spec: spec/ir.md. Schema version is carried in Graph.schema_version;
+// see spec/ir.md "versioning" for the bump policy.
+
+namespace auto.ir.fb;
+
+// Capability effects a node may exercise at runtime.
+enum CapabilityEffect : ubyte { Net = 0, Fs = 1, Exec = 2, Secrets = 3, Payments = 4 }
+
+// Effects against the task's memory store.
+enum MemoryEffect : ubyte { Read = 0, Write = 1, Append = 2 }
+
+// How much of the node's behavior is fixed by its inputs.
+enum Uncertainty : ubyte { Deterministic = 0, Probabilistic = 1, Generative = 2 }
+
+// Value types flowing along edges. List carries its element type in TypeRef.elem.
+enum TypeKind : ubyte { Unit = 0, Bool = 1, Int = 2, Float = 3, Text = 4, Bytes = 5, Json = 6, List = 7 }
+
+table TypeRef {
+  kind: TypeKind;
+  elem: TypeRef; // present iff kind == List
+}
+
+table Port {
+  name: string (required);
+  ty: TypeRef (required);
+}
+
+table InputK {}
+table OutputK {}
+table BranchK {}
+table ToolCallK { tool: string (required); }
+table ModelCallK { model_class: string (required); }
+table TransformK { op: string (required); }
+
+union NodeKind { InputK, OutputK, ToolCallK, ModelCallK, TransformK, BranchK }
+
+// All bounds optional; null means "not declared". Never fabricated.
+table ResourceBounds {
+  max_latency_ms: uint64 = null;
+  max_cost_usd_micros: uint64 = null;
+  max_tokens: uint64 = null;
+  max_memory_bytes: uint64 = null;
+}
+
+table Node {
+  id: uint64;
+  name: string (required);
+  kind: NodeKind (required);
+  inputs: [Port] (required);
+  outputs: [Port] (required);
+  capabilities: [CapabilityEffect] (required);
+  memory: [MemoryEffect] (required);
+  uncertainty: Uncertainty;
+  bounds: ResourceBounds (required);
+}
+
+// Dataflow edge: (from_node, from_port) -> (to_node, to_port). Port indices are
+// positions in the source node's outputs / destination node's inputs.
+struct Edge {
+  from_node: uint64;
+  from_port: uint32;
+  to_node: uint64;
+  to_port: uint32;
+}
+
+// Region: a named group of nodes, the unit of extraction in later passes.
+table Region {
+  id: uint64;
+  name: string (required);
+  nodes: [uint64] (required);
+}
+
+table Graph {
+  schema_version: uint32;
+  id_hi: uint64;
+  id_lo: uint64;
+  name: string (required);
+  nodes: [Node] (required);
+  edges: [Edge] (required);
+  regions: [Region] (required);
+}
+
+root_type Graph;
+file_identifier "AIR0";

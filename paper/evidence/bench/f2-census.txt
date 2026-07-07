@@ -1,0 +1,22 @@
+determinism report — task "inbox-agent" (80 traces)
+effectful spans: 320 (structural spans excluded: 80)
+witnessed (signature observed >=2 across runs): 320 of 320 spans
+  deterministic: 248 spans (77.5% of witnessed)
+  divergent:     72 spans
+  unwitnessed:   0 spans — no claim made
+time-weighted deterministic fraction of witnessed: 68.6%
+by kind:
+  model_call: 240 spans — 168 deterministic, 72 divergent, 0 unwitnessed
+  tool_call: 80 spans — 80 deterministic, 0 divergent, 0 unwitnessed
+top divergent signatures:
+  model_call(priority) input=a2ed55c4dc2d — 2 observations, 2 distinct outputs, 0 errors
+  model_call(priority) input=b79956e58374 — 2 observations, 2 distinct outputs, 0 errors
+  model_call(priority) input=ecf5be059553 — 2 observations, 2 distinct outputs, 0 errors
+  model_call(summarize) input=12b5c99ead33 — 2 observations, 2 distinct outputs, 0 errors
+  model_call(summarize) input=12f9938a2cbd — 2 observations, 2 distinct outputs, 0 errors
+  model_call(summarize) input=1817220e683e — 2 observations, 2 distinct outputs, 0 errors
+  model_call(summarize) input=1a1ae40f840e — 2 observations, 2 distinct outputs, 0 errors
+  model_call(summarize) input=22baee4f59ba — 2 observations, 2 distinct outputs, 0 errors
+  model_call(summarize) input=2af6ca6d78e5 — 2 observations, 2 distinct outputs, 0 errors
+  model_call(summarize) input=4537763dceb8 — 2 observations, 2 distinct outputs, 0 errors
+(fractions cover witnessed spans only; nothing is extrapolated)

@@ -1,0 +1,31 @@
+# Emit contract for the inbox-agent summarize span (wave-5 multi-step E1).
+# Free-text output: 20% witnessed-deterministic at default temperature, so
+# the compiled artifact pins the ONE recorded behavior per witnessed input
+# (memorization semantics; the guard abstains beyond calibration) - the
+# statistical-acceptance open question made concrete.
+contract_version = 0
+task = "inbox-agent"
+
+[scope]
+type = "span"
+kind = "model_call"
+name = "summarize"
+
+[interface]
+input = "json"
+output = "text"
+
+[[example]]
+name = "sheets-export"
+match = "exact"
+input = { ticket = "Please add support for exporting reports directly to Google Sheets." }
+output = "Add direct Google Sheets export support for reports"
+
+[[property]]
+kind = "len_range"
+target = "output"
+min = 1
+max = 120
+
+[budgets]
+max_latency_ms_p95 = 30000

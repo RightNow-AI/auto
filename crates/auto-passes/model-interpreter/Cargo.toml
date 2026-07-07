@@ -1,0 +1,24 @@
+# Workspace-excluded wasm crate: the distilled-model interpreter embedded in
+# distilled artifacts. Built by auto-passes' build.rs; shares inference with
+# the native side via the auto-model path dependency.
+[package]
+name = "model_interpreter"
+version = "0.0.1"
+edition = "2024"
+publish = false
+
+[workspace]
+
+[lib]
+crate-type = ["cdylib"]
+
+[dependencies]
+auto-model = { path = "../../auto-model" }
+# float_roundtrip: input parsing must be bit-exact with the native side
+serde_json = { version = "1.0.150", features = ["float_roundtrip"] }
+
+[lints.rust]
+unsafe_code = "deny"
+
+[profile.release]
+opt-level = "s"

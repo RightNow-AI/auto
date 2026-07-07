@@ -1,0 +1,18 @@
+[package]
+name = "auto-ir"
+description = "Auto IR: typed task graph — capability/memory effects, uncertainty, resource bounds, flatbuffers serialization with byte-stable round-trip"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+publish.workspace = true
+build = "build.rs"
+
+[dependencies]
+flatbuffers.workspace = true
+thiserror.workspace = true
+
+[dev-dependencies]
+proptest.workspace = true
+
+[lints]
+workspace = true

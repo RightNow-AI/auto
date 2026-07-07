@@ -1,0 +1,324 @@
+# AUTO-BENCH v1 F6 novelty-stream (H1, the ratchet curve) - per-position log.
+# REAL leg: session bench-f6a, cap 1.00 USD, tier-0 frontier:gpt-5.4-mini, ledger ~/.auto/spend.jsonl
+# stream=evals\bench\f6-stream\stream.jsonl K=8 guard_alpha_milli=100
+# tier: bootstrap-record = paid recording via evals/ticket-triage/agent.py (no artifact yet);
+#       tier1 = guard proceed, compiled answer, marginal cost 0; tier0-deopt = guard trip, paid
+#       frontier answer ingested into the store (the ratchet); abstain/error = honest failures.
+# cost_usd_micros: bootstrap = reserved span attr from the store; tier0-deopt = spend-ledger
+# delta for this session; tier1 = 0. latency_ms: bootstrap = recorded span duration (real API
+# latency); tier0-deopt = the runtime's measured tier-0 wall time; tier1 = one-shot `auto run`
+# wall time (process spawn + wasm compile included - the honest one-shot number; see README).
+pos,category,text_sha12,distinct_seen,tier,guard_distance,latency_ms,cost_usd_micros,artifact_generation,answer
+1,billing,17cb12f37f2c,1,bootstrap-record,,1756,63,0,billing
+2,bug,ce3ad56c2cf2,2,bootstrap-record,,1333,57,0,bug
+3,feature,596a467f9df0,3,bootstrap-record,,837,61,0,feature
+4,billing,f08ef09a72b6,4,bootstrap-record,,997,58,0,billing
+5,bug,21e6c02f0cf9,5,bootstrap-record,,890,57,0,bug
+6,feature,63ba506c4f68,6,bootstrap-record,,929,57,0,feature
+7,billing,793f8e241429,7,bootstrap-record,,825,60,0,billing
+8,bug,c95d2df9836c,8,bootstrap-record,,1075,59,0,bug
+9,feature,85dc8b741c90,8,tier1,0.7923,72,0,1,feature
+10,billing,3f283840eeb8,8,tier1,0.7901,66,0,1,billing
+11,bug,5363b868787f,8,tier1,0.8714,68,0,1,bug
+12,feature,16311abe6402,8,tier1,0.8592,352,0,1,bug
+13,billing,793f8e241429,8,tier1,0.0000,68,0,1,billing
+14,bug,8f5076b17d0d,8,tier1,0.8792,323,0,1,bug
+15,billing,cfb98f978d8b,8,tier1,0.8690,597,0,1,billing
+16,bug,5363b868787f,8,tier1,0.8714,290,0,1,bug
+17,bug,21e6c02f0cf9,8,tier1,0.0000,856,0,1,bug
+18,feature,16311abe6402,8,tier1,0.8592,71,0,1,bug
+19,feature,63ba506c4f68,8,tier1,0.0000,77,0,1,feature
+20,billing,78a26c8bef69,8,tier1,0.8333,73,0,1,billing
+21,billing,793f8e241429,8,tier1,0.0000,71,0,1,billing
+22,feature,596a467f9df0,8,tier1,0.0000,69,0,1,feature
+23,billing,3f283840eeb8,8,tier1,0.7901,339,0,1,billing
+24,feature,596a467f9df0,8,tier1,0.0000,73,0,1,feature
+25,billing,f08ef09a72b6,8,tier1,0.0000,357,0,1,billing
+26,feature,1b3eb767452a,8,tier1,0.8897,69,0,1,bug
+27,bug,7c55b12b6d40,8,tier1,0.8551,325,0,1,bug
+28,feature,1b3eb767452a,8,tier1,0.8897,345,0,1,bug
+29,billing,17cb12f37f2c,8,tier1,0.0000,303,0,1,billing
+30,feature,68948e3c77c8,8,tier1,0.8936,847,0,1,feature
+31,bug,7c55b12b6d40,8,tier1,0.8551,304,0,1,bug
+32,billing,cfb98f978d8b,8,tier1,0.8690,78,0,1,billing
+33,billing,17cb12f37f2c,8,tier1,0.0000,78,0,1,billing
+34,feature,596a467f9df0,8,tier1,0.0000,77,0,1,feature
+35,feature,596a467f9df0,8,tier1,0.0000,79,0,1,feature
+36,billing,3f283840eeb8,8,tier1,0.7901,75,0,1,billing
+37,feature,63ba506c4f68,8,tier1,0.0000,370,0,1,feature
+38,bug,7c55b12b6d40,8,tier1,0.8551,72,0,1,bug
+39,billing,793f8e241429,8,tier1,0.0000,73,0,1,billing
+40,billing,3f283840eeb8,8,tier1,0.7901,374,0,1,billing
+41,feature,596a467f9df0,8,tier1,0.0000,70,0,1,feature
+42,feature,85dc8b741c90,8,tier1,0.7923,330,0,1,feature
+43,feature,68948e3c77c8,8,tier1,0.8936,374,0,1,feature
+44,bug,7c55b12b6d40,8,tier1,0.8551,357,0,1,bug
+45,bug,c95d2df9836c,8,tier1,0.0000,352,0,1,bug
+46,billing,f08ef09a72b6,8,tier1,0.0000,602,0,1,billing
+47,feature,85dc8b741c90,8,tier1,0.7923,820,0,1,feature
+48,feature,16311abe6402,8,tier1,0.8592,86,0,1,bug
+49,feature,68948e3c77c8,8,tier1,0.8936,79,0,1,feature
+50,security,4f493401f33b,8,tier1,0.8988,74,0,1,feature
+51,bug,21e6c02f0cf9,8,tier1,0.0000,69,0,1,bug
+52,billing,793f8e241429,8,tier1,0.0000,69,0,1,billing
+53,billing,17cb12f37f2c,8,tier1,0.0000,66,0,1,billing
+54,bug,8f5076b17d0d,8,tier1,0.8792,65,0,1,bug
+55,bug,21e6c02f0cf9,8,tier1,0.0000,65,0,1,bug
+56,feature,16311abe6402,8,tier1,0.8592,64,0,1,bug
+57,security,4ee6f6ed7ed0,8,tier1,0.9045,318,0,1,feature
+58,bug,c95d2df9836c,8,tier1,0.0000,76,0,1,bug
+59,security,77d54dd9a67c,8,tier1,0.8036,72,0,1,bug
+60,feature,85dc8b741c90,8,tier1,0.7923,67,0,1,feature
+61,security,4ee6f6ed7ed0,8,tier1,0.9045,70,0,1,feature
+62,security,4f493401f33b,8,tier1,0.8988,70,0,1,feature
+63,billing,f08ef09a72b6,8,tier1,0.0000,317,0,1,billing
+64,bug,7c55b12b6d40,8,tier1,0.8551,69,0,1,bug
+65,billing,f08ef09a72b6,8,tier1,0.0000,333,0,1,billing
+66,bug,21e6c02f0cf9,8,tier1,0.0000,68,0,1,bug
+67,billing,793f8e241429,8,tier1,0.0000,293,0,1,billing
+68,security,45bab5f6ed00,9,tier0-deopt,0.9286,966,108,1,security.phishing
+69,bug,5363b868787f,9,tier1,0.8714,79,0,1,bug
+70,security,907876c2e9aa,10,tier0-deopt,0.9351,2525,989,1,"To revoke a potentially leaked API key and rotate all related tokens, do this right away:
+
+1. Revoke the exposed API key immediately in your account/dashboard or admin console.
+2. Disable or delete any tokens, service accounts, or credentials that were derived from it.
+3. Generate a new API key and any required replacement tokens.
+4. Update all apps, CI/CD secrets, environment variables, and config files to use the new credentials.
+5. Search the public repository and commit history for the leaked secret and remove it from current files and history if possible.
+6. Check logs and usage for suspicious activity since the key was exposed.
+7. If the key may have been used externally, rotate any downstream secrets that could also be affected.
+8. Add secret-scanning and pre-commit protections to prevent future leaks.
+
+If you tell me which service this API key is for, I can give the exact revocation and rotation steps."
+71,security,4ee6f6ed7ed0,10,tier1,0.9045,327,0,1,feature
+72,security,2852dbe2ff73,10,tier1,0.9097,67,0,1,bug
+73,billing,cfb98f978d8b,10,tier1,0.8690,66,0,1,billing
+74,security,5415248e02e2,10,tier1,0.9185,67,0,1,bug
+75,bug,ce3ad56c2cf2,10,tier1,0.0000,341,0,1,bug
+76,security,4ee6f6ed7ed0,10,tier1,0.9045,68,0,1,feature
+77,security,45bab5f6ed00,10,tier0-deopt,0.9286,1490,270,1,"Security incident: phishing email impersonating support team and requesting passwords. Advise immediate reporting, user awareness notice, and credential reset for anyone who may have responded. Review email logs and block sender/domain."
+78,security,4f493401f33b,10,tier1,0.8988,171,0,1,feature
+79,feature,68948e3c77c8,10,tier1,0.8936,67,0,1,feature
+80,security,662c755241d1,11,tier0-deopt,0.9329,1848,338,1,"Rotate the password for any account that used the exposed password, especially your email account and any financial, shopping, cloud, or work accounts where you may have reused it. If you used the same password anywhere else, change those too, and enable two-factor authentication where available."
+81,security,9c474aa4438c,11,tier1,0.8896,149,0,1,bug
+82,security,f1e66211864a,11,tier1,0.8814,313,0,1,feature
+83,security,3c5b0804dfe3,11,tier1,0.9066,548,0,1,bug
+84,security,5eadfa45d7bf,11,tier1,0.8950,569,0,1,bug
+85,feature,85dc8b741c90,11,tier1,0.7923,88,0,1,feature
+86,security,45bab5f6ed00,11,tier0-deopt,0.9286,1041,108,1,security.phishing
+87,billing,78a26c8bef69,11,tier1,0.8333,65,0,1,billing
+88,security,3c5b0804dfe3,11,tier1,0.9066,69,0,1,bug
+89,security,4ee6f6ed7ed0,11,tier1,0.9045,282,0,1,feature
+90,security,45bab5f6ed00,11,tier0-deopt,0.9286,1182,239,1,"Security incident: phishing email impersonating support team to solicit passwords. High priority—contain by alerting users, preserving email headers, and checking for any credential compromise."
+91,security,2852dbe2ff73,11,tier1,0.9097,71,0,1,bug
+92,bug,21e6c02f0cf9,11,tier1,0.0000,70,0,1,bug
+93,billing,17cb12f37f2c,11,tier1,0.0000,74,0,1,billing
+94,security,5eadfa45d7bf,11,tier1,0.8950,71,0,1,bug
+95,feature,16311abe6402,11,tier1,0.8592,75,0,1,bug
+96,feature,63ba506c4f68,11,tier1,0.0000,68,0,1,feature
+97,feature,85dc8b741c90,11,tier1,0.7923,322,0,1,feature
+98,bug,ce3ad56c2cf2,11,tier1,0.0000,66,0,1,bug
+99,bug,ce3ad56c2cf2,11,tier1,0.0000,66,0,1,bug
+100,feature,68948e3c77c8,11,tier1,0.8936,338,0,1,feature
+101,feature,1b3eb767452a,11,tier1,0.8897,373,0,1,bug
+102,bug,c95d2df9836c,11,tier1,0.0000,327,0,1,bug
+103,feature,16311abe6402,11,tier1,0.8592,293,0,1,bug
+104,billing,793f8e241429,11,tier1,0.0000,859,0,1,billing
+105,bug,21e6c02f0cf9,11,tier1,0.0000,80,0,1,bug
+106,billing,793f8e241429,11,tier1,0.0000,77,0,1,billing
+107,security,5415248e02e2,11,tier1,0.9185,76,0,1,bug
+108,bug,21e6c02f0cf9,11,tier1,0.0000,71,0,1,bug
+109,feature,63ba506c4f68,11,tier1,0.0000,332,0,1,feature
+110,billing,cfb98f978d8b,11,tier1,0.8690,69,0,1,billing
+111,bug,ce3ad56c2cf2,11,tier1,0.0000,70,0,1,bug
+112,bug,c95d2df9836c,11,tier1,0.0000,66,0,1,bug
+113,security,77d54dd9a67c,11,tier1,0.8036,300,0,1,bug
+114,security,2852dbe2ff73,11,tier1,0.9097,69,0,1,bug
+115,feature,68948e3c77c8,11,tier1,0.8936,326,0,1,feature
+116,bug,5363b868787f,11,tier1,0.8714,352,0,1,bug
+117,billing,3f283840eeb8,11,tier1,0.7901,858,0,1,billing
+118,bug,5363b868787f,11,tier1,0.8714,1089,0,1,bug
+119,feature,85dc8b741c90,11,tier1,0.7923,70,0,1,feature
+120,onboarding,65e17160ea68,11,tier1,0.8987,66,0,1,billing
+121,onboarding,1c81d31bbc0b,12,tier0-deopt,0.9226,1568,451,1,"To connect your first data source, go to the data sources section and click Add connection. Choose the source type, enter the required credentials or authorization details, test the connection, and save. If the checklist is stuck on step three, try completing the data source connection from that page or refresh the app after saving. If you tell me which source you’re connecting, I can give the exact steps."
+122,feature,85dc8b741c90,12,tier1,0.7923,160,0,1,feature
+123,bug,8f5076b17d0d,12,tier1,0.8792,295,0,1,bug
+124,onboarding,65e17160ea68,12,tier1,0.8987,606,0,1,billing
+125,billing,17cb12f37f2c,12,tier1,0.0000,285,0,1,billing
+126,security,5415248e02e2,12,tier1,0.9185,62,0,1,bug
+127,bug,21e6c02f0cf9,12,tier1,0.0000,71,0,1,bug
+128,feature,1b3eb767452a,12,tier1,0.8897,67,0,1,bug
+129,security,f1e66211864a,12,tier1,0.8814,66,0,1,feature
+130,bug,5363b868787f,12,tier1,0.8714,70,0,1,bug
+131,feature,68948e3c77c8,12,tier1,0.8936,64,0,1,feature
+132,onboarding,1c81d31bbc0b,12,tier0-deopt,0.9226,1273,321,1,"Please check the setup instructions for connecting a new data source and ensure you have the required permissions. If step three is stuck, try refreshing the page or re-running the connection wizard. If it still doesn’t work, contact support with the exact error message."
+133,bug,21e6c02f0cf9,12,tier1,0.0000,241,0,1,bug
+134,onboarding,1c81d31bbc0b,12,tier0-deopt,0.9226,2000,348,1,"Step 3 usually refers to connecting your first data source. In the checklist, open the data source setup, choose the source type you want, and follow the authentication or connection prompts. If you tell me which data source you’re trying to connect, I can give the exact steps."
+135,security,3c5b0804dfe3,12,tier1,0.9066,738,0,1,bug
+136,feature,596a467f9df0,12,tier1,0.0000,279,0,1,feature
+137,onboarding,998c4ba59263,12,tier1,0.8780,71,0,1,bug
+138,bug,21e6c02f0cf9,12,tier1,0.0000,71,0,1,bug
+139,onboarding,1c81d31bbc0b,12,tier0-deopt,0.9226,1663,384,1,"To connect your first data source, open the setup or onboarding checklist and follow the data source connection flow. If step three appears stuck, try refreshing the page and checking whether the required fields are completed. If you still can’t proceed, share the product name and any error message you see so I can give more specific instructions."
+140,onboarding,998c4ba59263,12,tier1,0.8780,71,0,1,bug
+141,onboarding,6d99f75cb7ae,12,tier1,0.9197,666,0,1,bug
+142,security,f1e66211864a,12,tier1,0.8814,963,0,1,feature
+143,onboarding,bff272947e20,12,tier1,0.8963,86,0,1,bug
+144,feature,1b3eb767452a,12,tier1,0.8897,75,0,1,bug
+145,onboarding,8667e6330646,12,tier1,0.8671,79,0,1,billing
+146,feature,68948e3c77c8,12,tier1,0.8936,86,0,1,feature
+147,onboarding,8962185b2d7f,12,tier1,0.8806,340,0,1,feature
+148,onboarding,a0ba6e191d3a,12,tier1,0.9098,82,0,1,bug
+149,bug,c95d2df9836c,12,tier1,0.0000,377,0,1,bug
+150,security,2852dbe2ff73,12,tier1,0.9097,358,0,1,bug
+151,onboarding,98d321080eb1,12,tier1,0.9062,1180,0,1,bug
+152,bug,7c55b12b6d40,12,tier1,0.8551,92,0,1,bug
+153,bug,ce3ad56c2cf2,12,tier1,0.0000,80,0,1,bug
+154,onboarding,ac28bf167850,12,tier1,0.9161,393,0,1,feature
+155,security,5eadfa45d7bf,12,tier1,0.8950,74,0,1,bug
+156,billing,cfb98f978d8b,12,tier1,0.8690,94,0,1,billing
+157,onboarding,b5d2e8f9b001,12,tier1,0.8992,355,0,1,feature
+158,feature,63ba506c4f68,12,tier1,0.0000,76,0,1,feature
+159,feature,596a467f9df0,12,tier1,0.0000,76,0,1,feature
+160,onboarding,cce057678045,12,tier1,0.9128,346,0,1,bug
+161,feature,63ba506c4f68,12,tier1,0.0000,89,0,1,feature
+162,onboarding,65e17160ea68,12,tier1,0.8987,97,0,1,billing
+163,bug,7c55b12b6d40,12,tier1,0.8551,361,0,1,bug
+164,billing,3f283840eeb8,12,tier1,0.7901,80,0,1,billing
+165,security,45bab5f6ed00,12,tier0-deopt,0.9286,1050,108,1,security/phishing
+166,onboarding,1c81d31bbc0b,12,tier0-deopt,0.9226,1357,276,1,"Could you clarify which product or platform this refers to, and what kind of data source you’re trying to connect? If you share the checklist name or a screenshot, I can help with the exact steps."
+167,billing,cfb98f978d8b,12,tier1,0.8690,1062,0,1,billing
+168,billing,cfb98f978d8b,12,tier1,0.8690,84,0,1,billing
+169,onboarding,bff272947e20,12,tier1,0.8963,78,0,1,bug
+170,bug,c95d2df9836c,12,tier1,0.0000,82,0,1,bug
+171,feature,596a467f9df0,12,tier1,0.0000,84,0,1,feature
+172,feature,63ba506c4f68,12,tier1,0.0000,77,0,1,feature
+173,security,4ee6f6ed7ed0,12,tier1,0.9045,83,0,1,feature
+174,bug,21e6c02f0cf9,12,tier1,0.0000,79,0,1,bug
+175,onboarding,1c81d31bbc0b,12,tier0-deopt,0.9226,2675,460,1,"To connect your first data source, go to the Data Sources or Connections area in the app, choose the source type you want, and follow the setup prompts to authenticate and configure it. If the checklist is stuck on step three, try refreshing the page and completing the connection from the data source setup screen. If you tell me which data source you’re trying to add, I can give you the exact steps."
+176,bug,c95d2df9836c,12,tier1,0.0000,65,0,1,bug
+177,security,5eadfa45d7bf,12,tier1,0.8950,72,0,1,bug
+178,feature,16311abe6402,12,tier1,0.8592,66,0,1,bug
+179,onboarding,cce057678045,12,tier1,0.9128,67,0,1,bug
+180,security,4ee6f6ed7ed0,12,tier1,0.9045,79,0,1,feature
+181,bug,5363b868787f,12,tier1,0.8714,80,0,1,bug
+182,billing,17cb12f37f2c,12,tier1,0.0000,76,0,1,billing
+183,security,4f493401f33b,12,tier1,0.8988,63,0,1,feature
+184,onboarding,1c81d31bbc0b,12,tier0-deopt,0.9226,1485,537,1,"To connect your first data source, open the setup or integrations area in the app and choose your source type. Then follow the prompts to sign in or enter connection details, test the connection, and save it. If your getting started checklist is still stuck on step 3 after that, refresh the page and check whether the data source was successfully added.
+
+If you want, I can also help with the exact connection steps for a specific source like Salesforce, Google Analytics, or a database."
+185,bug,7c55b12b6d40,12,tier1,0.8551,90,0,1,bug
+186,feature,16311abe6402,12,tier1,0.8592,64,0,1,bug
+187,bug,21e6c02f0cf9,12,tier1,0.0000,65,0,1,bug
+188,security,9c474aa4438c,12,tier1,0.8896,67,0,1,bug
+189,feature,68948e3c77c8,12,tier1,0.8936,66,0,1,feature
+190,onboarding,8667e6330646,12,tier1,0.8671,67,0,1,billing
+191,billing,f08ef09a72b6,12,tier1,0.0000,64,0,1,billing
+192,onboarding,998c4ba59263,12,tier1,0.8780,66,0,1,bug
+193,billing,f08ef09a72b6,12,tier1,0.0000,61,0,1,billing
+194,onboarding,8962185b2d7f,12,tier1,0.8806,62,0,1,feature
+195,billing,cfb98f978d8b,12,tier1,0.8690,60,0,1,billing
+196,billing,793f8e241429,12,tier1,0.0000,59,0,1,billing
+197,security,2852dbe2ff73,12,tier1,0.9097,62,0,1,bug
+198,bug,5363b868787f,12,tier1,0.8714,60,0,1,bug
+199,security,662c755241d1,12,tier0-deopt,0.9329,1444,374,1,"Rotate the password for the affected account immediately, and also change any other accounts that used the same or a similar password. If you reused that password anywhere, update those accounts too. For extra safety, enable multi-factor authentication and review your account recovery email, security questions, and any linked API keys or app passwords."
+200,billing-fraud,3e24fdaa2019,12,tier1,0.9041,67,0,1,bug
+201,billing,f08ef09a72b6,12,tier1,0.0000,66,0,1,billing
+202,bug,8f5076b17d0d,12,tier1,0.8792,65,0,1,bug
+203,billing-fraud,bb3afbf3fae0,12,tier1,0.8933,63,0,1,bug
+204,billing,793f8e241429,12,tier1,0.0000,63,0,1,billing
+205,feature,16311abe6402,12,tier1,0.8592,64,0,1,bug
+206,billing-fraud,aa4621b71c34,12,tier1,0.9200,62,0,1,feature
+207,security,5eadfa45d7bf,12,tier1,0.8950,62,0,1,bug
+208,billing-fraud,adec52e9c436,12,tier1,0.8816,63,0,1,feature
+209,bug,c95d2df9836c,12,tier1,0.0000,62,0,1,bug
+210,billing-fraud,a8c1171b068d,12,tier1,0.9180,64,0,1,bug
+211,security,662c755241d1,12,tier0-deopt,0.9329,1367,329,1,"Rotate the password for the affected account first, and also change any other account that used the same or a similar password. If you reused that password anywhere else, update those credentials too. For extra safety, enable two-factor authentication where available and review account recovery options."
+212,billing-fraud,f53c48b0f77c,12,tier1,0.9042,64,0,1,feature
+213,onboarding,98d321080eb1,12,tier1,0.9062,276,0,1,bug
+214,bug,8f5076b17d0d,12,tier1,0.8792,61,0,1,bug
+215,billing-fraud,97fc8965221c,12,tier1,0.9148,63,0,1,bug
+216,billing-fraud,bc6b900f6708,12,tier1,0.9091,69,0,1,bug
+217,bug,21e6c02f0cf9,12,tier1,0.0000,64,0,1,bug
+218,security,5415248e02e2,12,tier1,0.9185,62,0,1,bug
+219,billing-fraud,e1e33daccb45,12,tier1,0.8895,65,0,1,feature
+220,security,2852dbe2ff73,12,tier1,0.9097,63,0,1,bug
+221,security,5415248e02e2,12,tier1,0.9185,70,0,1,bug
+222,onboarding,bff272947e20,12,tier1,0.8963,61,0,1,bug
+223,onboarding,ac28bf167850,12,tier1,0.9161,64,0,1,feature
+224,billing-fraud,bb3afbf3fae0,12,tier1,0.8933,62,0,1,bug
+225,billing,793f8e241429,12,tier1,0.0000,61,0,1,billing
+226,onboarding,1c81d31bbc0b,12,tier0-deopt,0.9226,2145,496,1,"To connect your first data source, open the product and go to the data sources or integrations section. From there, choose the source type you want to connect and follow the setup prompts. If the checklist is stuck on step three, try refreshing the page, signing out and back in, or clearing your browser cache. If you still can’t proceed, tell me which data source you’re trying to add and I can walk you through the exact steps."
+227,billing-fraud,bc6b900f6708,12,tier1,0.9091,61,0,1,bug
+228,bug,5363b868787f,12,tier1,0.8714,67,0,1,bug
+229,billing-fraud,bb3afbf3fae0,12,tier1,0.8933,71,0,1,bug
+230,feature,68948e3c77c8,12,tier1,0.8936,68,0,1,feature
+231,billing-fraud,efcfd0ceae7e,12,tier1,0.8940,64,0,1,bug
+232,bug,ce3ad56c2cf2,12,tier1,0.0000,63,0,1,bug
+233,billing-fraud,bc6b900f6708,12,tier1,0.9091,66,0,1,bug
+234,security,77d54dd9a67c,12,tier1,0.8036,62,0,1,bug
+235,bug,5363b868787f,12,tier1,0.8714,65,0,1,bug
+236,security,4ee6f6ed7ed0,12,tier1,0.9045,63,0,1,feature
+237,billing-fraud,9ce7474d0b59,12,tier1,0.8933,67,0,1,bug
+238,onboarding,a0ba6e191d3a,12,tier1,0.9098,79,0,1,bug
+239,onboarding,1c81d31bbc0b,12,tier0-deopt,0.9226,1414,393,1,"To connect your first data source, open the setup/checklist page and go to step 3, then choose the data source type you want to add and follow the connection prompts. If you tell me which source you’re trying to connect (for example, SQL, CSV, Salesforce, etc.), I can give you the exact steps."
+240,billing-fraud,a4faccf09ec1,12,tier1,0.9102,80,0,1,bug
+241,onboarding,998c4ba59263,12,tier1,0.8780,63,0,1,bug
+242,billing-fraud,cc8b30748245,12,tier1,0.9156,67,0,1,feature
+243,feature,16311abe6402,12,tier1,0.8592,311,0,1,bug
+244,billing,f08ef09a72b6,12,tier1,0.0000,63,0,1,billing
+245,billing-fraud,88f99b8bf7e9,12,tier1,0.9054,63,0,1,bug
+246,billing,cfb98f978d8b,12,tier1,0.8690,84,0,1,billing
+247,feature,68948e3c77c8,12,tier1,0.8936,69,0,1,feature
+248,bug,ce3ad56c2cf2,12,tier1,0.0000,70,0,1,bug
+249,billing-fraud,3e24fdaa2019,12,tier1,0.9041,65,0,1,bug
+250,billing-fraud,efcfd0ceae7e,12,tier1,0.8940,287,0,1,bug
+251,billing,793f8e241429,12,tier1,0.0000,68,0,1,billing
+252,feature,16311abe6402,12,tier1,0.8592,67,0,1,bug
+253,onboarding,ac28bf167850,12,tier1,0.9161,65,0,1,feature
+254,billing-fraud,cc8b30748245,12,tier1,0.9156,66,0,1,feature
+255,security,5415248e02e2,12,tier1,0.9185,72,0,1,bug
+256,bug,c95d2df9836c,12,tier1,0.0000,74,0,1,bug
+257,billing,793f8e241429,12,tier1,0.0000,69,0,1,billing
+258,billing,cfb98f978d8b,12,tier1,0.8690,70,0,1,billing
+259,security,9c474aa4438c,12,tier1,0.8896,65,0,1,bug
+260,security,9c474aa4438c,12,tier1,0.8896,63,0,1,bug
+261,security,4ee6f6ed7ed0,12,tier1,0.9045,66,0,1,feature
+262,security,45bab5f6ed00,12,tier0-deopt,0.9286,1201,248,1,"Security incident: likely phishing attempt. Advise staff not to reply or click links, reset any exposed passwords, report the email to security, and check for any account compromise."
+263,feature,596a467f9df0,12,tier1,0.0000,62,0,1,feature
+264,feature,16311abe6402,12,tier1,0.8592,62,0,1,bug
+265,security,9c474aa4438c,12,tier1,0.8896,299,0,1,bug
+266,onboarding,a0ba6e191d3a,12,tier1,0.9098,68,0,1,bug
+267,billing-fraud,f53c48b0f77c,12,tier1,0.9042,65,0,1,feature
+268,billing-fraud,f53c48b0f77c,12,tier1,0.9042,66,0,1,feature
+269,feature,68948e3c77c8,12,tier1,0.8936,61,0,1,feature
+270,onboarding,98d321080eb1,12,tier1,0.9062,75,0,1,bug
+271,billing,3f283840eeb8,12,tier1,0.7901,65,0,1,billing
+272,security,9c474aa4438c,12,tier1,0.8896,69,0,1,bug
+273,security,f1e66211864a,12,tier1,0.8814,62,0,1,feature
+274,security,9c474aa4438c,12,tier1,0.8896,63,0,1,bug
+275,bug,7c55b12b6d40,12,tier1,0.8551,329,0,1,bug
+276,billing-fraud,efcfd0ceae7e,12,tier1,0.8940,65,0,1,bug
+277,onboarding,8667e6330646,12,tier1,0.8671,68,0,1,billing
+278,billing-fraud,a8c1171b068d,12,tier1,0.9180,66,0,1,bug
+279,security,4f493401f33b,12,tier1,0.8988,65,0,1,feature
+280,feature,1b3eb767452a,12,tier1,0.8897,69,0,1,bug
+281,bug,21e6c02f0cf9,12,tier1,0.0000,66,0,1,bug
+282,feature,1b3eb767452a,12,tier1,0.8897,65,0,1,bug
+283,feature,596a467f9df0,12,tier1,0.0000,66,0,1,feature
+284,bug,c95d2df9836c,12,tier1,0.0000,66,0,1,bug
+285,security,5415248e02e2,12,tier1,0.9185,65,0,1,bug
+286,billing-fraud,88f99b8bf7e9,12,tier1,0.9054,332,0,1,bug
+287,billing,cfb98f978d8b,12,tier1,0.8690,81,0,1,billing
+288,billing,cfb98f978d8b,12,tier1,0.8690,72,0,1,billing
+289,onboarding,cce057678045,12,tier1,0.9128,74,0,1,bug
+290,security,4ee6f6ed7ed0,12,tier1,0.9045,64,0,1,feature
+291,security,9c474aa4438c,12,tier1,0.8896,65,0,1,bug
+292,billing-fraud,a4faccf09ec1,12,tier1,0.9102,62,0,1,bug
+293,billing-fraud,9ce7474d0b59,12,tier1,0.8933,64,0,1,bug
+294,billing-fraud,e1e33daccb45,12,tier1,0.8895,67,0,1,feature
+295,billing-fraud,adec52e9c436,12,tier1,0.8816,70,0,1,feature
+296,billing-fraud,97fc8965221c,12,tier1,0.9148,284,0,1,bug
+297,billing-fraud,aa4621b71c34,12,tier1,0.9200,67,0,1,feature
+298,onboarding,b5d2e8f9b001,12,tier1,0.8992,62,0,1,feature
+299,onboarding,6d99f75cb7ae,12,tier1,0.9197,63,0,1,bug
+300,security,907876c2e9aa,12,tier0-deopt,0.9351,1761,521,1,"Revoke the exposed API key immediately in your account/security settings, then generate a new key and update every service, app, or script that uses the old one. If you have other tokens that may be associated with the same account, revoke or rotate them as well, and review logs for any suspicious usage. After rotating, store the new credentials securely (for example in a secret manager), and remove the leaked key from the public repository history if possible to reduce further exposure."

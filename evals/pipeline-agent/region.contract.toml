@@ -1,0 +1,29 @@
+# Region contract for the pipeline-agent chain (ADR-0015): binds the WHOLE
+# recorded extract..format chain — the region's interface is the extract
+# span's input to the format span's output, and the emit gate replays every
+# recorded end-to-end chain differentially.
+contract_version = 0
+task = "pipeline-agent"
+
+[scope]
+type = "region"
+from = "extract"
+to = "format"
+
+[interface]
+input = "json"
+output = "text"
+
+[[example]]
+name = "first-word-upper"
+match = "exact"
+input = { doc = "Beta Alpha Gamma" }
+output = "BETA"
+
+[[property]]
+kind = "regex"
+target = "output"
+pattern = "^[A-Z]+$"
+
+[budgets]
+max_latency_ms_p95 = 1000

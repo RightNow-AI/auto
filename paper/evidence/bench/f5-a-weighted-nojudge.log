@@ -1,0 +1,60 @@
+$ target/release/auto distill --contract evals/bench/bench-f5.contract.toml --store target/bench/f2.db --trainer python crates/auto-passes/trainer/tree_train.py --model-kind tree --input-field ticket --holdout 0 --seed 0 --divergent-pick weighted --guard-alpha-milli 1 --out paper/evidence/bench\f5-weighted-nojudge.cbin --runs-dir evals/runs
+--- stdout ---
+weighted witnesses: 73 training row(s) over 40 input(s), 33 divergent reference(s) contributing every witnessed output, 0 errored group(s) skipped
+distilled: tree_train.py sklearn-1.9.0 seed=0 (train_accuracy 0.233 over 73, holdout_accuracy 1.000 over 0, classes ["API times out for requests exceeding 50 items", "API times out when requests exceed 50 items", "Android app crashes immediately on opening the settings page", "Android app crashes immediately when opening settings page", "Autosave reports success, but reopening restores an older document version", "Autosave reports success, but reopening shows outdated document version", "Billed enterprise tier while account is on starter plan", "Billing portal incorrectly shows paid wire transfer balance as past due", "Billing portal incorrectly shows past-due balance after wire payment", "CSV export 500s whenever the date column is included", "Cancel subscription and refund yesterday’s charge", "Charged enterprise pricing despite being on the starter plan", "Coupon SAVE20 missing from renewal payment", "Dark mode hides buttons on reports screen", "Dark mode hides buttons on the reports screen", "Dashboard freezes after uploading files larger than 10 MB", "Date picker resets to 1970 when selecting Sundays", "Deleting folder crashes app and folder reappears after restart", "Deleting folder crashes app; folder reappears after restart", "Desktop-web sync drops latest edits silently", "Desktop-web sync silently drops latest edits", "Download all past receipts from your account for tax filing", "Download past receipts from your account’s receipts or order history page", "Draft save throws unexpected token and loses changes", "Draft save throws unexpected token error, losing changes", "Dragging card between columns duplicates instead of moving it", "Dragging cards duplicates them instead of moving them between columns", "Duplicate charges showing company name twice on statement with two amounts", "Duplicate company charges listed with two different amounts on statement", "Duplicate subscription charge refund requested", "Duplicate subscription charge; customer requests refund for extra payment", "Expired company card retried on wrong backup card", "Expired company card retry charged wrong backup card", "Export email link returns 404 not found", "Export email links to a missing file, causing 404 errors", "Firefox PDF preview renders every page upside down", "Fix two-factor code rejection despite synced clock", "Investigate $49 charge despite $39 checkout price discrepancy", "Investigate billing discrepancy between checkout price and charged amount", "Invoice currency is USD instead of expected EUR pricing", "Invoice shows USD instead of expected EUR pricing", "Invoice still shows old plan price after downgrade", "Keyboard shortcuts broke after the latest release", "Keyboard shortcuts stopped working after the latest release", "Login page reloads silently without error since this morning", "Login page reloads without error since this morning", "Mobile app displays blank white screen after latest update", "Mobile app shows blank white screen after latest update", "Notifications are delayed three hours and some are missing entirely", "Notifications are delayed three hours and sometimes never arrive", "Payment failed but bank account was still charged", "Payment failed but funds were still withdrawn from bank account", "Provide VAT invoice for last month’s payment", "Question about unexpected monthly card charge despite annual prepayment", "Question about unexpected monthly charge despite annual prepayment", "Refund request for unused team plan seats", "Request VAT invoice for last month's payment for accounting", "Requesting refund for unused team plan seats", "Resend order 4482 receipt to inbox", "Resend receipt for order 4482; customer never received it", "Search returns no results for visible list view items", "Search yields no results for items visible in list view", "Switch monthly to annual billing and apply the discount", "Switching to annual billing with discount application inquiry", "Trial auto-converted to paid; customer charged $99 without warning", "Trial auto-converted to paid; user charged $99 without warning", "Two-factor codes rejected despite synced clock", "Update billing email for invoice delivery to accounts payable", "Update billing email for invoices to go to accounts payable", "Upgrade proration billed full month instead of prorated amount", "Uploaded images appear corrupted, displaying as gray rectangles", "Uploaded images display as corrupted gray rectangles", "Wrong proration charged for upgrade; billed full month"])
+weighted witnesses: weighted_train_accuracy 0.300 over              total witness weight 80 (ADR-0031; holdout stays plain unweighted)
+verification — contract 5c32548b7d38 task "inbox-agent"
+subject: distill candidate wasm "decision-tree-interpreter (distilled)" vs trace-store target/bench/f2.db
+observations: 41
+checks:
+  [pass] interface conformance (1 observations)
+  [pass] example "billing-duplicate-charge-summary" (1 matching observation(s))
+  [pass] property len_range(output, 1..=120) (1 observations)
+  [pass] budget max_latency_ms_p95 <= 30000 (measured p95 = 0ms over 1 observations)
+  [pass] differential: input #0 reproduces recorded output (2 observation(s)) — reference is the ADR-0018 majority pick over 2 distinct recorded outputs
+  [pass] [agreement evidence] differential: input #1 not judged — byte-divergent; judged differential declared but no judge supplied
+  [pass] differential: input #2 reproduces recorded output (2 observation(s)) — reference is the ADR-0018 majority pick over 2 distinct recorded outputs
+  [pass] [agreement evidence] differential: input #3 not judged — byte-divergent; judged differential declared but no judge supplied
+  [pass] [agreement evidence] differential: input #4 not judged — byte-divergent; judged differential declared but no judge supplied
+  [pass] [agreement evidence] differential: input #5 not judged — byte-divergent; judged differential declared but no judge supplied
+  [pass] differential: input #6 reproduces recorded output (2 observation(s))
+  [pass] differential: input #7 reproduces recorded output (2 observation(s)) — reference is the ADR-0018 majority pick over 2 distinct recorded outputs
+  [pass] [agreement evidence] differential: input #8 not judged — byte-divergent; judged differential declared but no judge supplied
+  [pass] [agreement evidence] differential: input #9 not judged — byte-divergent; judged differential declared but no judge supplied
+  [pass] differential: input #10 reproduces recorded output (2 observation(s)) — reference is the ADR-0018 majority pick over 2 distinct recorded outputs
+  [pass] differential: input #11 reproduces recorded output (2 observation(s)) — reference is the ADR-0018 majority pick over 2 distinct recorded outputs
+  [pass] differential: input #12 reproduces recorded output (2 observation(s)) — reference is the ADR-0018 majority pick over 2 distinct recorded outputs
+  [pass] [agreement evidence] differential: input #13 not judged — byte-divergent; judged differential declared but no judge supplied
+  [pass] differential: input #14 reproduces recorded output (2 observation(s))
+  [pass] [agreement evidence] differential: input #15 not judged — byte-divergent; judged differential declared but no judge supplied
+  [pass] [agreement evidence] differential: input #16 not judged — byte-divergent; judged differential declared but no judge supplied
+  [pass] [agreement evidence] differential: input #17 not judged — byte-divergent; judged differential declared but no judge supplied
+  [pass] [agreement evidence] differential: input #18 not judged — byte-divergent; judged differential declared but no judge supplied
+  [pass] differential: input #19 reproduces recorded output (2 observation(s))
+  [pass] [agreement evidence] differential: input #20 not judged — byte-divergent; judged differential declared but no judge supplied
+  [pass] [agreement evidence] differential: input #21 not judged — byte-divergent; judged differential declared but no judge supplied
+  [pass] differential: input #22 reproduces recorded output (2 observation(s)) — reference is the ADR-0018 majority pick over 2 distinct recorded outputs
+  [pass] differential: input #23 reproduces recorded output (2 observation(s)) — reference is the ADR-0018 majority pick over 2 distinct recorded outputs
+  [pass] differential: input #24 reproduces recorded output (2 observation(s))
+  [pass] differential: input #25 reproduces recorded output (2 observation(s)) — reference is the ADR-0018 majority pick over 2 distinct recorded outputs
+  [pass] [agreement evidence] differential: input #26 not judged — byte-divergent; judged differential declared but no judge supplied
+  [pass] differential: input #27 reproduces recorded output (2 observation(s))
+  [pass] [agreement evidence] differential: input #28 not judged — byte-divergent; judged differential declared but no judge supplied
+  [pass] differential: input #29 reproduces recorded output (2 observation(s))
+  [pass] differential: input #30 reproduces recorded output (2 observation(s))
+  [pass] [agreement evidence] differential: input #31 not judged — byte-divergent; judged differential declared but no judge supplied
+  [pass] [agreement evidence] differential: input #32 not judged — byte-divergent; judged differential declared but no judge supplied
+  [pass] [agreement evidence] differential: input #33 not judged — byte-divergent; judged differential declared but no judge supplied
+  [pass] [agreement evidence] differential: input #34 not judged — byte-divergent; judged differential declared but no judge supplied
+  [pass] differential: input #35 reproduces recorded output (2 observation(s)) — reference is the ADR-0018 majority pick over 2 distinct recorded outputs
+  [pass] [agreement evidence] differential: input #36 not judged — byte-divergent; judged differential declared but no judge supplied
+  [pass] [agreement evidence] differential: input #37 not judged — byte-divergent; judged differential declared but no judge supplied
+  [pass] [agreement evidence] differential: input #38 not judged — byte-divergent; judged differential declared but no judge supplied
+  [pass] [agreement evidence] differential: input #39 not judged — byte-divergent; judged differential declared but no judge supplied
+  [----] differential agreement >= 800/1000 — judged differential declared but no judge supplied (pass --judge-model)
+verdict: INCONCLUSIVE
+(inconclusive = nothing violated, but unchecked normative claims remain; never rounded up to pass)
+eval run 1efc381e2a0935b19cb0f43c6bf6e96911c17fdbe4f70f4aa03eb0a747063591 -> evals/runs\1efc381e2a0935b19cb0f43c6bf6e96911c17fdbe4f70f4aa03eb0a747063591.json
+
+--- stderr ---
+auto distill: emit blocked — verdict INCONCLUSIVE (a failing or inconclusive contract never emits; CLAUDE.md)

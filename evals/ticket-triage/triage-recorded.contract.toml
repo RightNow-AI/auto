@@ -1,0 +1,27 @@
+# Recorded-reference contract for the ticket-triage span: the claims that
+# only make sense against the RECORDED frontier agent — per-call cost and
+# token ceilings measured from the reserved span attrs (spec/trace.md §3)
+# plus real API latency. Check with `auto verify` (trace mode). The emit
+# contract (triage.contract.toml) carries everything a compiled subject can
+# be measured against; see the design note in spec/adr/open-questions.md.
+contract_version = 0
+task = "ticket-triage"
+
+[scope]
+type = "span"
+kind = "model_call"
+name = "triage"
+
+[interface]
+input = "json"
+output = "text"
+
+[[property]]
+kind = "one_of"
+target = "output"
+values = ["billing", "bug", "feature"]
+
+[budgets]
+max_latency_ms_p95 = 30000
+max_cost_usd_micros = 3000
+max_tokens = 3000

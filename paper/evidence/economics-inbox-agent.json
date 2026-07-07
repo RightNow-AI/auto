@@ -1,0 +1,38 @@
+{
+  "experiment": "E1 economics demo, MULTI-STEP agent scale (paper/log.md 2026-07-04 wave 5)",
+  "agent": "inbox-agent: per run, 3 real gpt-5.4-mini calls (classify, priority, summarize) + 1 local tool (lookup) + python glue; 60-ticket corpus",
+  "baseline_recorded": {
+    "n_runs": 60,
+    "full_run_latency_ms": { "p50": 2294, "p95": 5816, "mean": 2933 },
+    "per_call_latency_ms": { "p50": 737, "p95": 1360, "max": 12269 },
+    "cost_usd_micros_per_run": 188,
+    "total_recording_cost_usd_micros": 11274
+  },
+  "compiled_via_auto_serve": {
+    "artifacts": {
+      "classify": "34be1313... (tree, 60/60 differential PASS, eval run d98b61b5...)",
+      "priority": "3b332baf... (tree, 60/60 differential PASS, eval run 5bc4d557...)",
+      "summarize": "08a5143b... (tree @4096 buckets — the 20%-deterministic free-text step compiled to its single witnessed behavior per input; first attempt at 1024 buckets honestly FAILED the gate at train 0.733)"
+    },
+    "n_runs": 60,
+    "full_run_latency_ms": { "p50": 108, "p95": 146, "mean": 173 },
+    "per_call_latency_ms": { "p50": 21, "p95": 88, "max_cold": 3380 },
+    "marginal_cost_usd_micros_per_run": 0
+  },
+  "ratios_measured": {
+    "full_run_latency": "p50 21x, p95 40x, mean 17x",
+    "marginal_cost": "188 usd-micros/run -> 0; recording spend (11274 usd-micros) amortizes after ~60 runs",
+    "systems_finding": "artifact execution is <1ms (manifests); the compiled path's 173ms mean is python glue + HTTP + per-request wasm instantiation — once model calls compile away, the runtime around them becomes the bottleneck; in-process embedding of artifacts is the recorded path to the next order of magnitude"
+  },
+  "determinism_measured": {
+    "protocol": "20 tickets x 2 passes through BOTH recorders on identical traffic (auto proxy raw chat bodies + SDK agent-shaped spans)",
+    "proxy_view": "70.0% witnessed-deterministic (84/120 raw frontier calls)",
+    "sdk_view": "78.8% (126/160 effectful spans incl. the tool call)",
+    "per_step": { "classify": "20/20 (100%)", "priority": "19/20 (95%)", "lookup_tool": "100%", "summarize": "4/20 (20%)" }
+  },
+  "honesty_caveats": [
+    "designed 60-ticket corpus; the agent is single-turn per step (no inter-step model feedback loops)",
+    "all three artifacts compile the witnessed distribution (--holdout 0); guards abstain beyond calibration; the 20%-deterministic summarize step is pinned to one recorded behavior per input — statistical acceptance for divergent outputs remains the recorded open question",
+    "total wave-5 recording spend ~18,800 usd-micros (~$0.019: 180 baseline + 120 proxy-leg calls), owner-direct, measured via span attrs"
+  ]
+}

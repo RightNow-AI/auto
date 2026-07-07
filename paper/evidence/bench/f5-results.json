@@ -1,0 +1,118 @@
+{
+  "family": "f5",
+  "task": "inbox-agent",
+  "span": "summarize",
+  "generated_at_unix": 1783261156,
+  "store": "target/bench/f2.db",
+  "contract": "evals/bench/bench-f5.contract.toml",
+  "session": "bench-f5",
+  "cap_usd": "0.25",
+  "guard_alpha_milli": 1,
+  "ledger": "~/.auto/spend.jsonl",
+  "pins": {
+    "judge_model": "gpt-5.4-mini",
+    "distill_seed": 0,
+    "trainer": "python crates/auto-passes/trainer/tree_train.py",
+    "declared": "differential_match=judged, min agreement 800 milli (committed pre-run)"
+  },
+  "measured_expectations": {
+    "a": "INCONCLUSIVE, $0 (wave-9 row 1: judged w/o judge is Unchecked)",
+    "b": "verdict + agreement fraction; wave-12 measured PASS 17/20 = 85% on this store shape",
+    "c": "wave-9 measured PASS 20/20, 0 live consults (memorizing control)"
+  },
+  "repo_commit": "63b89a24a718f59d6292706b7332db5458d772bd",
+  "sub_runs": {
+    "a_weighted_nojudge": {
+      "exit": 1,
+      "verdict": "INCONCLUSIVE",
+      "agreement": "unchecked (no judge; judged differential Unchecked by construction)",
+      "weighted": {
+        "rows": 73,
+        "inputs": 40,
+        "divergent_references": 33
+      },
+      "train": {
+        "train_accuracy": 0.233,
+        "train_n": 73,
+        "holdout_accuracy": 1.0,
+        "holdout_n": 0
+      },
+      "judged_equivalent": 0,
+      "judged_not_equivalent": 0,
+      "judge_failures": 0,
+      "eval_run_id": "1efc381e2a0935b19cb0f43c6bf6e96911c17fdbe4f70f4aa03eb0a747063591",
+      "artifact_id": null,
+      "artifact_path": null,
+      "refusal_or_block_verbatim": "auto distill: emit blocked \u2014 verdict INCONCLUSIVE (a failing or inconclusive contract never emits; CLAUDE.md)",
+      "judge_model": null
+    },
+    "b_weighted_judged": {
+      "exit": 1,
+      "verdict": "FAIL",
+      "agreement": {
+        "declared_milli": 800,
+        "matched": 17,
+        "eligible": 40,
+        "pct_truncated": 42.5
+      },
+      "weighted": {
+        "rows": 73,
+        "inputs": 40,
+        "divergent_references": 33
+      },
+      "train": {
+        "train_accuracy": 0.233,
+        "train_n": 73,
+        "holdout_accuracy": 1.0,
+        "holdout_n": 0
+      },
+      "judged_equivalent": 0,
+      "judged_not_equivalent": 46,
+      "judge_failures": 0,
+      "eval_run_id": "f30393c904c7756c177c5372babc86707ce95fc23efd56056224fd86b69dc731",
+      "artifact_id": null,
+      "artifact_path": null,
+      "refusal_or_block_verbatim": "auto distill: emit blocked \u2014 verdict FAIL (a failing or inconclusive contract never emits; CLAUDE.md)",
+      "judge_model": "gpt-5.4-mini",
+      "judge_spend_usd_micros_session_delta": 1877,
+      "session_ledger_purposes_seen": {
+        "judge": 23
+      }
+    },
+    "c_mostcommon_judged": {
+      "exit": 1,
+      "verdict": "FAIL",
+      "agreement": {
+        "declared_milli": 800,
+        "matched": 30,
+        "eligible": 40,
+        "pct_truncated": 75.0
+      },
+      "canonical_pick": {
+        "inputs": 40,
+        "divergent_resolved": 33
+      },
+      "train": {
+        "train_accuracy": 0.75,
+        "train_n": 40,
+        "holdout_accuracy": 1.0,
+        "holdout_n": 0
+      },
+      "judged_equivalent": 0,
+      "judged_not_equivalent": 20,
+      "judge_failures": 0,
+      "eval_run_id": "d449f3dcceb1ef89d94700f7503a0c91c3d14978ef20bdb655fccc9e8d87547b",
+      "artifact_id": null,
+      "artifact_path": null,
+      "refusal_or_block_verbatim": "auto distill: emit blocked \u2014 verdict FAIL (a failing or inconclusive contract never emits; CLAUDE.md)",
+      "judge_model": "gpt-5.4-mini",
+      "judge_spend_usd_micros_session_delta": 814,
+      "session_ledger_purposes_seen": {
+        "judge": 33
+      }
+    }
+  },
+  "session_spend_usd_micros_total": 2691,
+  "status": "complete",
+  "deviations": []
+}

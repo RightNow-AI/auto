@@ -1,0 +1,21 @@
+[package]
+name = "auto-trace"
+description = "Auto trace core: trace model, JSONL ingestion, sqlite store, replay comparison, determinism analysis"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+publish.workspace = true
+
+[dependencies]
+rusqlite.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+sha2.workspace = true
+thiserror.workspace = true
+
+[dev-dependencies]
+proptest.workspace = true
+tempfile.workspace = true
+
+[lints]
+workspace = true

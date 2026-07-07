@@ -1,0 +1,10 @@
+{"id": "f1-p01", "kind": "heldout", "ticket": "My card was charged $29 twice for the same invoice this month, please remove the duplicate charge."}
+{"id": "f1-p02", "kind": "heldout", "ticket": "The refund for my canceled plan never arrived even though support confirmed it two weeks ago."}
+{"id": "f1-p03", "kind": "heldout", "ticket": "The app crashes whenever I rotate my phone on the reports screen."}
+{"id": "f1-p04", "kind": "heldout", "ticket": "Export to PDF times out with a server error every time the project has more than ten pages."}
+{"id": "f1-p05", "kind": "heldout", "ticket": "I upgraded to the annual plan but my invoice still shows the monthly price plus a second charge."}
+{"id": "f1-p06", "kind": "ood", "ticket": "W0705 09:14:33.812441 1 controller.go:217] node/worker-7 NotReady: container runtime network not ready: cni plugin not initialized"}
+{"id": "f1-p07", "kind": "ood", "ticket": "The kettle hums a small gray tune, the window frames a paper moon; I fold the evening like a letter, and tell the dark it could do better."}
+{"id": "f1-p08", "kind": "ood", "ticket": " "}
+{"id": "f1-p09", "kind": "ood", "ticket": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."}
+{"id": "f1-p10", "kind": "ood", "ticket": "ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near SELCT id FROM users at line 1"}

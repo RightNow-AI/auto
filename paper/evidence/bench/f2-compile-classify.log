@@ -1,0 +1,6 @@
+$ target/release/auto compile --contract evals/inbox-agent/classify.contract.toml --store target/bench/f2.db --synth enum --guard-field ticket --guard-alpha-milli 1 --divergent-pick most-common --out paper/evidence/bench\f2-classify.cbin --runs-dir evals/runs
+--- stdout ---
+canonical pick: 40 trainable input(s), 0 divergent reference(s) resolved to their majority witness, 0 errored group(s) skipped
+
+--- stderr ---
+auto compile: synthesis budget exhausted (300000 state(s), depth 8) — no fitting program in the v0 DSL; supply --module (hand-assisted) or wait for a richer search

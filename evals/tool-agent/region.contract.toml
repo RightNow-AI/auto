@@ -1,0 +1,28 @@
+# Region contract for the tool-agent chain (ADR-0017): the middle span is a
+# TOOL CALL, so the compiled artifact declares the `lookup` capability and
+# imports auto.tool_call — the confinement promise made physical.
+contract_version = 0
+task = "tool-agent"
+
+[scope]
+type = "region"
+from = "extract"
+to = "format"
+
+[interface]
+input = "json"
+output = "text"
+
+[[example]]
+name = "beta-team"
+match = "exact"
+input = { doc = "Beta Alpha Gamma" }
+output = "TEAM-B"
+
+[[property]]
+kind = "regex"
+target = "output"
+pattern = "^TEAM-[A-Z]$"
+
+[budgets]
+max_latency_ms_p95 = 1000
